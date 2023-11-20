@@ -6,15 +6,11 @@ const petSchema = mongoose.Schema(
             type: String,
             required: true,
         },
-        dob:{
-            type: Date,
-            required: true,
-        },
         animal:{
             type: String,
             required: true,
         },
-        Weight:{
+        weight:{
             type: Number,
             required: true,
         },
@@ -22,8 +18,8 @@ const petSchema = mongoose.Schema(
             type: String,
             required: true,
         },
-        owner:{
-            type: Number,
+        dob:{
+            type: Date,
             required: true,
         }
     },
