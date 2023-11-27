@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ML Output</title>
+    </head>
+    <body>
+        <h1>Image Classifier</h1>
+        <form action='/', method="post", enctype="multipart/form-data">
+            <input type="file" name="imagefile">
+            <input type="submit" value="Predict Image">
+        </form>
+        <h1>Prediction Result</h1>
+        <!-- Iterate through predictions and display each -->
+        {% for prediction in predictions %}
+            <p>Prediction: {{ prediction }}</p>
+        {% endfor %}
+    </body>
+</html>
