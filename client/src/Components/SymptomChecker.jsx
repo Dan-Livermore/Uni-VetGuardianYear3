@@ -1,6 +1,8 @@
 const SymptomChecker = () => {
   return (
-    <div>SymptomChecker</div>
+    <div>
+      <h1>SymptomChecker</h1>
+    </div>
   )
 }
 

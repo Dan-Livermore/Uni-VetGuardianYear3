@@ -14,13 +14,13 @@ const Nav = () => {
     <div className="lg:hidden block absolute top-16 w-full left-0 right-0 bg-teal-500 transition">
       <ul className="text-center text-xl p-20">
         {/* Links for sections*/}
-        <Link spy={true} smooth={true} to="Home">
+        <Link spy={true} smooth={true} to="/">
           <li className="my-4 py-4 border-b border-teal-500 hover:bg-teal-500 hover:text-zinc-400 hover:rounded cursor-pointer spy={true} smooth={true}">Home</li>
         </Link>
-        <Link spy={true} smooth={true} to="SymptomChecker">
+        <Link spy={true} smooth={true} to="/SymptomChecker">
           <li className="my-4 py-4 border-b border-teal-500 hover:bg-teal-500 hover:text-zinc-400 hover:rounded cursor-pointer spy={true} smooth={true}">Symptom Checker</li>
         </Link>
-        <Link spy={true} smooth={true} to="Accounts">
+        <Link spy={true} smooth={true} to="/Accounts">
           <li className="my-4 py-4 border-b border-teal-500 hover:bg-teal-500 hover:text-zinc-400 hover:rounded cursor-pointer spy={true} smooth={true}">Accounts</li>
         </Link>
       </ul>
