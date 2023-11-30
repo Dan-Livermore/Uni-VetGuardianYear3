@@ -6,7 +6,8 @@
 ### Project Vision
 For Pet owners whose pet is unwell, Vet Guardian is a web application that allows the owners to self-diagnose their pet’s problems before contacting their vet.
 
+Technologies: React.js, Node,js, Express.js, MongoDB, Python Flask
+
 Created by: Daniel Livermore 
 
-Supervisor: Liz Stuart
-
+Supervisor: Liz Stuart?
