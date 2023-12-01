@@ -29,16 +29,17 @@ const SymptomChecker = () => {
   };
 
   return (
-    <div>
-      <h1>Image Uploader</h1>
-      <form onSubmit={handleImageUpload}>
-        <input type="file" accept="image/*" onChange={handleImageChange} />
-        <button type="submit">Upload Image</button>
-      </form>
+<div className="p-4">
+  <h1 className="text-2xl font-bold mb-4">Image Uploader</h1>
+  <form onSubmit={handleImageUpload} className="mb-4">
+    <input type="file" accept="image/*" onChange={handleImageChange} className="border rounded-md p-2"/>
+    <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md mt-2">Upload Image</button>
+  </form>
 
-      <h1>Prediction Result</h1>
-      {prediction && <p>Prediction: {prediction}</p>}
-    </div>
+  <h1 className="text-2xl font-bold mb-4">Prediction Result</h1>
+  {prediction && (<p className="bg-gray-200 p-2 rounded-md"> Prediction: {prediction} </p>)}
+</div>
+
   );
 }
 
