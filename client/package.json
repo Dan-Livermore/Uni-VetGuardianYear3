@@ -3,15 +3,25 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:3002"
+    },
+    "/other": {
+      "target": "http://localhost:3000"
+    }
+  },
   "scripts": {
     "dev": "vite --host localhost --port 3001",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "vite --host localhost --port 3001"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "aos": "^3.0.0-beta.6",
+    "axios": "^1.6.2",
     "heroicons": "^2.0.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
