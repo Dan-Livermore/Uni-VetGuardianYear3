@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
 import tensorflow as tf
 from PIL import Image
-from tensorflow.keras.preprocessing import image as keras_image
 import numpy as np
 
 app = Flask(__name__)
@@ -15,11 +14,14 @@ def hello_world():
 
 model = tf.keras.models.load_model('Model.h5')
 class_names = [
-    'Abyssian','American Shorthair','African Grey Parrot','Boxer','Bulldog','British Shorthair','Beagle','Budgerigar',"Bourke's Parakeet",
-    'Cockatoo','Canary','Cocker Spaniel','Dachsund','Cockatiel','Chinchillas','Burmese','Egyptian Mau','Gerbils','Devon Rex','Finch',
-    'German Shepard','French Bulldog','Horses','Hedgehogs','Himalayan','Golden Retriever','Guinea Pigs','Great Dane','Hamsters','Mice',
-    'Parrotlet','Miniature Schanauzer','Lovebird','Labrador Retriever','Pionus Parrot','Maine Coon','Persian','Ragdoll','Rottweiler',
-    'Quaker Parrot','Rats','Rabbits','Poodle','Russain Blue','Serval Cats','Shih Tzu','Sphynx','Siamese','Scottish Fold','Yorkshire Terrier']
+    'Abyssinian','African Dwarf Frog','African Grey Parrot','American Shorthair','American Toad','Axolotls','Beagle','Bearded Dragon',
+    'Bengal' "Bourke's Parakeet" 'Boxer','British Shorthair','Budgerigar','Bulldog','Burmese','Canary','Chameleon','Chinchillas','Cockatiel',
+    'Cockatoo','Cocker Spaniel','Crested Gecko','Dachshund','Degus','Devon Rex','Eastern Newt','Egyptian Mau','Ferrets','Finch','Fox',
+    'French Bulldog','Frogs with Tadpoles','Gerbils','German Shepherd','Golden Retriever','Great Dane','Green Iguana','Guinea Pigs','Hamsters',
+    'Hedgehogs','Himalayan','Horned Toads','Horses','Hyacinth Macaws','Labrador Retriever','Leopard Gecko','Lovebird','Maine Coon','Mice',
+    'Miniature Schnauzer','Monitor Lizards','Parrotlet','Persian','Pionus Parrot','Poison Dart Frogs','Poodle','Prairie Dogs',
+    'Quaker Parrot','Rabbits','Ragdoll','Rats','Red-eyed Tree Frog','Rottweiler','Russian Blue','Salamander','Scottish Fold','Serval Cats',
+    'Shih Tzu','Siamese','Sphynx','Sugar Gliders','Wallabies',"White's Tree Frog",'Yorkshire Terrier']
 
 def prepareImage():
     imagefile = request.files['imagefile']
@@ -33,7 +35,14 @@ def prepareImage():
 
 def predictImage(img, model, class_names):
     predictions = model.predict(tf.expand_dims(img, axis=0))
-    pred_class = class_names[predictions.argmax()]
+      # Get the predicted class
+    # Check if predictions list is empty
+    
+    # Get the predicted class
+    if len(predictions[0]) > 1: # check for multi-class
+        pred_class = class_names[predictions.argmax()] # if more than one output, take the max
+    else:
+        pred_class = class_names[int(tf.round(predictions))[0][0]]
     return pred_class
 
 @app.route('/predict', methods=['POST'])
@@ -41,9 +50,6 @@ def predict():
     img = prepareImage()
     output = predictImage(img, model, class_names)
     return jsonify({'prediction': output})
-
-if __name__ == '__main__':
-    app.run(port=3002, debug=True)
 
 if __name__ == '__main__':
     app.run(port=3002, debug=True)
