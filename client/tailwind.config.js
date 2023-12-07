@@ -10,5 +10,6 @@ export default {
       'sans': ['Roboto', 'ui-sans-serif', 'system-ui'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),],
 }
