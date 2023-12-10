@@ -35,7 +35,6 @@ const Nav = () => {
 
   // Return JSX for the navbar
   return (
-    <Router>
     <nav className="bg-fuchsia-600">
       <div className="h-10vh flex justify-between z-50 text-white lg:py-5 px-20 py-4">
         {/* Logo */}
@@ -76,16 +75,6 @@ const Nav = () => {
         </button>
       </div>
     </nav>
-    
-    {/*Creates routing on navabar*/}
-   <Routes>
-   <Route path="/" exact Component={Home} />
-   <Route path="/about" exact Component={About} />
-   <Route path="/symptomchecker" exact Component={SymptomChecker} />
-   <Route path="/accounts" exact Component={Accounts} />
-   <Route path="*" exact Component={PageNotFound} />
-   </Routes>
- </Router>
   );
 }
 

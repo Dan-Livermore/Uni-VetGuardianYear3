@@ -23,9 +23,9 @@ function Accounts() {
               <div className="flex items-center justify-between">
                 <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">Password</label>
                 <div className="text-sm">
-                <Link to="/forgot-password">
-                  <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
-                </Link>
+                  <Link to="/forgot-password">
+                    <p className="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</p>
+                  </Link>
                 </div>
               </div>
               <div className="mt-2">
@@ -34,23 +34,21 @@ function Accounts() {
             </div>
 
             <div>
-            <Link to="/user-account">
-              <button
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-fuchsia-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-fuchsia-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-600">Sign in</button>
-            </Link>
+              <Link to="/user-home">
+                <button type="submit" className="flex w-full justify-center rounded-md bg-fuchsia-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-fuchsia-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-600">Sign in</button>
+              </Link>
             </div>
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">Don't have an account?
-          <Link to="/create-account">
-            <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"> Sign up today</a>
+            <Link to="/create-account" className="font-semibold text-indigo-600 hover:text-indigo-500">
+               {""} Sign up today
             </Link>
           </p>
         </div>
       </div>
     </>
-  )
+  );
 }
-      
-export default Accounts
+
+export default Accounts;
