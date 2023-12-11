@@ -7,11 +7,9 @@ import About from "./Pages/About";
 import SymptomChecker from "./Pages/SymptomChecker";
 import Accounts from "./Pages/Accounts";
 import PageNotFound from "./Pages/PageNotFound";
-
 import Services from "./Pages/Services";
 import Contact from "./Pages/Contact";
 import Terms from "./Pages/Terms";
-
 import CreateAccount from "./Pages/CreateAccount";
 import ForgotPassword from "./Pages/ForgotPassword";
 import UserHome from "./Pages/UserHome";
@@ -22,7 +20,6 @@ function App() {
     <>
     <Router>
       <Nav />
-
 
       <Routes>
         <Route path="/" element={<Home />} />

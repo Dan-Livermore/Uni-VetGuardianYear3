@@ -40,7 +40,7 @@ function Accounts() {
             </div>
           </form>
 
-          <p className="mt-10 text-center text-sm text-gray-500">Don't have an account?
+          <p className="mt-10 text-center text-sm text-gray-500 pb-12">Don't have an account?
             <Link to="/create-account" className="font-semibold text-indigo-600 hover:text-indigo-500">
                {""} Sign up today
             </Link>
