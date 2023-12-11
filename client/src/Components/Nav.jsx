@@ -17,17 +17,17 @@ const Nav = () => {
 
   // Mobile view
   const content = (
-    <div className="lg:hidden block absolute top-16 w-full left-0 right-0 bg-fuchsia-500 transition">
+    <div className="lg:hidden block absolute top-16 w-full left-0 right-0 bg-purple-500 transition">
       <ul className="text-center text-xl p-20">
         {/* Links for sections*/}
         <Link spy={true} smooth={true} to="/about">
-          <li className="my-4 py-4 border-b border-fuchsia-500 hover:bg-fuchsia-500 hover:text-zinc-400 hover:rounded cursor-pointer spy={true} smooth={true}">About</li>
+          <li className="my-4 py-4 border-b border-purple-500 hover:bg-purple-500 hover:text-zinc-400 hover:rounded cursor-pointer spy={true} smooth={true}">About</li>
         </Link>
         <Link spy={true} smooth={true} to="/symptomchecker">
-          <li className="my-4 py-4 border-b border-fuchsia-500 hover:bg-fuchsia-500 hover:text-zinc-400 hover:rounded cursor-pointer spy={true} smooth={true}">Symptom Checker</li>
+          <li className="my-4 py-4 border-b border-purple-500 hover:bg-purple-500 hover:text-zinc-400 hover:rounded cursor-pointer spy={true} smooth={true}">Symptom Checker</li>
         </Link>
         <Link spy={true} smooth={true} to="/accounts">
-          <li className="my-4 py-4 border-b border-fuchsia-500 hover:bg-fuchsia-500 hover:text-zinc-400 hover:rounded cursor-pointer spy={true} smooth={true}">Accounts</li>
+          <li className="my-4 py-4 border-b border-purple-500 hover:bg-purple-500 hover:text-zinc-400 hover:rounded cursor-pointer spy={true} smooth={true}">Accounts</li>
         </Link>
       </ul>
     </div>
@@ -35,14 +35,14 @@ const Nav = () => {
 
   // Return JSX for the navbar
   return (
-    <nav className="bg-fuchsia-600">
+    <nav className="bg-purple-600">
       <div className="h-10vh flex justify-between z-50 text-white lg:py-5 px-20 py-4">
         {/* Logo */}
         <div className="flex items-center flex-1">
           <span className="text-3xl font-bold items-center">
             <Link spy={true} smooth={true} to="/">
               <img src="../favicon.ico" alt="Vet Guardian" className="logo-img inline-block h-8 w-auto mr-2" />
-              <p className="hover:text-zinc-400 transition border-b-0 border-fuchsia-600 hover:border-zinc-400 cursor-pointer inline-block">Vet Guardian</p>
+              <p className="hover:text-zinc-400 transition border-b-0 border-purple-600 hover:border-zinc-400 cursor-pointer inline-block">Vet Guardian</p>
             </Link>
           </span>
         </div>
@@ -53,13 +53,13 @@ const Nav = () => {
             <ul className="flex gap-8 mr-0 ml-auto text-[18px]">
               {/* links for sections */}
               <Link spy={true} smooth={true} to="/about">
-                <li className="hover:text-zinc-400 transition border-b-0 border-fuchsia-600 hover:border-zinc-400 cursor-pointer">About</li>
+                <li className="hover:text-zinc-400 transition border-b-0 border-purple-600 hover:border-zinc-400 cursor-pointer">About</li>
               </Link>
               <Link spy={true} smooth={true} to="/symptomchecker">
-                <li className="hover:text-zinc-400 transition border-b-0 border-fuchsia-600 hover:border-zinc-400 cursor-pointer">Symptom Checker</li>
+                <li className="hover:text-zinc-400 transition border-b-0 border-purple-600 hover:border-zinc-400 cursor-pointer">Symptom Checker</li>
               </Link>
               <Link spy={true} smooth={true} to="/accounts">
-                <li className="hover:text-zinc-400 transition border-b-0 border-fuchsia-600 hover:border-zinc-400 cursor-pointer">Accounts</li>
+                <li className="hover:text-zinc-400 transition border-b-0 border-purple-600 hover:border-zinc-400 cursor-pointer">Accounts</li>
               </Link>
             </ul>
           </div>

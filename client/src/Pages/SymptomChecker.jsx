@@ -47,23 +47,23 @@ const SymptomChecker = () => {
         <h1 className="text-4xl font-bold mb-4">Pet Prediction</h1>
         {/* {prediction && (<p className="bg-purple-200 p-2 rounded-md"> Prediction: {prediction} </p>)} */}
         <img src={Image} alt="Image From User" className="w-auto h-auto max-h-96 mb-12 border-2 border-solid border-slate-950 rounded-md"/>
-        <p className="bg-purple-200 p-2 rounded-md"> Prediction: Bear <br /> Confidence: 76.67%</p>
+        <p className="bg-purple-200 p-2 rounded-md"> Prediction: Bear <br /> Confidence: 81.67%</p>
 
         <button type="submit" className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-md mt-2">
           Save Pet 
         </button>
-          
       </div>
 
-      <div className="p-4 h-1/3 text-xl border border-fuchsia-600 border-3 rounded-md bg-fuchsia-300">
+      <div className="p-4 h-1/3 text-xl border border-purple-600 border-3 rounded-md bg-purple-300">
         <h1 className="text-4xl font-bold mb-4">Instructions</h1>
-        <p>1. Click on the "Choose File" button and select a photo of your pet.</p>
-        <p>2. Select the "Upload Image" Button.</p>
+        <p>1. Click on the <b>Choose File</b> button and select a photo of your pet.</p>
+        <p>2. Select the <b>Upload Image</b> Button.</p>
         <p>3. A prediction of your pet will be displayed.</p>
         <br/>
         <p>Supported File Types: GIF, JPEG, PNG.</p>
       </div>
     </div>
+    
   );
 };
 

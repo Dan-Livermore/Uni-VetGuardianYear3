@@ -22,7 +22,7 @@ services:
       context: ./client
       dockerfile: Dockerfile
     ports:
-      - "30:01"
+      - "3001:3001"
     depends_on:
       - express
 
