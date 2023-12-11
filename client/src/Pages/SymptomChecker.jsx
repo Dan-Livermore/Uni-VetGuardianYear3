@@ -35,8 +35,8 @@ const SymptomChecker = () => {
   };
 
   return (
-    <div className="p-4 bg-purple-100 grid grid-cols-2 gap-4 h-screen">
-      <div className="p-4">
+    <div className="p-4 bg-purple-100 grid grid-cols-2 gap-4 h-screen min-h-screen">
+      <div className="p-4 flex-1">
         <h1 className="text-4xl font-bold mb-4">Pet Identifier</h1>
         <form onSubmit={handleImageUpload} className="mb-4">
           <input type="file" accept="image/*" onChange={handleImageChange} className="bg-purple-50 border border-slate-300 rounded-md p-2"/>
