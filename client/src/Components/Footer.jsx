@@ -5,8 +5,8 @@ import { RiTiktokFill } from "react-icons/ri";
 const Footer = () => {
   return (
 <footer className="bg-white text-black py-4 shadow-md">
-  <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
-    <div className="mb-4 md:mb-0 bg-white rounded-lg shadow-inner-top p-4 w-full md:w-auto">
+  <div className="container mx-auto flex flex-col md:flex-row items-center justify-between shadow-inner-top">
+    <div className="mb-4 md:mb-0 bg-white rounded-lg  p-4 w-full md:w-auto">
       <h3 className="text-lg font-bold">Contact Us</h3>
       <p>Email: contact@vetguardian.com</p>
       <p>Phone: 01010011 01001111 01010011</p>
@@ -20,10 +20,10 @@ const Footer = () => {
     </nav>
     <div className="mt-4 md:mt-0 text-center">
       <h3 className="text-lg font-bold mb-2">Follow Us</h3>
-      <div className="flex items-center text-black hover:text-gray-300">
-        <LiaFacebookSquare className="mr-4" size={40}/>
-        <BsTwitterX className="mr-4" size={30}/>
-        <RiTiktokFill className="mr-4" size={30}/>
+      <div className="flex items-center text-black">
+        <LiaFacebookSquare className="mr-4 hover:text-gray-300" size={40}/>
+        <BsTwitterX className="mr-4 hover:text-gray-300" size={30}/>
+        <RiTiktokFill className="mr-4 hover:text-gray-300" size={30}/>
       </div>
     </div>
   </div>

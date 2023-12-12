@@ -5,6 +5,7 @@ import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import SymptomChecker from "./Pages/SymptomChecker";
+import ImageClassifier from "./Pages/ImageClassifier";
 import Accounts from "./Pages/Accounts";
 import PageNotFound from "./Pages/PageNotFound";
 import Services from "./Pages/Services";
@@ -24,7 +25,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/symptomchecker" element={<SymptomChecker />} />
+        <Route path="/symptom-checker" element={<SymptomChecker />} />
+        <Route path="/image-classifier" element={<ImageClassifier />} />
         <Route path="/accounts" element={<Accounts />} />
 
         <Route path="/services" element={<Services />} />
