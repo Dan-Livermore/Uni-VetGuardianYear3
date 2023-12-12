@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 const Result = () => {
   return (
-    <div>Result</div>
+    <div>
+      <h1> Symptom Prediction</h1>
+      <p> You're pet might have: "condition"</p>
+      <h2>Contact your vetenary surgery immediately</h2>
+    </div>
   )
 }
 

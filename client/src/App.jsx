@@ -15,6 +15,8 @@ import CreateAccount from "./Pages/CreateAccount";
 import ForgotPassword from "./Pages/ForgotPassword";
 import UserHome from "./Pages/UserHome";
 
+import Result from "./Pages/SymptomChecker/Result";
+
 
 function App() {
   return (
@@ -36,6 +38,11 @@ function App() {
         <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/user-home" element={<UserHome />} />
+
+        
+        <Route path="/result" element={<Result />} />
+
+
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Router>
