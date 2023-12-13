@@ -89,7 +89,7 @@ function SymptomDropdown() {
     </Listbox>
     {selected && selected.id !== 0 && (
       <>
-      {/* <p className="text-gray-600 mt-2">{selected.name}</p> */}
+      <p className="text-gray-600 mt-2">Selected: {selected.name}</p>
       <Symptom2 />
       </>
     )}

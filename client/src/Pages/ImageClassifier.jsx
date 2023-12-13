@@ -35,7 +35,7 @@ const ImageClassifier = () => {
   };
 
   return (
-    <div className="p-4 bg-purple-100 grid grid-cols-2 gap-4 h-screen min-h-screen">
+    <div className="p-4 bg-purple-100 grid grid-cols-2 gap-4 h-screen-1.5 min-h-screen">
       <div className="p-4 flex-1">
         <h1 className="text-4xl font-bold mb-4">Pet Identifier</h1>
         <form onSubmit={handleImageUpload} className="mb-4">
@@ -47,7 +47,7 @@ const ImageClassifier = () => {
         <h1 className="text-4xl font-bold mb-4">Pet Prediction</h1>
         {/* {prediction && (<p className="bg-purple-200 p-2 rounded-md"> Prediction: {prediction} </p>)} */}
         <img src={Image} alt="Image From User" className="w-auto h-auto max-h-96 mb-12 border-2 border-solid border-slate-950 rounded-md"/>
-        <p className="bg-purple-200 p-2 rounded-md"> Prediction: Bear <br /> Confidence: 81.67%</p>
+        <p className="bg-purple-200 p-2 rounded-md pb-4"> Prediction: Bear <br /> Confidence: 81.67%</p>
 
         <button type="submit" className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-md mt-2">
           Save Pet 

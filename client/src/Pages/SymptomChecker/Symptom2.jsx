@@ -1,29 +1,35 @@
 import React, { useState } from 'react';
-import Symptom3 from "./Symptom3";
+import Symptom3 from './Symptom3';
 
 const Symptom2 = () => {
-  const [showElement, setShowElement] = useState(false);
+  const [selectedButton, setSelectedButton] = useState(null);
+  const [showElement, setShowElement] = useState(false); // Define showElement state
 
-  const handleButtonClick = () => {
-    setShowElement(!showElement); // Toggles the visibility state
+  const handleButtonClick = (id) => {
+    setSelectedButton(id);
+    setShowElement(true); // Set showElement to true when a button is clicked
   };
+
   return (
     <>
-      <div className="flex">
+      <div className="flex p-4">
         <div>
           <p>Is your pet pregnant?</p>
-          <button onClick={handleButtonClick} type="submit"
+          <button onClick={() => handleButtonClick('Yes')} id="Yes" type="submit"
             className="flex-1 bg-purple-500 hover:bg-purple-700 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-24">
             Yes
           </button>
-          <button onClick={handleButtonClick} type="submit"
+          <button onClick={() => handleButtonClick('No')} id="No" type="submit"
             className="flex-1 bg-purple-500 hover:bg-purple-700 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-24">
             No
           </button>
+        
+        {selectedButton && (
+          <div className="py-4 pr-4 pb-4">
+            {showElement && <Symptom3 selected={selectedButton} />}
+          </div>
+        )}
         </div>
-        {showElement && ( // Conditionally render the element based on showElement state
-        <Symptom3/>
-      )}
       </div>
     </>
   );
