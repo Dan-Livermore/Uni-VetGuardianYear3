@@ -2,7 +2,7 @@
 const About = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-purple-100">
-      <div className="max-w-4xl p-8 border-purple-600 border-3 rounded-md bg-purple-300">
+      <div className="max-w-4xl p-8 border-purple-600 border-3 rounded-md bg-white">
         <h1 className="text-3xl font-bold mb-4">About Us</h1>
         <p className="text-lg mb-4">
           Vet Guardian provides tools for managing your pet's health. 

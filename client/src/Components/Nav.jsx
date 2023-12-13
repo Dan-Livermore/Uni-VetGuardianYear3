@@ -3,11 +3,6 @@ import { FaTimes } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "../Pages/Home";
-import About from "../Pages/About";
-import SymptomChecker from "../Pages/SymptomChecker";
-import Accounts from "../Pages/Accounts";
-import PageNotFound from "../Pages/PageNotFound";
 
 // Navbar
 const Nav = () => {
@@ -26,6 +21,9 @@ const Nav = () => {
         <Link spy={true} smooth={true} to="/symptom-checker">
           <li className="my-4 py-4 border-b border-purple-500 hover:bg-purple-500 hover:text-zinc-400 hover:rounded cursor-pointer spy={true} smooth={true}">Symptom Checker</li>
         </Link>
+        <Link spy={true} smooth={true} to="/image-classifier">
+          <li className="my-4 py-4 border-b border-purple-500 hover:bg-purple-500 hover:text-zinc-400 hover:rounded cursor-pointer spy={true} smooth={true}">Pet Identifier</li>
+        </Link>
         <Link spy={true} smooth={true} to="/accounts">
           <li className="my-4 py-4 border-b border-purple-500 hover:bg-purple-500 hover:text-zinc-400 hover:rounded cursor-pointer spy={true} smooth={true}">Log In</li>
         </Link>
@@ -40,7 +38,7 @@ const Nav = () => {
         {/* Logo */}
         <div className="flex items-center flex-1">
           <span className="text-3xl font-bold items-center">
-            <Link spy={true} smooth={true} to="/">
+            <Link spy={true} smooth={true} to="/about">
               <img src="../favicon.ico" alt="Vet Guardian" className="logo-img inline-block h-8 w-auto mr-2" />
               <p className="hover:text-zinc-400 transition border-b-0 border-purple-600 hover:border-zinc-400 cursor-pointer inline-block">Vet Guardian</p>
             </Link>
@@ -57,6 +55,9 @@ const Nav = () => {
               </Link>
               <Link spy={true} smooth={true} to="/symptom-checker">
                 <li className="hover:text-zinc-400 transition border-b-0 border-purple-600 hover:border-zinc-400 cursor-pointer">Symptom Checker</li>
+              </Link>
+              <Link spy={true} smooth={true} to="/image-classifier">
+                <li className="hover:text-zinc-400 transition border-b-0 border-purple-600 hover:border-zinc-400 cursor-pointer">Pet Identifier</li>
               </Link>
               <Link spy={true} smooth={true} to="/accounts">
                 <li className="hover:text-zinc-400 transition border-b-0 border-purple-600 hover:border-zinc-400 cursor-pointer">Log In</li>

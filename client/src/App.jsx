@@ -16,6 +16,7 @@ import ForgotPassword from "./Pages/ForgotPassword";
 import UserHome from "./Pages/UserHome";
 
 import Result from "./Pages/SymptomChecker/Result";
+import PasswordRequestSent from "./Pages/PasswordRequestSent";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
 
         <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path ="/password-request-sent" element={<PasswordRequestSent/>} />
         <Route path="/user-home" element={<UserHome />} />
 
         

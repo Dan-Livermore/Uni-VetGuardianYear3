@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const CreateAccount = () => {
   return (<>
-    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+    <div className="flex min-h-full flex-1 flex-col justify-center items-center px-6 py-12 lg:px-8 bg-purple-100">
+<div className="bg-white shadow-md rounded-md p-6 max-w-md w-full mt-1 md:mt-0">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
           Create your account
@@ -51,6 +52,7 @@ const CreateAccount = () => {
             {" "} Log In
           </Link>
         </p>
+      </div>
       </div>
     </div>
   </>
