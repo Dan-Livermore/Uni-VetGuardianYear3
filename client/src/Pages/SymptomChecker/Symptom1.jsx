@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import Symptom2 from "./Symptom2";
 
-import SymptomDropdown from "../../Components/SymptomDropdown";
+import SymptomDropdown from "../../components/SymptomDropdown";
 
 const Symptom1 = () => {
   return (
