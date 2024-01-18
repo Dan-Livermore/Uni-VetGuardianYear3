@@ -4,7 +4,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-// Navbar
 const Navbar = () => {
   // To allow dynamic navbar
   const [click, setClick] = useState(false);
@@ -12,8 +11,8 @@ const Navbar = () => {
 
   // Mobile view
   const content = (
-    <div className="lg:hidden block absolute top-16 w-full left-0 right-0 bg-emerald-500 transition">
-      <ul className="text-center text-xl p-20">
+    <div className="lg:hidden block absolute top-16 w-full left-0 right-0 bg-emerald-800 transition">
+      <ul className="text-center text-3xl p-20">
         {/* Links for sections*/}
         <Link  to="/about">
           <li className="my-4 py-4 border-b border-emerald-500 hover:bg-emerald-500 hover:text-zinc-400 hover:rounded cursor-pointer ">About</li>
@@ -46,9 +45,9 @@ const Navbar = () => {
         </div>
         
         {/* Desktop view */}
-        <div className="lg:flex md:flex lg: flex-1 items center justify-end font-normal hidden">
+        <div className="lg:flex md:flex lg: flex-1 items-center justify-end font-normal hidden">
           <div className="flex-10">
-            <ul className="flex gap-8 mr-0 ml-auto text-[18px]">
+            <ul className="flex gap-8 mr-0 ml-auto text-xl">
               {/* links for sections */}
               <Link  to="/about">
                 <li className="hover:text-zinc-400 transition border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">About</li>

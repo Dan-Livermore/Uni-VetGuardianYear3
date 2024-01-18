@@ -1,37 +1,32 @@
-import {
-  createBrowserRouter,
-  Route,
-  createRoutesFromElements,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter,Route,createRoutesFromElements,RouterProvider } from "react-router-dom";
 import RootLayout from "./structure/RootLayout";
 import PrivateRoutes from "./structure/PrivateRoutes";
 
-import Home from "./Pages/Home";
-import About from "./Pages/About";
-import SymptomChecker from "./Pages/SymptomChecker";
-import ImageClassifier from "./Pages/ImageClassifier";
-import PageNotFound from "./Pages/PageNotFound";
-import Services from "./Pages/Services";
-import Contact from "./Pages/Contact";
-import Terms from "./Pages/Terms";
-import CreateAccount from "./Pages/CreateAccount";
-import ForgotPassword from "./Pages/ForgotPassword";
-import UserHome from "./Pages/UserHome";
-import LogIn from "./Pages/LogIn";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import SymptomChecker from "./pages/SymptomChecker";
+import ImageClassifier from "./pages/ImageClassifier";
+import PageNotFound from "./pages/PageNotFound";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
+import Terms from "./pages/Terms";
+import CreateAccount from "./pages/CreateAccount";
+import ForgotPassword from "./pages/ForgotPassword";
+import UserHome from "./pages/UserHome";
+import LogIn from "./pages/LogIn";
 
-import Result from "./Pages/SymptomChecker/Result";
-import PasswordRequestSent from "./Pages/PasswordRequestSent";
+// import Result from "./pages/SymptomChecker/Result";
+import PasswordRequestSent from "./pages/PasswordRequestSent";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<RootLayout />}>
       <Route path="/" element={<Home />} />
-      <Route path="/log-in" element={<LogIn />}/>  
+      <Route path="/log-in" element={<LogIn />} />
       {/* action={HandleLogIn} /> */}
       <Route path="*" element={<PageNotFound />} />
 
-      <Route path="/create-account" element={<CreateAccount />}/>
+      <Route path="/create-account" element={<CreateAccount />} />
       {/* action={HandleSignUp}/> */}
       <Route path="/about" element={<About />} />
       <Route path="/symptom-checker" element={<SymptomChecker />} />
@@ -45,7 +40,7 @@ const router = createBrowserRouter(
       <Route path="/password-request-sent" element={<PasswordRequestSent />} />
       <Route path="/user-home" element={<UserHome />} />
 
-      <Route path="/result" element={<Result />} />
+      {/* <Route path="/result" element={<Result />} /> */}
 
       <Route path="*" element={<PageNotFound />} />
 

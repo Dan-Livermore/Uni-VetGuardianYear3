@@ -1,17 +1,21 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Image from "../assets/LogInBackground.jpg"
+import Image from "../assets/LogInBackground.jpg";
 
 function LogIn() {
   return (
     <>
       <div className="flex h-screen bg-white">
         <div className="w-8/12 bg-white">
-          <img src={Image} alt="Page Not Found" className="object-cover h-full"/>
+          <img
+            src={Image}
+            alt="Animal Image"
+            className="object-cover h-full"
+          />
         </div>
-          <div className="bg-white shadow-md w-4/12 p-8">
-              <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-                Sign in
-              </h2>
+        <div className="bg-white shadow-md w-4/12 p-8">
+          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+            Sign in
+          </h2>
 
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
             <form className="space-y-6" action="#" method="POST">
