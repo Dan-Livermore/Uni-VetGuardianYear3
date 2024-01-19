@@ -118,8 +118,8 @@ const LogIn = () => {
 
 export default LogIn;
 
+export const HandleLogIn = async ({ request}) => {
 
-export const HandleLogIn = async ({ request }) => {
   const data = await request.formData();
 
   const email = data.get("email");
@@ -128,25 +128,27 @@ export const HandleLogIn = async ({ request }) => {
   console.log(email, password);
   try {
     // Make a POST request to your Express route
-    const response = await axios.post("http://localhost:5555/login", {
+    const response = await axios.post("http://localhost:1111/login", {
       email,
       password,
     });
 
     console.log("Response from server:", response.data);
     if (response.data.token) {
-      // Store the token in local storage or session storage
       localStorage.setItem("token", response.data.token);
-      // Redirect to account page or perform other actions
       return redirect("/account");
     } else if (response.data === "User not found") {
       return { error: 'User Not Found' };
     }
-    // ... (other conditions)
-  } catch (error) {
-    console.error("Error:", error.response.data);
-  }
 
-  // Add a default return statement if none of the conditions above are met
+  } catch (error) {
+    if (error.response && error.response.data) {
+      console.error("Error:", error.response.data);
+      return { error: error.response.data };
+    } else {
+      console.error("An unexpected error occurred:", error.message);
+      return { error: error.response.data };
+    }
+  }
   return null;
 };

@@ -13,7 +13,7 @@ import Terms from "./pages/Terms";
 import CreateAccount from "./pages/CreateAccount";
 import ForgotPassword from "./pages/ForgotPassword";
 import UserHome from "./pages/UserHome";
-import LogIn from "./pages/LogIn";
+import LogIn, { HandleLogIn } from "./pages/LogIn";
 
 // import Result from "./pages/SymptomChecker/Result";
 import PasswordRequestSent from "./pages/PasswordRequestSent";
@@ -22,12 +22,11 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<RootLayout />}>
       <Route path="/" element={<Home />} />
-      <Route path="/log-in" element={<LogIn />} />
-      {/* action={HandleLogIn} /> */}
+      <Route path="/log-in" element={<LogIn />} action={HandleLogIn} />
       <Route path="*" element={<PageNotFound />} />
+{/* 
+      <Route path="/create-account" element={<CreateAccount />} action={HandleSignUp}/> */}
 
-      <Route path="/create-account" element={<CreateAccount />} />
-      {/* action={HandleSignUp}/> */}
       <Route path="/about" element={<About />} />
       <Route path="/symptom-checker" element={<SymptomChecker />} />
       <Route path="/image-classifier" element={<ImageClassifier />} />

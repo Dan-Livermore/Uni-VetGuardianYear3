@@ -11,20 +11,19 @@ router.post("/", async (req, res) => {
   try {
     const user = await User.findOne({ email: email });
     if (!user) {
-      return res.status(404).send("User not found");
+      return res.status(404).send("User Not Found");
     }
 
     const correctPassword = await bcrypt.compare(password, user.password);
     if (!correctPassword) {
-      return res.status(401).send("Wrong Password");
+      return res.status(401).send("Incorrect Password");
     }
 
-    // Create a JWT token
     const token = jwt.sign({ userId: user._id }, "movies", {
       expiresIn: "1h", // Token expires in 1 hour
     });
 
-    res.status(200).json({ token }); // Send the token to the client
+    res.status(200).json({ token });
   } catch (error) {
     res.status(500).send("An Error Has Occurred");
   }
