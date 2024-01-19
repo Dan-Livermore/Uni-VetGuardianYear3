@@ -1,6 +1,7 @@
 import express from "express";
 import { User } from "../models/usersModel.js";
 import bcrypt from "bcrypt";
+import mongoose from "mongoose";
 
 const router = express.Router();
 
@@ -61,18 +62,34 @@ router.put('/:id', async (request, response) => {
 });
 
 
-//DELETE
+// DELETE
 router.delete("/:id", async (request, response) => {
   try {
     const { id } = request.params;
+
+    // Validate if the ID is a valid ObjectId before attempting to delete
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return response.status(400).json({ message: "Invalid user ID format" });
+    }
+
     const result = await User.findByIdAndDelete(id);
+
     if (!result) {
       return response.status(404).json({ message: "User not found" });
     }
-    return response.status(200).send({ message: "User deleted successfully" });
+
+    return response.status(200).json({ message: "User deleted successfully" });
   } catch (error) {
-    response.status(500).send({ message: error.message });
+    console.error("Error during user deletion:", error);
+
+    // Check for specific error conditions and provide appropriate responses
+    if (error.name === "CastError" && error.kind === "ObjectId") {
+      return response.status(400).json({ message: "Invalid user ID format" });
+    }
+
+    response.status(500).json({ message: "Internal Server Error" });
   }
 });
+
 
 export default router;

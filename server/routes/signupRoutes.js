@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
     const newAccount = {
       email: req.body.email,
       password: hash,
-      admin: req.body.admin,
+      admin: req.body.admin || false,
     };
 
     const account = await User.create(newAccount);
