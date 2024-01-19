@@ -35,6 +35,7 @@ const ImageClassifier = () => {
   };
 
   return (
+    <>
     <div className="p-4 bg-emerald-100 h-screen-1.5 min-h-screen">
       <div className="p-4 flex-1">
         <h1 className="text-4xl font-bold mb-4">Pet Identifier</h1>
@@ -48,16 +49,23 @@ const ImageClassifier = () => {
         <p className="px-2 py-4"><b>Supported File Types: GIF, JPEG, PNG.</b></p>
         </form>
         <h1 className="text-4xl mb-4"><b>Identified Pet</b> 'filename'</h1>
+        <div className="grid grid-cols-2">
+        <div>
+          <img src={Image} alt="Image From User" className="w-11/12 h-auto  mb-12 border-2 border-solid border-slate-950 rounded-md"/>
+        </div>
+          <div>
         {/* {prediction && (<p className="bg-emerald-200 p-2 rounded-md"> Prediction: {prediction} </p>)} */}
-        <img src={Image} alt="Image From User" className="w-2/3 h-auto  mb-12 border-2 border-solid border-slate-950 rounded-md"/>
-        <p className="bg-emerald-200 p-2 rounded-md pb-4 w-2/3"><span className="font-bold">Prediction: </span> Bear <br /><span className="font-bold"> Confidence:</span> 81.67%</p>
+        <p className="bg-emerald-200 p-2 rounded-md pb-4 w-11/12"><span className="font-bold">Prediction: </span> Bear <br /><span className="font-bold"> Confidence:</span> 81.67%</p>
 
         <button type="submit" className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-md mt-2">
           Save Pet 
         </button>
+        </div>
       </div>
-    </div>
-  )
-}
+      </div>
+      </div>
+    </>
+  );
+};
 
 export default ImageClassifier

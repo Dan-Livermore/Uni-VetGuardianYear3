@@ -2,6 +2,9 @@ import express from "express";
 import { PORT, mongoDBURL } from "./config.js";
 import mongoose from "mongoose";
 import petsRoute from "./routes/petsRoutes.js";
+import usersRoute from "./routes/usersRoutes.js";
+import signupRoute from "./routes/signupRoutes.js";
+import loginRoute from "./routes/loginRoute.js";
 import cors from 'cors';
 
 const app = express();
@@ -22,6 +25,9 @@ app.get('/', (request,response) => {
   });
 
 app.use('/pets', petsRoute);
+app.use("/users", usersRoute);
+app.use("/signup", signupRoute);
+app.use("/login", loginRoute);
 
 mongoose
   .connect(mongoDBURL)

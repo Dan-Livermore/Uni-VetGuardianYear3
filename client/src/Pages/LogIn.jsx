@@ -1,7 +1,21 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link, Form, redirect, useActionData } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
 import Image from "../assets/LogInBackground.jpg";
 
-function LogIn() {
+const LogIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const data = useActionData();
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
   return (
     <>
       <div className="flex h-screen bg-white">
@@ -12,26 +26,27 @@ function LogIn() {
             className="object-cover h-full"
           />
         </div>
-        <div className="bg-white shadow-md w-4/12 p-8">
+        <div className="bg-white shadow-md w-4/12 p-8 pt-20">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Sign in
+            Sign In
           </h2>
 
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form className="space-y-6" action="#" method="POST">
+            <Form method="post" action="/log-in" className="space-y-6">
               <div>
                 <label
                   htmlFor="email"
                   className="block text-sm font-medium leading-6 text-gray-900"
                 >
-                  Email Address
+                  Email address
                 </label>
                 <div className="mt-2">
                   <input
-                    id="email"
                     name="email"
                     type="email"
                     autoComplete="email"
+                    value={email}
+                    onChange={handleEmailChange}
                     required
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
@@ -56,27 +71,34 @@ function LogIn() {
                 </div>
                 <div className="mt-2">
                   <input
-                    id="password"
                     name="password"
                     type="password"
-                    autoComplete="current-password"
+                    onChange={handlePasswordChange}
                     required
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
 
+              {data && data.error && (
+                <div
+                  className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+                  role="alert"
+                >
+                  <strong className="font-bold">Error! </strong>
+                  <span className="block sm:inline">{data.error}</span>
+                </div>
+              )}
+
               <div>
-                <Link to="/user-home">
-                  <button
-                    type="submit"
-                    className="flex w-full justify-center rounded-md bg-emerald-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
-                  >
-                    Sign in
-                  </button>
-                </Link>
+                <button
+                  type="submit"
+                  className="flex w-full justify-center rounded-md bg-emerald-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+                >
+                  Sign in
+                </button>
               </div>
-            </form>
+            </Form>
 
             <p className="mt-10 text-center text-sm text-gray-500 pb-12">
               Don't have an account?
@@ -95,3 +117,36 @@ function LogIn() {
 }
 
 export default LogIn;
+
+
+export const HandleLogIn = async ({ request }) => {
+  const data = await request.formData();
+
+  const email = data.get("email");
+  const password = data.get("password");
+
+  console.log(email, password);
+  try {
+    // Make a POST request to your Express route
+    const response = await axios.post("http://localhost:5555/login", {
+      email,
+      password,
+    });
+
+    console.log("Response from server:", response.data);
+    if (response.data.token) {
+      // Store the token in local storage or session storage
+      localStorage.setItem("token", response.data.token);
+      // Redirect to account page or perform other actions
+      return redirect("/account");
+    } else if (response.data === "User not found") {
+      return { error: 'User Not Found' };
+    }
+    // ... (other conditions)
+  } catch (error) {
+    console.error("Error:", error.response.data);
+  }
+
+  // Add a default return statement if none of the conditions above are met
+  return null;
+};
