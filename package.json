@@ -1,0 +1,23 @@
+{
+  "name": "comp3000danlivermore",
+  "version": "1.0.0",
+  "description": "For Pet owners whose pet is unwell, Vet Guardian is a web application that allows the owners to self-diagnose their pet’s problems before contacting their vet.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 50000 ./server/tests/ConnectDatabase.test.js ./server/tests -exit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "chai": "^5.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mocha": "^10.2.0",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.1.0",
+    "node": "^21.2.0",
+    "nodemon": "^3.0.3",
+    "supertest": "^6.3.4"
+  }
+}
