@@ -18,6 +18,14 @@ router.post('/', async (request, response) => {
           'Send all required fields',
       });
     }
+    if (typeof request.body.weight  !== 'number'){
+      return response.status(400).send({
+        message:
+          'weight must be a number',
+      });
+    }
+    
+
     const newPet = {
       name: request.body.name,
       animal: request.body.animal,
@@ -25,9 +33,9 @@ router.post('/', async (request, response) => {
       weight: request.body.weight,
       dob: request.body.dob,
     };
+    
 
     const pet = await Pet.create(newPet);
-    console.log(pet);
 
     return response.status(201).send(pet);
   } catch (error) {
