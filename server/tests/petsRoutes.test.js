@@ -261,4 +261,126 @@ describe("Pets Routes", () => {
           });
       });
   });
+
+
+  
+  it("UPDATE - No ID", () => {
+    return request
+      .put("/pets/")
+      .expect(404)
+      .then((res) => {
+        expect(res.body).to.be.an("object");
+      });
+  });
+
+  it("UPDATE - ID Too Short", () => {
+    return request
+      .put("/pets/1")
+      .expect(400)
+      .then((res) => {
+        expect(res.body).to.be.an("object");
+      });
+  });
+
+  it("UPDATE - No Name", () => {
+    return request
+      .put("/pets/111111111111111111111111")
+      .send({
+            animal: "Mouse",
+            gender: "Female",
+            weight: 100,
+            dob: "1998-09-09T00:00:00.000Z",
+        })
+      .expect(400)
+      .then((res) => {
+        expect(res.body).to.be.an("object");
+      });
+  });
+
+  it("UPDATE - No Animal", () => {
+    return request
+      .put("/pets/111111111111111111111111")
+      .send({
+        name: "Unit Pet",
+        gender: "Female",
+        weight: 100,
+        dob: "1998-09-09T00:00:00.000Z",
+    })
+      .expect(400)
+      .then((res) => {
+        expect(res.body).to.be.an("object");
+      });
+  });
+
+  it("UPDATE - No Gender", () => {
+    return request
+      .put("/pets/111111111111111111111111")
+      .send({
+        name: "Unit Pet",
+        animal: "Mouse",
+        weight: 100,
+        dob: "1998-09-09T00:00:00.000Z",
+    })
+      .expect(400)
+      .then((res) => {
+        expect(res.body).to.be.an("object");
+      });
+  });
+
+  it("UPDATE - No Weight", () => {
+    return request
+      .put("/pets/111111111111111111111111")
+      .send({
+        name: "Unit Pet",
+        animal: "Mouse",
+        gender: "Female",
+        dob: "1998-09-09T00:00:00.000Z",
+    })
+      .expect(400)
+      .then((res) => {
+        expect(res.body).to.be.an("object");
+      });
+  });
+
+  it("UPDATE - No DOB", () => {
+    return request
+      .put("/pets/111111111111111111111111")
+      .send({
+        name: "Unit Pet",
+        animal: "Mouse",
+        gender: "Female",
+        weight: 100,
+    })
+      .expect(404)
+      .then((res) => {
+        expect(res.body).to.be.an("object");
+      });
+  });
+
+  it("DELETE - No ID", () => {
+    return request
+      .delete("/pets/")
+      .expect(404)
+      .then((res) => {
+        expect(res.body).to.be.an("object");
+      });
+  });
+
+  it("DELETE - ID Too Short", () => {
+    return request
+      .delete("/pets/1")
+      .expect(500)
+      .then((res) => {
+        expect(res.body).to.be.an("object");
+      });
+  });
+
+  it("DELETE - No ID in DB", () => {
+    return request
+      .delete("/pets/111111111111111111111111")
+      .expect(404)
+      .then((res) => {
+        expect(res.body).to.be.an("object");
+      });
+  });
 });

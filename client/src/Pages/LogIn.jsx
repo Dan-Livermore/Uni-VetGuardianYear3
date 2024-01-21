@@ -118,8 +118,7 @@ const LogIn = () => {
 
 export default LogIn;
 
-export const HandleLogIn = async ({ request}) => {
-
+export const HandleLogIn = async ({ request }) => {
   const data = await request.formData();
 
   const email = data.get("email");
@@ -139,10 +138,11 @@ export const HandleLogIn = async ({ request}) => {
       // Redirect to account page or perform other actions
       return redirect("/account");
     } else {
-      return { error: error.response.data.message || 'An error occurred.' };
+      return { error: error.response.data.error || 'An error occurred.' };
     }
   } catch (error) {
     console.error("Error:", error.response.data);
+    return { error: error.response.data.error || 'An error occurred.', statusCode: error.response.status };
   }
-  return null;
 };
+
