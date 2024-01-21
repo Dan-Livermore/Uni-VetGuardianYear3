@@ -21,7 +21,7 @@ describe("Users Routes", () => {
 
   it("UPDATE is a valid request", () => {
     return request
-      .put("/users/65ad30fe22525ab757c0f7b9")
+      .put("/users/65ad4911c28626f9ae94fe6c")
       .send({
         email: "startup@unittest.com",
         password: "password",

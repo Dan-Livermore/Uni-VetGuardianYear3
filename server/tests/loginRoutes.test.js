@@ -5,16 +5,16 @@ import app from "../index.js";
 const request = supertest(app);
 
 describe("Log In Routes", () => {  
-    // "_id": "65ad2aae91937f2bcd0c6726",
+    // "_id": "65ad4a1dd3ce46da39d5b77c",
     // "email": "test@admin.com",
-    // "password": "$2b$13$1x31E8tdjo1NeVw8BBnSeOO81YzVwALikIhJruODr8PErbZNKKQUy",
+    // "password": "password",
     // "firstname": "Test",
     // "lastname": "Admin",
-    // "admin": false,
+    // "admin": true
     it("Log In Correctly", () => {
         const loginData = {
             email: "test@admin.com",
-            password: "test",
+            password: "password",
         }    
         return request
           .post("/login")

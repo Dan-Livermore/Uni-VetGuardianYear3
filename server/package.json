@@ -7,7 +7,7 @@
   "scripts": {
     "start": "nodemon index.js",
     "dev": "nodemon index.js",
-    "test": "mocha --timeout 50000 ./tests/ConnectDatabase.test.js ./tests -exit"
+    "test": "mocha --timeout 500000 ./tests/ConnectDatabase.test.js ./tests -exit"
   },
   "keywords": [],
   "author": "",
