@@ -6,6 +6,8 @@ const request = supertest(app);
 // "_id": "65aaa64c4a9f399263617b01"
 // "email":"unit@test.com"
 // "password":"unittest"
+// firstname: "unit"
+// lastname: "test"
 
 describe("Users Routes", () => {
   it("READ is a valid request", () => {
@@ -19,10 +21,12 @@ describe("Users Routes", () => {
 
   it("UPDATE is a valid request", () => {
     return request
-      .put("/users/65aaa64c4a9f399263617b01")
+      .put("/users/65ad30fe22525ab757c0f7b9")
       .send({
         email: "startup@unittest.com",
         password: "password",
+        firstname: "unit",
+        lastname: "test",
         admin: true,
       })
       .expect(200)

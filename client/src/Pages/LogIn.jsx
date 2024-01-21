@@ -127,7 +127,6 @@ export const HandleLogIn = async ({ request}) => {
 
   console.log(email, password);
   try {
-    // Make a POST request to your Express route
     const response = await axios.post("http://localhost:1111/login", {
       email,
       password,
@@ -139,14 +138,11 @@ export const HandleLogIn = async ({ request}) => {
       localStorage.setItem("token", response.data.token);
       // Redirect to account page or perform other actions
       return redirect("/account");
-    } else if (response.data === "User not found") {
-      return { error: 'User Not Found' };
+    } else {
+      return { error: error.response.data.message || 'An error occurred.' };
     }
-    // ... (other conditions)
   } catch (error) {
     console.error("Error:", error.response.data);
   }
-
-  // Add a default return statement if none of the conditions above are met
   return null;
 };

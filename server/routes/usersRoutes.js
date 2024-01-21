@@ -35,21 +35,21 @@ router.get("/:id", async (request, response) => {
 // UPDATE
 router.put('/:id', async (request, response) => {
   try {
-    if (!request.body.email || !request.body.password) {
+    if (!request.body.email || !request.body.password || !request.body.firstname || !request.body.lastname) {
       return response.status(400).send({
         message: 'Enter an email and password',
       });
     }
 
     const { id } = request.params;
-    const { email, password } = request.body;
+    const { email, password, firstname, lastname } = request.body;
 
     if (request.body.password.length < 20) {
       // Hash the new password
       request.body.password = await bcrypt.hash(password, 13);
     }
 
-    const updatedUser = await User.findByIdAndUpdate(id, { email, password: request.body.password }, { new: true });
+    const updatedUser = await User.findByIdAndUpdate(id, { email, password: request.body.password, firstname, lastname }, { new: true });
 
     if (!updatedUser) {
       return response.status(404).json({ message: 'User not found' });
