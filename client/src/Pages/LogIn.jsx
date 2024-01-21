@@ -103,7 +103,7 @@ const LogIn = () => {
             <p className="mt-10 text-center text-sm text-gray-500 pb-12">
               Don't have an account?
               <Link
-                to="/create-account"
+                to="/sign-up"
                 className="font-semibold text-indigo-600 hover:text-indigo-500"
               >
                 {""} Sign up today
@@ -135,20 +135,18 @@ export const HandleLogIn = async ({ request}) => {
 
     console.log("Response from server:", response.data);
     if (response.data.token) {
+      // Store the token in local storage or session storage
       localStorage.setItem("token", response.data.token);
+      // Redirect to account page or perform other actions
       return redirect("/account");
     } else if (response.data === "User not found") {
       return { error: 'User Not Found' };
     }
-
+    // ... (other conditions)
   } catch (error) {
-    if (error.response && error.response.data) {
-      console.error("Error:", error.response.data);
-      return { error: error.response.data };
-    } else {
-      console.error("An unexpected error occurred:", error.message);
-      return { error: error.response.data };
-    }
+    console.error("Error:", error.response.data);
   }
+
+  // Add a default return statement if none of the conditions above are met
   return null;
 };

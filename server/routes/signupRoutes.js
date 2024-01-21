@@ -6,9 +6,9 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   try {
-    if (!req.body.email || !req.body.password) {
+    if (!req.body.email || !req.body.password || !req.body.firstname || !req.body.lastname) {
       return res.status(400).send({
-        message: "Enter both an email and a password",
+        message: "Enter an email, a password and both names",
       });
     }
     const hash = await bcrypt.hash(req.body.password, 13);
@@ -16,6 +16,8 @@ router.post("/", async (req, res) => {
     const newAccount = {
       email: req.body.email,
       password: hash,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
       admin: req.body.admin || false,
     };
 

@@ -1,36 +1,48 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
-
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  // To allow dynamic navbar
   const [click, setClick] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const checkTokenStatus = () => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+    };
+
+    // Initial check when the component mounts
+    checkTokenStatus();
+
+    // Polling interval (every half second in this case)
+    const interval = setInterval(() => {
+      checkTokenStatus();
+    }, 500); // 500 milliseconds = 0.5 seconds
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(interval);
+  }, []);
+
   const handleClick = () => setClick(!click);
 
-  // Mobile view
   const content = (
-    <div className="lg:hidden block absolute top-16 w-full left-0 right-0 bg-emerald-800 transition">
-      <ul className="text-center text-3xl p-20">
-        {/* Links for sections*/}
-        <Link  to="/about">
-          <li className="my-4 py-4 border-b border-emerald-500 hover:bg-emerald-500 hover:text-zinc-400 hover:rounded cursor-pointer ">About</li>
-        </Link>
-        <Link  to="/symptom-checker">
-          <li className="my-4 py-4 border-b border-emerald-500 hover:bg-emerald-500 hover:text-zinc-400 hover:rounded cursor-pointer ">Symptom Checker</li>
-        </Link>
-        <Link  to="/image-classifier">
-          <li className="my-4 py-4 border-b border-emerald-500 hover:bg-emerald-500 hover:text-zinc-400 hover:rounded cursor-pointer ">Pet Identifier</li>
-        </Link>
-        <Link  to="/log-in">
-          <li className="my-4 py-4 border-b border-emerald-500 hover:bg-emerald-500 hover:text-zinc-400 hover:rounded cursor-pointer ">Log In</li>
-        </Link>
+    <div className="lg:hidden block absolute top-16 w-full left-0 right-0 bg-sky-500 transition">
+      <ul className="text-center text-xl p-20">
+        <li className="my-4 py-4 border-b border-sky-500 hover:bg-sky-500 hover:text-zinc-400 hover:rounded cursor-pointer">
+          <Link to="/account">
+            {isLoggedIn ? <button>Account</button> : <button>Log In</button>}
+          </Link>
+        </li>
       </ul>
     </div>
   );
 
-  // Return JSX for the navbar
   return (
     <nav className="bg-emerald-900">
       <div className="h-10vh flex justify-between z-50 text-white lg:py-5 px-20 py-4">
@@ -58,24 +70,28 @@ const Navbar = () => {
               <Link  to="/image-classifier">
                 <li className="hover:text-zinc-400 transition border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">Pet Identifier</li>
               </Link>
-              <Link  to="/log-in">
-                <li className="hover:text-zinc-400 transition border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">Log In</li>
-              </Link>
+              <li className="hover:text-zinc-400 transition border-b-0 border-sky-600 hover:border-zinc-400 cursor-pointer">
+              
+              <Link to="/account">
+                  {isLoggedIn ? (
+                    <button>Account</button>
+                  ) : (
+                    <button>Log In</button>
+                  )}
+                  </Link>
+              </li>
             </ul>
           </div>
         </div>
 
         {/* Mobile burger */}
-        <div>
-          {click && content}
-        </div>
+        <div>{click && content}</div>
         <button className="block sm:hidden transition" onClick={handleClick}>
-          {/* Hamburger icons*/}
-          { click ? <FaTimes /> : <GiHamburgerMenu /> }
+          {click ? <FaTimes /> : <GiHamburgerMenu />}
         </button>
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;
