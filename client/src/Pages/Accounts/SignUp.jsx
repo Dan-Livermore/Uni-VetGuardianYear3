@@ -168,6 +168,7 @@ export const HandleSignUp = async ({ request }) => {
     });
     console.log("Response from server:", response.data);
     if (response.data === "Account Created!") {
+      alert("Your account has been created!");
       return redirect("/account");
     }
     else if (response.data === "Enter an email, a password and both names"){
