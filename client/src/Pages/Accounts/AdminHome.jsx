@@ -11,7 +11,7 @@ const AdminHome = () => {
           <br />
           <div className="grid grid-cols-3 gap-4">
             <div className="flex justify-center items-center">
-              <Link to="/films">
+              <Link to="/admin/users">
                 <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-40">
                   Users
                 </button>
