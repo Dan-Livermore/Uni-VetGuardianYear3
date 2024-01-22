@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
-import Symptom2 from '../Pages/SymptomChecker/Symptom2';
+import Symptom2 from '../pages/SymptomChecker/Symptom2';
 
 const symptom = [
   {id: 0, name: 'Please select an option' },

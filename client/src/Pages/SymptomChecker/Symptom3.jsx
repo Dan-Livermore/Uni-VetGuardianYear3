@@ -18,11 +18,11 @@ const Symptom3 = () => {
           <p>Is there a sudden change in your pet's behaviour?</p>
           <Link to="/result">
             <button onClick={handleButtonClick} type="submit"
-              className="flex-1 bg-purple-500 hover:bg-purple-700 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-24">
+              className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-24">
               Yes
             </button>
             <button onClick={handleButtonClick} type="submit"
-              className="flex-1 bg-purple-500 hover:bg-purple-700 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-24">
+              className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-24">
               No
             </button>
           </Link>

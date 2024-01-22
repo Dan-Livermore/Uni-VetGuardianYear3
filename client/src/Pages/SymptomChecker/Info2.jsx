@@ -10,7 +10,7 @@ const Info2 = () => {
   return (
     <>
       <div className="grid grid-cols-2 gap-4 ">
-        <div className="bg-purple-500 hover:bg-purple-700 text-white font-bold text-2xl py-4 px-4 rounded-md mt-2">
+        <div className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-2xl py-4 px-4 rounded-md mt-2">
           <p>Age: </p>
         </div>
         <div>
@@ -19,7 +19,7 @@ const Info2 = () => {
       </div>
 
       <button onClick={handleButtonClick} type="submit"
-            className="bg-purple-500 hover:bg-purple-700 text-white font-bold text-2xl py-4 px-4 rounded-md mt-2">
+            className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-2xl py-4 px-4 rounded-md mt-2">
             Continue
           </button>
       {showElement && (

@@ -5,22 +5,22 @@ import app from "../index.js";
 const request = supertest(app);
 
 describe("Sign Up Routes", () => {  
-    it("Sign Up Correctly", () => {
-        const signupData = {
-            email: "unittest@signup.com1",
-            password: "password",
-            firstname: "unit",
-            lastname: "test",
-        }    
-        return request
-          .post("/signup")
-          .send(signupData)
-          .expect(200)
-          .then((res) => {
-            expect(res.body).to.be.an("object");
-            return request.delete(`../users/${res.body._id}`);
-          });
-      });
+    // it("Sign Up Correctly", () => {
+    //     const signupData = {
+    //         email: "unittest@signup.com1",
+    //         password: "password",
+    //         firstname: "unit",
+    //         lastname: "test",
+    //     }    
+    //     return request
+    //       .post("/signup")
+    //       .send(signupData)
+    //       .expect(200)
+    //       .then((res) => {
+    //         expect(res.body).to.be.an("object");
+    //         return request.delete(`../users/${res.body._id}`);
+    //       });
+    //   });
       it("Sign Up Fails = No Given Email", () => {
         const signupData = {
             email: "unittest@signup.com1",

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const Result = () => {
   return (
     <>
-    <div className="p-4 bg-purple-100 h-screen min-h-screen">
+    <div className="p-4 bg-emerald-50 h-screen min-h-screen">
       <div className="p-4 flex-1">
         <h1 className="p-2 text-4xl font-bold mb-4">Symptom Prediction</h1>
         <p className='p-2'> You're pet might have: ligma.</p>

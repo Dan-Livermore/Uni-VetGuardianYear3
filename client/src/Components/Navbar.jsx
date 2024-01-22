@@ -59,7 +59,7 @@ const Navbar = () => {
         {/* Desktop view */}
         <div className="lg:flex md:flex lg: flex-1 items-center justify-end font-normal hidden">
           <div className="flex-10">
-            <ul className="flex gap-8 mr-0 ml-auto text-xl">
+            <ul className="flex gap-8 mr-0 ml-auto text-xl font-bold">
               {/* links for sections */}
               <Link  to="/about">
                 <li className="hover:text-zinc-400 transition border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">About</li>

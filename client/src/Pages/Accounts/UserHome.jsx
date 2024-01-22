@@ -57,7 +57,7 @@ const UserHome = () => {
             <Link to="/log-in">
               <button
                 onClick={handleLogOut}
-                className="flex w-full justify-center rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
+                className="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-full"
               >
                 Log Out
               </button>
@@ -66,7 +66,7 @@ const UserHome = () => {
             <Link to="/symptom-checker">
               <button
                 type="submit"
-                className="flex-1 bg-emerald-500 hover:bg-emerald-700 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-full"
+                className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-full"
               >
                 Symptom Checker
               </button>
@@ -74,7 +74,7 @@ const UserHome = () => {
             <Link to="/image-classifier">
               <button
                 type="submit"
-                className="flex-1 bg-emerald-500 hover:bg-emerald-700 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-full"
+                className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-full"
               >
                 Pet Identifier
               </button>
