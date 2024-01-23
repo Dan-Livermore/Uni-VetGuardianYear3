@@ -24,18 +24,18 @@ const DisplayUsers = () => {
   }, []);
 
   return (
-    <div className="p-4">
+    <div className="p-4 bg-emerald-50">
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-bold my-8">List of All Users</h1>
-        <Link to="/Users/create">
-          <button className="bg-sky-600 text-white rounded-lg w-40 h-10 4xl">Add User</button>
+        <Link to="/admin/users/create">
+          <button className="bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg w-40 h-10 4xl">Add User</button>
         </Link>
       </div>
         <>
           {users.length === 0 ? (
             <p>No user data in the database</p>
           ) : (
-            <table className="w-full border-spacing-2">
+            <table className="w-full border-spacing-2 bg-white">
               <thead>
                 <tr>
                   <th className="border border-slate-600 rounded-md">No.</th>

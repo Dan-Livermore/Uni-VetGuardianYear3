@@ -25,10 +25,10 @@ import Result from "./pages/SymptomChecker/Result";
 
 // DB Info Pages
 import DisplayUsers from "./Pages/DBInfo/Users/DisplayUsers.jsx";
-// import CreateUser from "./Pages/DBInfo/Users/CreateUser.jsx"; 
-// import DisplayOneUser from "./Pages/DBInfo/Users/DisplayOneUser.jsx";
-// import EditUser from "./Pages/DBInfo/Users/UpdateUser.jsx";
-// import DeleteUser from "./Pages/DBInfo/Users/DeleteUser.jsx";
+import CreateUser from "./Pages/DBInfo/Users/CreateUser.jsx"; 
+import DisplayOneUser from "./Pages/DBInfo/Users/DisplayOneUser.jsx";
+import EditUser from "./Pages/DBInfo/Users/UpdateUser.jsx";
+import DeleteUser from "./Pages/DBInfo/Users/DeleteUser.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -55,10 +55,10 @@ const router = createBrowserRouter(
       <Route element={<PrivateRoutes />}>
         <Route path="/account" element={<UserHome />} />
         <Route path="/admin/users" element={<DisplayUsers />} />  
-        {/* <Route path="/admin/users/create" element={<CreateUser />}  />
+        <Route path="/admin/users/create" element={<CreateUser />}  />
         <Route path="/admin/users/read/:id" element={<DisplayOneUser />} />  
         <Route path="/admin/users/edit/:id" element={<EditUser />} />  
-        <Route path="/admin/users/delete/:id" element={<DeleteUser />} />   */}
+        <Route path="/admin/users/delete/:id" element={<DeleteUser />} />
       </Route>
     </Route>
   )
