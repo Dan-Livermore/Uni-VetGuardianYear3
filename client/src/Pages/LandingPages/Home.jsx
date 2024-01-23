@@ -3,8 +3,17 @@ const Home = () => {
     <>
     <div className="bg-emerald-50 h-screen flex items-center justify-center">
       <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
-        <h1 className="text-3xl font-semibold mb-4">Welcome to The Front Page</h1>
-        <p className="text-gray-600 mb-6">This is where the basic information about the service will go</p>
+        <p className="text-lg mb-4">
+          Vet Guardian provides tools for managing your pet's health. 
+          Through suggesting potential health issues based on your pet's symptoms,
+          you can seek professional help more effectively.
+        </p>
+        <p className="text-lg mb-4">
+          Vet Guardian is a prototype animal healthcare platform and does not provide medical advice, diagnosis or treatment.
+        </p>
+        <p className="text-lg mb-4">
+          Consult a registered veternarian immediately if your pet's condition is serious.
+        </p>
       </div>
     </div></>
   );
