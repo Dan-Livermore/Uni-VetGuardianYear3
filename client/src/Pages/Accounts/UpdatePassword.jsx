@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import BackButton from "../../components/BackButton";
+import AccountBackButton from "../../components/AccountBackButton";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
@@ -64,10 +64,10 @@ const UpdatePassword = () => {
 
   return (
     <div className="p-4">
-      <h1 className="text-3xl my-4 text-center">Edit Password</h1>
-      <div className="flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto">
+      <h1 className="text-3xl font-bold my-4 text-center">Edit Password</h1>
+      <div className="flex flex-col border-2 bg-emerald-200 border-emerald-300 rounded-xl w-[600px] p-4 mx-auto">
         <div className="my-4">
-          <label className="text-xl mr-4 text-gray-500">
+          <label className="text-xl mr-4 text-black">
             Enter New Password
           </label>
           <input
@@ -77,13 +77,13 @@ const UpdatePassword = () => {
           />
         </div>
         <button
-          className="p-2 bg-sky-400  hover:bg-sky-600 rounded-lg m-8"
+          className="p-2 bg-emerald-500  hover:bg-emerald-600 rounded-lg m-8 text-white"
           onClick={handleUpdatePassword}
         >
           Save
         </button>
       </div>
-      <BackButton />
+      <AccountBackButton />
     </div>
   );
 };
