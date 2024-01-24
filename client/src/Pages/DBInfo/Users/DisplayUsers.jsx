@@ -63,7 +63,7 @@ const DisplayUsers = () => {
 
                     <td className="border border-slate-700 rounded-md text-center max-md:hidden">
                       <div className="flex justify-center gap-x-4">
-                        <Link to={`/users/details/${user._id}`}>
+                        <Link to={`/admin/users/read/${user._id}`}>
                           <BsInfoCircle className="text-2xl text-green-800" />
                         </Link>
                         <Link to={`/users/edit/${user._id}`}>

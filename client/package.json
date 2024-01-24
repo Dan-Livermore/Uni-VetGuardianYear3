@@ -19,8 +19,12 @@
     "start": "vite --host 0.0.0.0 --port 3001"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
+    "@mui/icons-material": "^5.15.6",
+    "@mui/material": "^5.15.6",
     "aos": "^3.0.0-beta.6",
     "axios": "^1.6.5",
     "google-fonts": "^1.0.0",

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import faviconImage from "../assets/favicon.jpeg";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -59,11 +60,7 @@ const Navbar = () => {
         <div className="flex items-center flex-1">
           <span className="text-3xl font-bold items-center">
             <Link to="/about">
-              <img
-                src="../favicon.ico"
-                alt="Vet Guardian"
-                className="logo-img inline-block h-8 w-auto mr-2"
-              />
+              <img src={faviconImage} alt="Vet Guardian Logo" className="logo-img inline-block h-8 w-auto mr-2" />
               <p className="hover:text-zinc-400 transition border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer inline-block">
                 Vet Guardian
               </p>
