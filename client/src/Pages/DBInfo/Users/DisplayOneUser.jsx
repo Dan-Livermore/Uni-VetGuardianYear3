@@ -23,7 +23,7 @@ const DisplayOneUser = () => {
   }, []);
 
   return (
-    <div className="p-4 bg-emerald-50">
+    <div className="p-4 bg-emerald-50 min-h-screen">
       <h1 className="text-3xl text-bold my-4 text-center text-black ">User Information</h1>
       <div className="flex flex-col border-2 bg-emerald-200 border-emerald-300 rounded-xl w-[800px] p-4 mx-auto">
           <div className='my-4'>

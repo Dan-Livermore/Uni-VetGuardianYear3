@@ -42,7 +42,7 @@ const ImageClassifier = () => {
         <form onSubmit={handleImageUpload} className="mb-4">
         <p className="px-2 py-1">Click on the <b>Choose File</b> button and select a photo of your pet.</p>
         <p className="px-2 py-1">Select the <b>Load Image</b> Button.</p>
-          <input type="file" accept="image/*" onChange={handleImageChange} className="bg-emerald-50 border border-slate-300 rounded-md p-2"/>
+          <input type="file" accept="image/*" onChange={handleImageChange} className="bg-white border border-slate-300 rounded-md p-2"/>
           <button type="submit" className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded-md mt-2">
             Load Image
           </button>

@@ -45,7 +45,7 @@ const UserHome = () => {
 
   return (
     <>
-      <div className="flex min-h-full flex-1 flex-col justify-center items-center px-6 py-12 lg:px-8 bg-emerald-50">
+      <div className="flex h-full flex-1 flex-col justify-center items-center px-6 pt-12 lg:px-8 bg-emerald-50">
         <div className="bg-white shadow-md rounded-md p-6 max-w-md w-full mt-1 md:mt-0">
           <div className=" items-center">
             {loading ? (
@@ -69,7 +69,7 @@ const UserHome = () => {
           </div>
         </div>
       </div>
-          {isAdmin && <AdminHome />}
+      {isAdmin && <AdminHome />}
     </>
   );
 };

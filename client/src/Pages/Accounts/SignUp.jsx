@@ -27,7 +27,7 @@ const SignUp = () => {
 
     return (
       <>
-        <div className="flex h-screen bg-white">
+        <div className="flex min-h-screen bg-white">
           <div className="w-8/12 bg-white">
             <img src={Image} alt="Animal Image" className="object-cover h-full"/>
           </div>

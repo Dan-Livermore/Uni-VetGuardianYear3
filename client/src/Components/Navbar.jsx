@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import faviconImage from "../assets/favicon.jpeg";
+import faviconImage from "../assets/logo.jpeg";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);

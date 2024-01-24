@@ -5,7 +5,7 @@ import axios from "axios";
 const AdminHome = () => {
   return (
     <>
-      <div className="flex min-h-full flex-1 flex-col justify-center items-center px-6 py-12 lg:px-8 bg-emerald-50">
+      <div className="flex flex-1 flex-col justify-center items-center px-6 py-12 lg:px-8 bg-emerald-50 min-h-screen">
         <div className="bg-white shadow-md rounded-md p-6 max-w-screen-md w-full mx-auto mt-1 md:mt-0">
           <h1 className="text-center text-2xl font-bold">Manage Data</h1>
           <br />

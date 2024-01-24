@@ -18,7 +18,7 @@ const LogIn = () => {
 
   return (
     <>
-      <div className="flex h-screen bg-white">
+      <div className="flex min-h-screen bg-white">
         <div className="w-8/12 bg-white">
           <img
             src={Image}

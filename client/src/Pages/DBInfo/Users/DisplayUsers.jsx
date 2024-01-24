@@ -24,7 +24,7 @@ const DisplayUsers = () => {
   }, []);
 
   return (
-    <div className="p-4 bg-emerald-50">
+    <div className="p-4 bg-emerald-50 min-h-screen">
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-bold my-8">List of All Users</h1>
         <Link to="/admin/users/create">

@@ -1,7 +1,7 @@
 const Home = () => {
   return (
     <>
-    <div className="bg-emerald-50 h-screen flex items-center justify-center">
+    <div className="bg-emerald-50 min-h-screen flex items-center justify-center">
       <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
         <p className="text-lg mb-4">
           Vet Guardian provides tools for managing your pet's health. 

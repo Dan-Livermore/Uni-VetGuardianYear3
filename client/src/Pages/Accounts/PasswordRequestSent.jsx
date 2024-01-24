@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const PasswordRequestSent = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-emerald-50">
+    <div className="flex items-center justify-center bg-emerald-50 min-h-screen">
       <div className="bg-white shadow-md rounded-md p-6 max-w-md w-full mt-1 md:mt-0">
         <h2 className="text-2xl font-bold mb-4">Password Request Sent!</h2>
         <p className="text-gray-700 mb-4">
