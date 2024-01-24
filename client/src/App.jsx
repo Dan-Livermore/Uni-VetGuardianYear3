@@ -14,10 +14,13 @@ import Terms from "./pages/LandingPages/Terms";
 
 // Accounts Pages
 import ForgotPassword from "./pages/Accounts/ForgotPassword";
+import PasswordRequestSent from "./pages/Accounts/PasswordRequestSent";
 import LogIn, { HandleLogIn } from "./pages/Accounts/LogIn";
 import SignUp, { HandleSignUp } from "./pages/Accounts/SignUp.jsx";
-import PasswordRequestSent from "./pages/Accounts/PasswordRequestSent";
-import UserHome from "./pages/Accounts/UserHome";
+import UserHome from "./Pages/Accounts/UserHome.jsx";
+import UpdateUser from "./Pages/Accounts/UpdateUser.jsx";
+import UpdatePassword from "./Pages/Accounts/UpdatePassword.jsx";
+import DeleteAccount from "./Pages/Accounts/DeleteAccount.jsx";
 
 // Symptom Checker Pages
 import SymptomChecker from "./pages/SymptomChecker/SymptomChecker.jsx";
@@ -27,7 +30,7 @@ import Result from "./pages/SymptomChecker/Result";
 import DisplayUsers from "./Pages/DBInfo/Users/DisplayUsers.jsx";
 import CreateUser from "./Pages/DBInfo/Users/CreateUser.jsx"; 
 import DisplayOneUser from "./Pages/DBInfo/Users/DisplayOneUser.jsx";
-import EditUser from "./Pages/DBInfo/Users/UpdateUser.jsx";
+import EditUser from "./Pages/DBInfo/Users/EditUser.jsx";
 import DeleteUser from "./Pages/DBInfo/Users/DeleteUser.jsx";
 
 const router = createBrowserRouter(
@@ -40,6 +43,8 @@ const router = createBrowserRouter(
       <Route path="/services" element={<Services />} />
       <Route path="/terms" element={<Terms />} />
 
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/password-request-sent" element={<PasswordRequestSent />} />
       <Route path="/log-in" element={<LogIn />} action={HandleLogIn} />
       <Route path="/sign-up" element={<SignUp />} action={HandleSignUp}/>
 
@@ -47,18 +52,19 @@ const router = createBrowserRouter(
       <Route path="/result" element={<Result />} />
       <Route path="/image-classifier" element={<ImageClassifier />} />
 
-      <Route path="/forgot-password" element={<ForgotPassword />} />
-      <Route path="/password-request-sent" element={<PasswordRequestSent />} />
-      <Route path="/user-home" element={<UserHome />} />
-
 
       <Route element={<PrivateRoutes />}>
         <Route path="/account" element={<UserHome />} />
+        <Route path="/update-account/:id" element={<UpdateUser />} />
+        <Route path="/update-password/:id" element={<UpdatePassword />} />
+        <Route path="/delete-account/:id" element={<DeleteAccount />} />
+
+
         <Route path="/admin/users" element={<DisplayUsers />} />  
         <Route path="/admin/users/create" element={<CreateUser />}  />
         <Route path="/admin/users/read/:id" element={<DisplayOneUser />} />  
         <Route path="/admin/users/edit/:id" element={<EditUser />} />  
-        <Route path="/admin/users/delete/:id" element={<DeleteUser />} />
+        <Route path="/admin/users/delete/:id" element={<DeleteUser/>} />
       </Route>
     </Route>
   )

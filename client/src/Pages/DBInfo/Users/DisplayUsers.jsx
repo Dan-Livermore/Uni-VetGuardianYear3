@@ -66,10 +66,10 @@ const DisplayUsers = () => {
                         <Link to={`/admin/users/read/${user._id}`}>
                           <BsInfoCircle className="text-2xl text-green-800" />
                         </Link>
-                        <Link to={`/users/edit/${user._id}`}>
+                        <Link to={`/admin/users/edit/${user._id}`}>
                           <AiOutlineEdit className="text-2xl text-yellow-600" />
                         </Link>
-                        <Link to={`/users/delete/${user._id}`}>
+                        <Link to={`/admin/users/delete/${user._id}`}>
                           <MdOutlineDelete className="text-2xl text-red-600" />
                         </Link>
                       </div>

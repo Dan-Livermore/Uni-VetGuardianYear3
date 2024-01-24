@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import BackButton from "../../../components/BackButton";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
@@ -17,7 +16,8 @@ const DeleteUser = () => {
       .then(() => {
         setLoading(false);
         enqueueSnackbar("User Deleted Successfully", { variant: "success" });
-        navigate(-1);
+        localStorage.removeItem("token");
+        navigate("/log-in");
       })
       .catch((error) => {
         setLoading(false);
@@ -29,21 +29,22 @@ const DeleteUser = () => {
   const handleCancelDelete = () => {
     enqueueSnackbar("Cancelled User Deletion", { variant: "success" });
     navigate(-1);
-  }
+  };
+
 
   return (
     <div className="p-4 bg-emerald-50 min-h-screen">
       <h1 className="text-3xl my-4">Delete User</h1>
       <div className="flex flex-col items-center bg-emerald-200 border-2 border-emerald-300 rounded-xl w-[600px] p-8 mx-auto">
         <h3 className="text-2xl">
-          Are you sure you want to delete this account?
+          Are You Sure You want to delete your account?
         </h3>
 
         <button
           className="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-full"
           onClick={handleDeleteUser}
         >
-          Yes. Delete it
+          Yes, Delete it
         </button>
         <button
           className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-full"
@@ -52,7 +53,6 @@ const DeleteUser = () => {
           No. Go Back
         </button>
       </div>
-      <BackButton />
     </div>
   );
 };
