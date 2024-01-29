@@ -34,7 +34,6 @@ const DeleteUser = () => {
 
   return (
     <div className="p-4 bg-emerald-50 min-h-screen">
-      <h1 className="text-3xl my-4">Delete User</h1>
       <div className="flex flex-col items-center bg-emerald-200 border-2 border-emerald-300 rounded-xl w-[600px] p-8 mx-auto">
         <h3 className="text-2xl">
           Are You Sure You want to delete your account?

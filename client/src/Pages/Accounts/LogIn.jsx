@@ -1,7 +1,7 @@
 import { Link, Form, redirect, useActionData } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
-import Image from "../../assets/LogInBackground.jpg";
+import Image from "../../assets/Accounts/LogInBackground.jpg";
 
 const LogIn = () => {
   const [email, setEmail] = useState("");

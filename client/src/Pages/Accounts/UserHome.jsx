@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 
 import AdminHome from "./AdminHome";
+import DeleteAccount from "../../components/Accounts/DeleteAccount";
+import LogOut from "../../components/Accounts/LogOut";
+import UpdateAccount from "../../components/Accounts/UpdateAccount";
+import UpdatePassword from "../../components/Accounts/UpdatePassword";
 
 const UserHome = () => {
   const [user, setUser] = useState({});
@@ -33,14 +36,6 @@ const UserHome = () => {
     }
   }, []);
 
-  const handleLogOut = () => {
-    try {
-      localStorage.removeItem("token");
-    } catch {
-      console.log("Can Not Log Out");
-    }
-  };
-
   const isAdmin = user.admin === true;
 
   return (
@@ -58,42 +53,14 @@ const UserHome = () => {
               </h2>
             )}
             <br />
-            <Link to={`/update-account/${user._id}`}>
-              <button
-                type="submit"
-                className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xl text-center pb-2 px-4 rounded-md mt-2 mr-4 w-full"
-              >
-                Change Details
-              </button>
-            </Link>
+            <UpdateAccount/>
             <br />
-            <Link to={`/update-password/${user._id}`}>
-              <button
-                type="submit"
-                className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xl text-center pb-2 px-4 rounded-md mt-2 mr-4 w-full"
-              >
-                Update Password
-              </button>
-            </Link>
+            <UpdatePassword/>
             <br />
-            <Link to={`/delete-account/${user._id}`}>
-              <button
-                type="submit"
-                className="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold text-xl text-center pb-2 px-4 rounded-md mt-2 mr-4 w-full"
-              >
-                Delete Account
-              </button>
-            </Link>
+            <DeleteAccount/>
             <br />
             <br />
-            <Link to="/log-in">
-              <button
-                onClick={handleLogOut}
-                className="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold text-xl text-center pb-2 px-4 rounded-md mt-2 mr-4 w-full"
-              >
-                Log Out
-              </button>
-            </Link>
+            <LogOut/>
           </div>
         </div>
       </div>

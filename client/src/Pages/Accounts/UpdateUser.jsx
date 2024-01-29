@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import AccountBackButton from "../../components/AccountBackButton";
+import AccountBackButton from "../../components/Accounts/AccountBackButton";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";

@@ -1,7 +1,8 @@
 import { Link, Form, redirect, useActionData } from "react-router-dom";
-import Image from "../../assets/LogInBackground.jpg";
+import Image from "../../assets/Accounts/SignUpBackground.jpg";
 import axios from "axios";
 import { useState } from "react";
+
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

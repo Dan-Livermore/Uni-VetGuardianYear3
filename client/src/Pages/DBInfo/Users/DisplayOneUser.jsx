@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import BackButton from '../../../components/BackButton';
+import BackButton from '../../../components/DBInfo/BackButton';
 
 const DisplayOneUser = () => {
   const [user, setUser] = useState({});
