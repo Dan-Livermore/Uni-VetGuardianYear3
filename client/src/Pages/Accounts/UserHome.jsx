@@ -7,6 +7,7 @@ import DeleteAccount from "../../components/Accounts/DeleteAccount";
 import LogOut from "../../components/Accounts/LogOut";
 import UpdateAccount from "../../components/Accounts/UpdateAccount";
 import UpdatePassword from "../../components/Accounts/UpdatePassword";
+import PetsList from "../../components/Accounts/PetsList";
 
 const UserHome = () => {
   const [user, setUser] = useState({});
@@ -41,7 +42,7 @@ const UserHome = () => {
   return (
     <>
       <div className="flex h-full flex-1 flex-col justify-center items-center px-6 pt-12 lg:px-8 bg-emerald-50">
-        <div className="bg-white shadow-md rounded-md p-6 max-w-md w-full mt-1 md:mt-0">
+        <div className="bg-white shadow-md rounded-md p-6 w-7/12  mt-1 md:mt-0">
           <div className=" items-center">
             {loading ? (
               <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
@@ -59,6 +60,7 @@ const UserHome = () => {
             <br />
             <DeleteAccount/>
             <br />
+            <PetsList/>
             <br />
             <LogOut/>
           </div>
