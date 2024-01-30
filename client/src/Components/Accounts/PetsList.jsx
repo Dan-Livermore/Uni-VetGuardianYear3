@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 import { FaTrash } from "react-icons/fa";
 
 import { FaBug } from "react-icons/fa";
@@ -24,17 +25,27 @@ const PetsList = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      try {
+        const id = jwtDecode(token).userId;
+    axios    
       .get("http://localhost:1111/pets")
       .then((response) => {
-        setPets(response.data.data);
+        const filteredPets = response.data.data.filter(pet => pet.ownerID === id);
+
+        setPets(filteredPets);
         setLoading(false);
       })
       .catch((error) => {
         console.log(error);
         setLoading(false);
       });
-  }, []);
+} catch (error) {
+console.error("Error decoding token:", error);
+setLoading(false);
+} }}, []);
 
   return (
     <div className="shadow-xl p-8 mx-auto my-16 bg-white">

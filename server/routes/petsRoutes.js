@@ -8,6 +8,7 @@ router.post('/', async (request, response) => {
   try {
     if (
       !request.body.name ||
+      !request.body.ownerID ||
       !request.body.animal ||
       !request.body.gender ||
       !request.body.weight ||
@@ -28,6 +29,7 @@ router.post('/', async (request, response) => {
 
     const newPet = {
       name: request.body.name,
+      ownerID: request.body.ownerID,
       animal: request.body.animal,
       gender: request.body.gender,
       weight: request.body.weight,
@@ -78,6 +80,7 @@ router.put('/:id', async (request, response) => {
   try {
     if (
       !request.body.name ||
+      !request.body.ownerID ||
       !request.body.animal ||
       !request.body.gender ||
       !request.body.weight

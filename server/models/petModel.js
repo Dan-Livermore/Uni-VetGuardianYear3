@@ -6,6 +6,10 @@ const petSchema = mongoose.Schema(
             type: String,
             required: true,
         },
+        ownerID:{
+            type: String,
+            required: true,
+        },
         animal:{
             type: String,
             required: true,
