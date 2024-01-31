@@ -33,6 +33,13 @@ import DisplayOneUser from "./Pages/DBInfo/Users/DisplayOneUser.jsx";
 import EditUser from "./Pages/DBInfo/Users/EditUser.jsx";
 import DeleteUser from "./Pages/DBInfo/Users/DeleteUser.jsx";
 
+// DB Info Pages
+import DisplayPets from "./pages/DBInfo/Pets/DisplayPets.jsx";
+// import CreatePet from "./Pages/DBInfo/Pets/CreatePet.jsx";
+// import DisplayOnePet from "./Pages/DBInfo/Pets/DisplayOnePet.jsx";
+// import EditPet from "./Pages/DBInfo/Pets/EditPet.jsx";
+// import DeletePet from "./Pages/DBInfo/Pets/DeletePet.jsx";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<RootLayout />}>
@@ -64,6 +71,12 @@ const router = createBrowserRouter(
         <Route path="/admin/users/read/:id" element={<DisplayOneUser />} />  
         <Route path="/admin/users/edit/:id" element={<EditUser />} />  
         <Route path="/admin/users/delete/:id" element={<DeleteUser/>} />
+
+        <Route path="/admin/pets" element={<DisplayPets />} />  
+        {/* <Route path="/admin/pets/create" element={<CreatePet />}  />
+        <Route path="/admin/pets/read/:id" element={<DisplayOnePet />} />  
+        <Route path="/admin/pets/edit/:id" element={<EditPet />} />  
+        <Route path="/admin/pets/delete/:id" element={<DeletePet/>} /> */}
       </Route>
     </Route>
   )

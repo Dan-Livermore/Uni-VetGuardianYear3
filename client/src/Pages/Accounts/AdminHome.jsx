@@ -19,16 +19,15 @@ const AdminHome = () => {
             </div>
 
             <div className="flex justify-center items-center">
-              <Link to="/showings">
-                {/* <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-40"> */}
-                <button disabled className="bg-slate-400 hover:bg-slate-400 text-white font-bold py-2 px-4 rounded w-40">
+              <Link to="/admin/pets">
+                <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-40">
                   Pets
                 </button>
               </Link>
             </div>
             
             <div className="flex justify-center items-center">
-              <Link to="/showings">
+              <Link to="/admin/records">
                 {/* <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-40"> */}
                 <button disabled className="bg-slate-400 hover:bg-slate-400 text-white font-bold py-2 px-4 rounded w-40">
                   Pet's Conditions
