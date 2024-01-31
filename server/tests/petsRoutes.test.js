@@ -8,10 +8,11 @@ describe("Pets Routes", () => {
   it("CREATE is a valid request", () => {
     const newPetData = {
         name: "Unit Pet",
-        animal: "Dog",
+        ownerID: "65ad4911c28626f9ae94fe6c",
+        animal: "Dragon",
         gender: "Male",
-        weight: 29.5,
-        dob: "2024-01-01T00:00:00.000Z",
+        weight: 29500,
+        dob: "2024-01-31T00:00:00.000Z",
     };
 
     return request
@@ -22,6 +23,7 @@ describe("Pets Routes", () => {
       .then((res) => {
         expect(res.body).to.be.an("object");
         expect(res.body.name).to.equal(newPetData.name);
+        expect(res.body.ownerID).to.equal(newPetData.ownerID);
         expect(res.body.animal).to.equal(newPetData.animal);
         expect(res.body.gender).to.equal(newPetData.gender);
         expect(res.body.weight).to.equal(newPetData.weight);
@@ -42,6 +44,7 @@ describe("Pets Routes", () => {
   it("UPDATE is a valid request", () => {
     const newPetData = {
         name: "Unit Pet",
+        ownerID: "65ad4911c28626f9ae94fe6c",
         animal: "Dog",
         gender: "Male",
         weight: 29.5,
@@ -49,6 +52,7 @@ describe("Pets Routes", () => {
     };
     const updatedPetData = {
         name: "Updated Pet",
+        ownerID: "65ad4911c28626f9ae94fe6c",
         animal: "Cat",
         gender: "Female",
         weight: 20,
@@ -76,6 +80,7 @@ describe("Pets Routes", () => {
   it("DELETE is a valid request", () => {
     const newPetData = {
         name: "Unit Pet",
+        ownerID: "65ad4911c28626f9ae94fe6c",
         animal: "Dog",
         gender: "Male",
         weight: 29.5,
@@ -103,7 +108,7 @@ describe("Pets Routes", () => {
   });
   it("GET ONE by known ID", () => {
     return request
-      .get("/pets/65abea5551dbf8fed92dc601")
+      .get("/pets/65b9155453f7b67ea6423f98")
       .expect(200)
       .expect("Content-Type", /json/)
       .then((res) => {
@@ -154,6 +159,7 @@ describe("Pets Routes", () => {
   it("CREATE Pet", () => {
     const newPetData = {
         name: "Unit Pet",
+        ownerID: "65ad4911c28626f9ae94fe6c",
         animal: "Dog",
         gender: "Male",
         weight: 29.5,
@@ -178,6 +184,7 @@ describe("Pets Routes", () => {
   it("CREATE Pet - dob not a date", () => {
     const newPetData = {
         name: "Unit Pet",
+        ownerID: "65ad4911c28626f9ae94fe6c",
         animal: "Dog",
         gender: "Male",
         weight: 29.5,
@@ -193,6 +200,7 @@ describe("Pets Routes", () => {
   it("CREATE Pet - weight is a string", () => {
     const newPetData = {
         name: "Unit Pet",
+        ownerID: "65ad4911c28626f9ae94fe6c",
         animal: "Dog",
         gender: "Male",
         weight: "29.5",
@@ -211,6 +219,7 @@ describe("Pets Routes", () => {
   it("DELETE an existing pet", () => {
     const newPetData = {
         name: "Unit Pet",
+        ownerID: "65ad4911c28626f9ae94fe6c",
         animal: "Dog",
         gender: "Male",
         weight: 29.5,
@@ -232,6 +241,7 @@ describe("Pets Routes", () => {
   it("UPDATE a Pet", () => {
     const newPetData = {
         name: "Unit Pet",
+        ownerID: "65ad4911c28626f9ae94fe6c",
         animal: "Dog",
         gender: "Male",
         weight: 29.5,
@@ -239,6 +249,7 @@ describe("Pets Routes", () => {
     };
     const updatedPetData = {
         name: "Updated Pet",
+        ownerID: "65ad4911c28626f9ae94fe6c",
         animal: "Cat",
         gender: "Female",
         weight: 10,
@@ -297,11 +308,27 @@ describe("Pets Routes", () => {
       });
   });
 
+  it("UPDATE - No OwnerID", () => {
+    return request
+      .put("/pets/111111111111111111111111")
+      .send({
+        name: "Unit Pet",
+        gender: "Female",
+        weight: 100,
+        dob: "1998-09-09T00:00:00.000Z",
+    })
+      .expect(400)
+      .then((res) => {
+        expect(res.body).to.be.an("object");
+      });
+  });
+
   it("UPDATE - No Animal", () => {
     return request
       .put("/pets/111111111111111111111111")
       .send({
         name: "Unit Pet",
+        ownerID: "65ad4911c28626f9ae94fe6c",
         gender: "Female",
         weight: 100,
         dob: "1998-09-09T00:00:00.000Z",
@@ -317,6 +344,7 @@ describe("Pets Routes", () => {
       .put("/pets/111111111111111111111111")
       .send({
         name: "Unit Pet",
+        ownerID: "65ad4911c28626f9ae94fe6c",
         animal: "Mouse",
         weight: 100,
         dob: "1998-09-09T00:00:00.000Z",
@@ -332,6 +360,7 @@ describe("Pets Routes", () => {
       .put("/pets/111111111111111111111111")
       .send({
         name: "Unit Pet",
+        ownerID: "65ad4911c28626f9ae94fe6c",
         animal: "Mouse",
         gender: "Female",
         dob: "1998-09-09T00:00:00.000Z",
@@ -347,6 +376,7 @@ describe("Pets Routes", () => {
       .put("/pets/111111111111111111111111")
       .send({
         name: "Unit Pet",
+        ownerID: "65ad4911c28626f9ae94fe6c",
         animal: "Mouse",
         gender: "Female",
         weight: 100,
