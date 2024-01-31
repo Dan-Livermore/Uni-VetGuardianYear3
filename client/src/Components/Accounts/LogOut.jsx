@@ -4,48 +4,53 @@ import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 
 const LogOut = () => {
-    const [user, setUser] = useState({});
-    const [loading, setLoading] = useState(false);
-  
-    useEffect(() => {
-      setLoading(true);
-      const token = localStorage.getItem("token");
-  
-      if (token) {
-        try {
-          const id = jwtDecode(token).userId;
-          axios
-            .get(`http://localhost:1111/users/${id}`)
-            .then((response) => {
-              setUser(response.data);
-              setLoading(false);
-            })
-            .catch((error) => {
-              console.log(error);
-              setLoading(false);
-            });
-        } catch (error) {
-          console.error("Error decoding token:", error);
-          setLoading(false);
-        }
-      }
-    }, []);
+  const [user, setUser] = useState({});
+  const [loading, setLoading] = useState(false);
 
-    const handleLogOut = () => {
-        try {
-          localStorage.removeItem("token");
-        } catch {
-          console.log("Can Not Log Out");
-        }
-      };
+  useEffect(() => {
+    setLoading(true);
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      try {
+        const id = jwtDecode(token).userId;
+        axios
+          .get(`http://localhost:1111/users/${id}`)
+          .then((response) => {
+            setUser(response.data);
+            setLoading(false);
+          })
+          .catch((error) => {
+            console.log(error);
+            setLoading(false);
+          });
+      } catch (error) {
+        console.error("Error decoding token:", error);
+        setLoading(false);
+      }
+    }
+  }, []);
+
+  const handleLogOut = () => {
+    try {
+      localStorage.removeItem("token");
+    } catch {
+      console.log("Can Not Log Out");
+    }
+  };
 
   return (
-        <Link to="/log-in">
-            <button onClick={handleLogOut} className="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold text-xl text-center pb-2 px-4 rounded-md mt-2 mr-4 w-full">
-                Log Out
-            </button>
-        </Link>
-  )
-}
+    <Link to="/log-in">
+      <div className="flex justify-center">
+        <button
+          onClick={handleLogOut}
+          className="bg-red-500 hover:bg-red-600 text-white font-bold text-center text-xl py-2 px-4 rounded-md my-4 w-2/3"
+        >
+          Log Out
+        </button>
+      </div>
+    </Link>
+  );
+};
 
-export default LogOut
+export default LogOut;
