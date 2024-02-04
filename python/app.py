@@ -5,12 +5,11 @@ from PIL import Image
 import numpy as np
 
 app = Flask(__name__)
-CORS(app, resources={r"/predict": {"origins": "http://localhost:3001"}})
+cors = CORS(app, resources={r"/predict": {"origins": "http://localhost:3001"}})
 
 @app.route('/', methods=['GET'])
 def hello_world():
     return render_template('index.html')
-
 
 model = tf.keras.models.load_model('Model.h5')
 class_names = [
