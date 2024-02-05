@@ -34,11 +34,8 @@ def prepareImage():
 
 def predictImage(img, model, class_names):
     predictions = model.predict(tf.expand_dims(img, axis=0))
-      # Get the predicted class
-    # Check if predictions list is empty
     
-    # Get the predicted class
-    if len(predictions[0]) > 1: # check for multi-class
+    if len(predictions[0]) > 1: # check for multiple outputs
         pred_class = class_names[predictions.argmax()] # if more than one output, take the max
     else:
         pred_class = class_names[int(tf.round(predictions))[0][0]]

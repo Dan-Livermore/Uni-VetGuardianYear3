@@ -5,9 +5,8 @@ import { FaArrowLeft } from "react-icons/fa";
 const ImageClassifier = () => {
   const [prediction, setPrediction] = useState("");
   const [Image, setImage] = useState("");
-  const [error, setError] = useState("");
   const [ImageURL, setImageURL] = useState(null); 
-
+  const [error, setError] = useState("");
 
   const handleImageChange = (event) => {
     setImage(event.target.files[0]);
@@ -50,10 +49,11 @@ const ImageClassifier = () => {
     }
   };
 
-  const reset = () => {
+  const Restart = () => {
     setPrediction("");
     setImage("");
     setError("");
+    setImageURL(null);
   }
 
   return (
@@ -68,10 +68,8 @@ const ImageClassifier = () => {
               <input type="file" accept="image/*" onChange={handleImageChange} className="bg-white border border-slate-300 rounded-md p-2"/>
               <button type="submit" className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded-md mt-2">
                 Load Image
-                </button>
-              <p className="px-2 py-4">
-                <b>Supported File Types: GIF, JPEG, PNG.</b>
-              </p>
+              </button>
+              <p className="px-2 py-4 font-bold">Supported File Types: GIF, JPEG, PNG.</p>
             </form>
           </div>
         )}
@@ -83,19 +81,21 @@ const ImageClassifier = () => {
             </h1>
               <div>
                 <img src={ImageURL} alt="Image From User" className="w-1/2 h-auto mb-2 border-2 border-solid border-slate-950 rounded-md"/>
-                <p className="bg-emerald-200 p-2 rounded-md w-1/2">{" "} Prediction: {prediction}{" "}</p>
+                <div className="bg-emerald-200 p-2 rounded-md w-1/2">
+                  <p>{" "} Prediction: {prediction}{" "}</p>
+                  <p>{" "} Confidence: TBA {" "}</p>
+                </div>
                 <button type="submit" className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded-md mt-2">
                   Add Your Pet
                 </button>
               </div>
               <br/>
-                <Link to="/image-classifier">
-                <button onClick={reset} className="flex items-center bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded-md mt-2 mr-5">
+              <Link to="/image-classifier">
+                <button onClick={Restart} className="flex items-center bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded-md mt-2 mr-5">
                   <FaArrowLeft style={{ marginRight: '5px' }} />
                   Retry Prediction
                 </button>
-
-                </Link>
+              </Link>
           </>
         )}
 
