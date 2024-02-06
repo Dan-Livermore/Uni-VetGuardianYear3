@@ -1,19 +1,20 @@
 import React from 'react'
-import Image from "../../assets/SymptomChecker/DogBodyImg.png";
+import Image from "../../assets/SymptomChecker/Dog.avif";
 
 const Dog = () => {
   return (
     <>
     <img src={Image} useMap="#image_map" />
     <map name="image_map">
-      <area alt="Tail" title="Tail" href="http://localhost:3001/SymptomChecker/Dog/Tail" coords="551,172 573,196 604,170 637,153 657,126 645,118 628,139 579,160 548,167 " shape="polygon" />
-      <area alt="Nose" title="Nose" href="http://localhost:3001/SymptomChecker/Dog/Nose" coords="8,41 21,37 25,49 16,58 8,54 " shape="polygon" />
-      <area alt="Ears" title="Ears" href="http://localhost:3001/SymptomChecker/Dog/Ears" coords="123,33 159,53 162,76 165,95 160,103 160,113 139,133 121,144 110,133 109,103 116,84 124,72 " shape="polygon" />
-      <area alt="Head" title="Head" href="http://localhost:3001/SymptomChecker/Dog/Head" coords="12,58 28,81 48,93 81,89 97,89 109,99 121,67 124,35 159,55 170,34 154,14 126,7 97,7 75,18 66,27 39,34 23,39 25,49 " shape="polygon" />
-      <area alt="Feet" title="Feet" href="http://localhost:3001/SymptomChecker/Dog/Feet" coords="625,509 633,515 647,513 656,516 674,505 674,491 650,491 631,497 " shape="polygon" />
-      <area alt="Feet" title="Feet" href="http://localhost:3001/SymptomChecker/Dog/Feet" coords="588,474 599,477 609,478 626,471 629,457 603,456 586,463 583,471 592,478 " shape="polygon"/>
-      <area alt="Feet" title="Feet" href="http://localhost:3001/SymptomChecker/Dog/Feet" coords="160,504 165,490 182,486 194,452 233,451 230,464 215,477 207,502 193,507 185,511 161,509 160,501 151,503 155,488 158,481 171,479 187,451 210,455 " shape="polygon"/>
-      <area alt="Leg" title="Leg" href="http://localhost:3001/SymptomChecker/Dog/Leg" coords="252,109 220,109 189,124 165,167 154,210 161,232 188,272 199,394 185,443 167,448 159,459 161,466 187,468 193,463 207,462 214,435 231,419 233,337 238,285 246,278 246,244 262,214 276,175 267,129 " shape="polygon" />
+      <area alt="Tail" title="Tail" href="localhost:3001/Dog/Tail" coords="481,149 494,182 506,210 515,240 521,251 536,254 557,266 570,268 584,266 607,266 614,258 608,252 586,245 567,241 542,221 520,185 503,162 " shape="polygon"/>
+      <area alt="Ears" title="Ears" href="localhost:3001/Dog/Ears" coords="118,40 123,48 126,59 126,71 121,75 123,84 125,100 131,110 138,119 144,117 151,107 163,100 173,91 178,74 176,64 174,58 158,50 148,43 132,33 " shape="polygon"/>
+      <area alt="Belly" title="Belly" href="localhost:3002/SymptomChecker/Dog/Belly" coords="402,251 381,253 349,258 304,287 286,294 249,297 252,280 256,267 263,256 308,245 355,236 394,221 410,224 " shape="polygon"/>
+      <area alt="Back" title="Back" href="localhost:3002/SymptomChecker/Dog/Back" coords="479,151 451,163 419,191 408,224 394,221 367,233 324,243 263,257 274,224 250,188 225,172 245,144 241,118 251,118 266,119 281,127 324,129 371,127 405,127 462,141 " shape="polygon"/>
+      <area alt="Neck" title="Neck" href="localhost:3002/SymptomChecker/Dog/Neck" coords="183,68 200,85 220,103 224,110 242,113 245,144 225,172 179,193 166,214 157,244 146,245 141,217 144,207 127,178 110,145 118,135 140,127 172,94 " shape="polygon"/>
+      <area alt="Legs" title="Legs" href="localhost:3002/SymptomChecker/Dog/FrontLegs" coords="236,398 207,397 207,377 205,364 211,341 204,300 197,316 197,345 190,375 184,398 160,388 163,344 158,284 147,245 155,245 166,214 176,195 225,172 249,186 274,224 263,256 250,280 245,339 240,375 " shape="polygon"/>
+      <area alt="Face" title="Face" href="localhost:3001/SymptomChecker/Dog/Face" coords="115,33 120,46 126,62 124,76 124,99 134,113 138,124 128,134 118,138 107,145 113,130 117,117 106,111 91,113 78,120 69,117 67,111 57,111 49,107 41,103 20,97 33,90 46,83 60,74 61,61 63,53 72,45 94,33 " shape="polygon"/>
+  <area alt="Nose" title="Nose" href="localhost:3001/SymptomChecker/Dog/Nose" coords="31,117 40,106 19,97 19,105 51,126 81,122 68,113 40,105 29,99 " shape="polygon"/>
+  <area alt="Mouth" title="Mouth" href="localhost:3001/SymptomChecker/Dog/Mouth" coords="41,155 52,152 82,155 95,145 107,144 117,116 91,117 74,120 55,124 43,134 " shape="polygon"/>
     </map>
     </>
   );
