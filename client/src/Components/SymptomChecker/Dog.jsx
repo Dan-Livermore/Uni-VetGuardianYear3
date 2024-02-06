@@ -1,69 +1,79 @@
-// import React, { useState } from "react";
-// import Image from "../../assets/SymptomChecker/Dog.avif";
-// import ImageMapper from "react-image-mapper";
+import React, { useState } from 'react';
+import ImageMapper from 'react-img-mapper';
+import IMGURL from "../../assets/SymptomChecker/Dog.avif";
+import Symptom2 from "../../pages/SymptomChecker/Symptom2";
 
-// const Dog = () => {
-//   const [highlightedArea, setHighlightedArea] = useState(null); // State to track highlighted area
+const Dog = () => {
+    const [hoveredArea, setHoveredArea] = useState(null);
+    const [selectedArea, setSelectedArea] = useState(null);
 
+    const MAP = {
+        name: "my-map",
+        areas: [
+        { name: "Back", shape: "poly", coords: [479,151,451,163,419,191,408,224,394,221,367,233,324,243,263,257,274,224,250,188,225,172,245,144,241,118,251,118,266,119,281,127,324,129,371,127,405,127,462,141], fillColor: "green"  },
+        { name: "Belly", shape: "poly",  coords: [402,251 ,381,253 ,349,258 ,304,287 ,286,294 ,249,297 ,252,280 ,256,267 ,263,256 ,308,245 ,355,236 ,394,221 ,410,224], fillColor: "red"  },
+        { name: "Ears", shape: "poly",  coords: [118,40, 123,48, 126,59, 126,71, 121,75, 123,84, 125,100, 131,110, 138,119, 144,117, 151,107, 163,100, 173,91, 178,74, 176,64, 174,58, 158,50, 148,43, 132,33], fillColor: "red"  },
+        { name: "Face", shape: "poly",  coords: [115,33,120,46,126,62,124,76,124,99,134,113,138,124,128,134,118,138,107,145,113,130,117,117,106,111,91,113,78,120,69,117,67,111,57,111,49,107,41,103,20,97,33,90,46,83,60,74,61,61,63,53,72,45,94,33], fillColor: "red"  },
+        { name: "Feet", shape: "poly",  coords: [479,443,492,440,500,431,506,407,486,400,479,417,459,427,458,437,468,443,404,415,402,426,415,434,421,429,432,431,443,422,446,399,426,396,418,407,404,415,434,429,467,441,],fillColor: "red"  },
+        { name: "Feet", shape: "poly",  coords: [160,389,149,403,130,410,133,426,152,426,160,428,175,422,182,405,186,392,239,399,232,417,224,431,219,443,196,443,182,440,178,434,184,423,197,416,205,401,206,394],fillColor: "red"  },
+        { name: "Legs", shape: "poly",  coords: [236,398,207,397,207,377,205,364,211,341,204,300,197,316,197,345,190,375,184,398,160,388,163,344,158,284,147,245,155,245,166,214,176,195,225,172,249,186,274,224,263,256,250,280,245,339,240,375],fillColor: "red"  },
+        { name: "Legs", shape: "poly",  coords: [479,153,455,162,441,195,428,213,406,242,405,252,385,253,370,256,375,293,383,304,397,327,423,352,429,384,426,396,448,401,455,364,461,340,486,400,506,407,516,356,506,336,496,304,498,256,504,209,492,168,484,151 ],fillColor: "red"  },
+        { name: "Mouth", shape: "poly",  coords: [41,155,52,152,82,155,95,145,107,144,117,116,91,117,74,120,55,124,43,134 ], fillColor: "red"  },
+        { name: "Neck", shape: "poly",  coords: [183,68,200,85,220,103,224,110,242,113,245,144,225,172,179,193,166,214,157,244,146,245,141,217,144,207,127,178,110,145,118,135,140,127,172,94], fillColor: "red"  },
+        { name: "Nose", shape: "poly",  coords: [31,117,40,106,19,97,19,105,51,126,81,122,68,113,40,105,29,99], fillColor: "red"  },
+        { name: "Tail", shape: "poly",  coords: [617,257, 594,247, 569,240, 541,221, 522,191, 507,168, 496,154, 481,150, 490,168, 500,196, 507,212, 512,237, 519,247, 531,256, 540,256, 555,264, 563,265, 570,266, 578,266, 591,266, 604,266], fillColor: "red"  },
+        ]
+    };
 
-//   const sections = [
-//     {
-//       alt: "Tail", title: "Tail", href: "localhost:3001/Dog/Tail", shape: "polygon", coords: "481,149 494,182 506,210 515,240 521,251 536,254 557,266 570,268 584,266 607,266 614,258 608,252 586,245 567,241 542,221 520,185 503,162"
-//     },
-//     {
-//       alt: "Ears", title: "Ears", href: "localhost:3001/Dog/Ears", shape: "polygon", coords: "118,40 123,48 126,59 126,71 121,75 123,84 125,100 131,110 138,119 144,117 151,107 163,100 173,91 178,74 176,64 174,58 158,50 148,43 132,33"
-//     },
-//     {
-//       alt: "Belly", title: "Belly", href: "localhost:3002/SymptomChecker/Dog/Belly", shape: "polygon", coords: "402,251 381,253 349,258 304,287 286,294 249,297 252,280 256,267 263,256 308,245 355,236 394,221 410,224"
-//     },
-//     {
-//       alt: "Back", title: "Back", href: "localhost:3002/SymptomChecker/Dog/Back", shape: "polygon", coords: "479,151 451,163 419,191 408,224 394,221 367,233 324,243 263,257 274,224 250,188 225,172 245,144 241,118 251,118 266,119 281,127 324,129 371,127 405,127 462,141"
-//     },
-//     {
-//       alt: "Neck", title: "Neck", href: "localhost:3002/SymptomChecker/Dog/Neck", shape: "polygon", coords: "183,68 200,85 220,103 224,110 242,113 245,144 225,172 179,193 166,214 157,244 146,245 141,217 144,207 127,178 110,145 118,135 140,127 172,94"
-//     },
-//     {
-//       alt: "Legs", title: "Legs", href: "localhost:3002/SymptomChecker/Dog/FrontLegs", shape: "polygon", coords: "236,398 207,397 207,377 205,364 211,341 204,300 197,316 197,345 190,375 184,398 160,388 163,344 158,284 147,245 155,245 166,214 176,195 225,172 249,186 274,224 263,256 250,280 245,339 240,375"
-//     },
-//     {
-//       alt: "Face", title: "Face", href: "localhost:3001/SymptomChecker/Dog/Face", shape: "polygon", coords: "115,33 120,46 126,62 124,76 124,99 134,113 138,124 128,134 118,138 107,145 113,130 117,117 106,111 91,113 78,120 69,117 67,111 57,111 49,107 41,103 20,97 33,90 46,83 60,74 61,61 63,53 72,45 94,33"
-//     },
-//     {
-//       alt: "Nose", title: "Nose", href: "localhost:3001/SymptomChecker/Dog/Nose", shape: "polygon", coords: "31,117 40,106 19,97 19,105 51,126 81,122 68,113 40,105 29,99"
-//     },
-//     {
-//       alt: "Mouth", title: "Mouth", href: "localhost:3001/SymptomChecker/Dog/Mouth", shape: "polygon", coords: "41,155 52,152 82,155 95,145 107,144 117,116 91,117 74,120 55,124 43,134"
-//     }
-//   ];
+// href:"./symptom-checker/dog/back", 
+// href:"./symptom-checker/dog/belly",
+// href:"./symptom-checker/dog/ears",
+// href:"./symptom-checker/dog/face",
+// href:"./symptom-checker/dog/feet",
+// href:"./symptom-checker/dog/feet",
+// href:"./symptom-checker/dog/legs",
+// href:"./symptom-checker/dog/legs",
+// href:"./symptom-checker/dog/mouth",
+// href:"./symptom-checker/dog/neck",
+// href:"./symptom-checker/dog/nose",
+// href:"./symptom-checker/dog/tail",
 
-//   const handleMouseEnter = (area, index) => {
-//     setHighlightedArea(index); // Set highlighted area on mouse enter
-//   };
+const enterArea = area => {
+    if (selectedArea != null && !selectedArea.includes(area.name)) {
+        setHoveredArea(area);
+        }
+    };
 
-//   const handleMouseLeave = () => {
-//     setHighlightedArea(null); // Reset highlighted area on mouse leave
-//   };
+const leaveArea = () => {
+    if (!selectedArea === null){
+        setHoveredArea(null);
+        }
+    };
 
-//   return (
-//     <>
-//       <div className="relative">
-//         <ImageMapper
-//           src={Image}
-//           map={{
-//             name: "image_map",
-//             areas: sections.map((area, index) => ({
-//               ...area,
-//               onMouseEnter: () => handleMouseEnter(area, index),
-//               onMouseLeave: handleMouseLeave
-//             }))
-//           }}
+const selectArea = (area) => {
+    setSelectedArea(null);
+    setSelectedArea(area);
+    };
 
+  return (
+    <div className='flex'>
+      <ImageMapper
+        src={IMGURL}
+        map={MAP}
+        width={626}
+        onMouseEnter={enterArea}
+        onMouseLeave={leaveArea}
+        onClick={selectArea}
+      />
+      {hoveredArea && (
+        <span>
+          <br />
+          {hoveredArea.name}
+          <Symptom2 />
+        </span>
+      )}
+    </div>
+  );
+};
 
-//         />
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Dog;
-
+export default Dog;

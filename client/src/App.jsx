@@ -56,6 +56,16 @@ const router = createBrowserRouter(
       <Route path="/sign-up" element={<SignUp />} action={HandleSignUp}/>
 
       <Route path="/symptom-checker" element={<SymptomChecker />} />
+      <Route path="/symptom-checker/dog/back" element={<SymptomChecker />} />
+      <Route path="/symptom-checker/dog/belly" element={<SymptomChecker />} />
+      <Route path="/symptom-checker/dog/ears" element={<SymptomChecker />} />
+      <Route path="/symptom-checker/dog/face" element={<SymptomChecker />} />
+      <Route path="/symptom-checker/dog/feet" element={<SymptomChecker />} />
+      <Route path="/symptom-checker/dog/legs" element={<SymptomChecker />} />
+      <Route path="/symptom-checker/dog/mouth" element={<SymptomChecker />} />
+      <Route path="/symptom-checker/dog/neck" element={<SymptomChecker />} />
+      <Route path="/symptom-checker/dog/nose" element={<SymptomChecker />} />
+      <Route path="/symptom-checker/dog/tail" element={<SymptomChecker />} />
       <Route path="/result" element={<Result />} />
       <Route path="/image-classifier" element={<ImageClassifier />} />
 

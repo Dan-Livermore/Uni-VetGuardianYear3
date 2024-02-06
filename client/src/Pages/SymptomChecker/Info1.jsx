@@ -4,7 +4,7 @@ import { GiSnail } from "react-icons/gi";
 
 import React, { useState } from 'react';
 
-// import Dog from "../../components/SymptomChecker/Dog";
+import Dog from "../../components/SymptomChecker/Dog";
 import Symptom1 from "./Symptom1";
 import Mapper from "../../components/SymptomChecker/Mapper";
 
@@ -55,10 +55,8 @@ return (
     {selectedButton && (
       <div>
         <p className="py-8 pr-4 pb-4">Now, where does the problem occur from?</p>
-        {/* Render the Symptom1 component with selectedButton */}
-        {/* <Dog /> */}
-        <Mapper />
-        <Symptom1 selected={selectedButton} />
+        <Dog />
+        {/* <Symptom1 selected={selectedButton} /> */}
       </div>
     )}
   </>
