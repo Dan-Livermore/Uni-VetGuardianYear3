@@ -20,7 +20,8 @@ const AdminHome = () => {
 
             <div className="flex justify-center items-center">
               <Link to="/admin/pets">
-                <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-40">
+                <button disabled className="bg-slate-500 text-white font-bold py-2 px-4 rounded w-40">
+                {/* <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-40"> */}
                   Pets
                 </button>
               </Link>
@@ -29,7 +30,7 @@ const AdminHome = () => {
             <div className="flex justify-center items-center">
               <Link to="/admin/records">
                 {/* <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-40"> */}
-                <button disabled className="bg-slate-400 hover:bg-slate-400 text-white font-bold py-2 px-4 rounded w-40">
+                <button disabled className="bg-slate-500 text-white font-bold py-2 px-4 rounded w-40">
                   Pet's Conditions
                 </button>
               </Link>

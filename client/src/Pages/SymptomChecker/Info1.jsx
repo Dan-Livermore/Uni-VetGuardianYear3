@@ -32,7 +32,8 @@ return (
           onClick={() => handleButtonClick('Cat')}
           id="Cat"
           type="submit"
-          className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-2xl py-6 px-8 rounded-md mt-2 flex flex-col items-center justify-center w-48 h-48"
+          disabled
+          className="bg-slate-500 text-white font-bold text-2xl py-6 px-8 rounded-md mt-2 flex flex-col items-center justify-center w-48 h-48"
         >
           Cat
           <span className="mt-2"><FaCat size={40} /></span>
@@ -43,7 +44,8 @@ return (
           onClick={() => handleButtonClick('Other')}
           id="Other"
           type="submit"
-          className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-2xl py-6 px-8 rounded-md mt-2 flex flex-col items-center justify-center w-48 h-48"
+          disabled
+          className="bg-slate-500 text-white font-bold text-2xl py-6 px-8 rounded-md mt-2 flex flex-col items-center justify-center w-48 h-48"
         >
           Other
           <span className="mt-2"><GiSnail size={50} /></span>
