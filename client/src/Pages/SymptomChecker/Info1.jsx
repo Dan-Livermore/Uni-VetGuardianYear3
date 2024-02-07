@@ -1,12 +1,10 @@
+import React, { useState } from 'react';
+
 import { FaDog } from "react-icons/fa";
 import { FaCat } from "react-icons/fa";
 import { GiSnail } from "react-icons/gi";
 
-import React, { useState } from 'react';
-
 import Dog from "../../components/SymptomChecker/Dog";
-import Symptom1 from "./Symptom1";
-import Mapper from "../../components/SymptomChecker/Mapper";
 
 const Info1 = () => {
 const [selectedButton, setSelectedButton] = useState(null);
@@ -53,11 +51,10 @@ return (
       </div>
     </div>
     {selectedButton && (
-      <div>
+      <>
         <p className="py-8 pr-4 pb-4">Now, where does the problem occur from?</p>
         <Dog />
-        {/* <Symptom1 selected={selectedButton} /> */}
-      </div>
+      </>
     )}
   </>
 );

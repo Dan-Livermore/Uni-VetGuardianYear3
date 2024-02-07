@@ -3,18 +3,18 @@ import Symptom3 from './Symptom3';
 
 const Symptom2 = () => {
   const [selectedButton, setSelectedButton] = useState(null);
-  const [showElement, setShowElement] = useState(false); // Define showElement state
+  const [showElement, setShowElement] = useState(false);
 
   const handleButtonClick = (id) => {
     setSelectedButton(id);
-    setShowElement(true); // Set showElement to true when a button is clicked
+    setShowElement(true);
   };
 
   return (
     <>
       <div className="flex p-4">
         <div>
-          <p>Is your pet pregnant?</p>
+          <p>Has your pet had a change in energy levels?</p>
           <button onClick={() => handleButtonClick('Yes')} id="Yes" type="submit"
             className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-24">
             Yes

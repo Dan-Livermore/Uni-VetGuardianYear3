@@ -15,7 +15,7 @@ const Symptom3 = () => {
     <>
       <div className="flex ">
         <div>
-          <p>Is there a sudden change in your pet's behaviour?</p>
+          <p>Has your pet experienced any changes in appetite or water consumption recently?</p>
           <Link to="/result">
             <button onClick={handleButtonClick} type="submit"
               className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-24">

@@ -39,7 +39,7 @@ const Navbar = () => {
           <li className="hover:text-zinc-400 transition border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">About</li>
         </Link>
         <Link to="/symptom-checker">
-          <li className="hover:text-zinc-400 transition border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">Symptom Checker</li>
+          <li className="hover:text-zinc-400 transition border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">Symptom Suggester</li>
         </Link>
         <Link to="/image-classifier">
           <li className="hover:text-zinc-400 transition border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">Pet Identifier</li>
