@@ -108,7 +108,7 @@ describe("Pets Routes", () => {
   });
   it("GET ONE by known ID", () => {
     return request
-      .get("/pets/65b9155453f7b67ea6423f98")
+      .get("/pets/65b915c553f7b67ea6423fa0")
       .expect(200)
       .expect("Content-Type", /json/)
       .then((res) => {

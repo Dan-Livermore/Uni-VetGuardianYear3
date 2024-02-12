@@ -110,26 +110,26 @@ const DisplayPets = () => {
                   <td className="border border-slate-700 text-center">
                     {pet.name + " " + pet.ownerLname}
                   </td>
-                  <td className="border border-slate-700 text-center">
+                  <td className="border border-slate-700 text-center max-md:hidden">
                     {pet.ownerFname + " " + pet.ownerLname}
                   </td>
-                  <td className="border border-slate-700 text-center">
+                  <td className="border border-slate-700 text-center max-md:hidden">
                     {pet.animal}
                   </td>
-                  <td className="border border-slate-700 text-center">
+                  <td className="border border-slate-700 text-center max-md:hidden">
                     {pet.weight}
                   </td>
-                  <td className="border border-slate-700 text-center">
+                  <td className="border border-slate-700 text-center max-md:hidden">
                     {pet.gender}
                   </td>
-                  <td className="border border-slate-700 text-center">
+                  <td className="border border-slate-700 text-center max-md:hidden">
                     {pet.dob}
                   </td>
-                  {/* <td className="border border-slate-700 text-center">
+                  {/* <td className="border border-slate-700 text-center max-md:hidden">
                   {user.records}
                   </td> */}
 
-                  <td className="border border-slate-700 text-center max-md:hidden">
+                  <td className="border border-slate-700 text-center">
                     <div className="flex justify-center gap-x-4">
                       <Link to={`/admin/pets/read/${pet._id}`}>
                         <BsInfoCircle className="text-2xl text-green-800" />
