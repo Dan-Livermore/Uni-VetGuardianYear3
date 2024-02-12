@@ -24,7 +24,7 @@ const DisplayUsers = () => {
   }, []);
 
   return (
-    <div className="p-4 bg-emerald-50 min-h-screen">
+    <div className="p-4 min-h-screen">
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-bold my-8">List of All Users</h1>
         <Link to="/admin/users/create">
@@ -36,32 +36,32 @@ const DisplayUsers = () => {
             <p>No user data in the database</p>
           ) : (
             <table className="w-full border-spacing-2 bg-white">
-              <thead>
+              <thead className="bg-emerald-500 text-white">
                 <tr>
-                  <th className="border border-slate-600 rounded-md">No.</th>
-                  <th className="border border-slate-600 rounded-md">Email</th>
-                  <th className="border border-slate-600 rounded-md max-md:hidden">User's Name</th>
-                  <th className="border border-slate-600 rounded-md max-md:hidden">Admin</th>
-                  <th className="border border-slate-600 rounded-md">Options</th>
+                  <th className="border border-slate-600">No.</th>
+                  <th className="border border-slate-600">Email</th>
+                  <th className="border border-slate-600 max-md:hidden">User's Name</th>
+                  <th className="border border-slate-600 max-md:hidden">Admin</th>
+                  <th className="border border-slate-600">Options</th>
                 </tr>
               </thead>
               <tbody>
                 {users.map((user, index) => (
                   <tr key={user._id} className="h-8">
-                    <td className="border border-slate-700 rounded-md text-center">
+                    <td className="border border-slate-700 text-center">
                           {index + 1}
                     </td>
-                    <td className="border border-slate-700 rounded-md text-center">
+                    <td className="border border-slate-700 text-center">
                          {user.email}
                     </td>
-                    <td className="border border-slate-700 rounded-md text-center">
+                    <td className="border border-slate-700 text-center">
                          {user.firstname + " " + user.lastname}
                     </td>
-                    <td className="border border-slate-700 rounded-md text-center">
+                    <td className="border border-slate-700 text-center">
                     {user.admin ? 'Yes' : 'No'}
                     </td>
 
-                    <td className="border border-slate-700 rounded-md text-center max-md:hidden">
+                    <td className="border border-slate-700 text-center max-md:hidden">
                       <div className="flex justify-center gap-x-4">
                         <Link to={`/admin/users/read/${user._id}`}>
                           <BsInfoCircle className="text-2xl text-green-800" />
