@@ -58,7 +58,7 @@ const UpdateUser = () => {
   };
 
   return (
-    <div className="p-4 bg-emerald-50 min-h-screen">
+    <div className="p-4  min-h-screen">
       <h1 className="text-3xl my-4 text-center">Edit User</h1>
       <div className="flex flex-col border-2 border-emerald-300 bg-emerald-200 rounded-xl w-[600px] p-4 mx-auto">
         <div className="my-4">

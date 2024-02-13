@@ -58,7 +58,7 @@ const ImageClassifier = () => {
 
   return (
     <>
-      <div className="p-4 bg-emerald-50 h-screen-1.5 min-h-screen">
+      <div className="p-4  h-screen-1.5 min-h-screen">
         {prediction === "" && (
           <div className="p-4 flex-1">
             <h1 className="text-4xl font-bold mb-4">Pet Identifier</h1>

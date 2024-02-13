@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 const ForgotPassword = () => {
   return (
     <>
-<div className="bg-emerald-50 min- h-screen flex items-center justify-center">
+<div className=" min- h-screen flex items-center justify-center">
   <div className="w-1/3 bg-white p-8 rounded-xl shadow shadow-slate-300">
    <h1 class="text-4xl font-medium">Reset Password</h1>
         <p class="text-slate-500">Fill in the form to reset your password</p>
