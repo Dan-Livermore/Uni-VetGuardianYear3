@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { createBrowserRouter,Route,createRoutesFromElements,RouterProvider } from "react-router-dom";
+
 import RootLayout from "./structure/RootLayout";
 import PrivateRoutes from "./structure/PrivateRoutes";
+import { ThemeProvider } from './structure/ColourThemes.jsx';
 
 import ImageClassifier from "./pages/ImageClassifier";
 import PageNotFound from "./pages/PageNotFound";
@@ -95,7 +98,9 @@ const router = createBrowserRouter(
 function App() {
   return (
     <>
+    <ThemeProvider>
       <RouterProvider router={router} />
+    </ThemeProvider>
     </>
   );
 }
