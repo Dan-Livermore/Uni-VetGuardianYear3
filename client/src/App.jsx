@@ -1,9 +1,12 @@
-import { useState } from "react";
 import { createBrowserRouter,Route,createRoutesFromElements,RouterProvider } from "react-router-dom";
+import "./index.css";
+
 
 import RootLayout from "./structure/RootLayout";
 import PrivateRoutes from "./structure/PrivateRoutes";
-import { ThemeProvider } from './structure/ColourThemes.jsx';
+
+
+import ColourThemes from './structure/ColourThemes.jsx';
 
 import ImageClassifier from "./pages/ImageClassifier";
 import PageNotFound from "./pages/PageNotFound";
@@ -46,6 +49,15 @@ import DisplayPets from "./pages/DBInfo/Pets/DisplayPets.jsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<RootLayout />}>
+
+
+
+      
+<Route path="/colour-themes" element={<ColourThemes />} />
+
+
+
+
       <Route path="*" element={<PageNotFound />} />
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
@@ -98,9 +110,7 @@ const router = createBrowserRouter(
 function App() {
   return (
     <>
-    <ThemeProvider>
       <RouterProvider router={router} />
-    </ThemeProvider>
     </>
   );
 }

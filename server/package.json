@@ -23,6 +23,7 @@
     "mongoose": "^8.0.0",
     "node": "^21.2.0",
     "nodemon": "^3.0.2",
-    "supertest": "^6.3.4"
+    "supertest": "^6.3.4",
+    "tailwindcss": "^3.4.1"
   }
 }
