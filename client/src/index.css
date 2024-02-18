@@ -4,39 +4,26 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* Light Theme Styles */
-.theme-light {
-  /* Define light theme styles */
-  --bg-color: #ffffff;
-  --text-color: #333333;
+:root {
+  --primary-color-light: #007bff;
+  --secondary-color-light: #6c757d;
+  --background-color-light: #f8f9fa;
+
+  --primary-color-dark: #1f6feb;
+  --secondary-color-dark: #adb5bd;
+  --background-color-dark: #212529;
 }
 
-/* Dark Theme Styles */
-.theme-dark {
-  /* Define dark theme styles */
-  --bg-color: #333333;
-  --text-color: #ffffff;
+[data-theme="light"] {
+  --primary-color: var(--primary-color-light);
+  --secondary-color: var(--secondary-color-light);
+  --background-color: var(--background-color-light);
 }
 
-/* High Contrast Theme Styles */
-.theme-high-contrast {
-  /* Define high contrast theme styles */
-  --bg-color: #000000;
-  --text-color: #ffffff;
+[data-theme="dark"] {
+  --primary-color: var(--primary-color-dark);
+  --secondary-color: var(--secondary-color-dark);
+  --background-color: var(--background-color-dark);
 }
 
-/* Apply theme-specific styles to body */
-body.theme-light {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-body.theme-dark {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-body.theme-high-contrast {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
+/* Define other styles using the theme colors */
