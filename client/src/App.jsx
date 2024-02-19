@@ -4,7 +4,6 @@ import "./index.css";
 import RootLayout from "./structure/RootLayout";
 import PrivateRoutes from "./structure/PrivateRoutes";
 
-
 import ColourThemes from './structure/ColourThemes.jsx';
 
 import ImageClassifier from "./pages/ImageClassifier";

@@ -43,10 +43,6 @@ const DisplayOneUser = () => {
             <span>{user.email}</span>
           </div>
           <div className='my-4'>
-            <span className='text-xl mr-4 font-bold text-black'>Password Hash:</span>
-            <span>{user.password}</span>
-          </div>
-          <div className='my-4'>
             <span className='text-xl mr-4 font-bold text-black'>Admin:</span>
             <span>{user.admin ? 'Yes' : 'No'}</span>
           </div>

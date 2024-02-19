@@ -34,7 +34,39 @@ const UpdateUser = () => {
       });
   }, []);
 
+  const validateForm = () => {
+    if (!emailIsValid(email)) {
+      enqueueSnackbar("Invalid Email Address", { variant: "error" });
+      return false;
+    }
+    if (!firstnameIsValid(firstname)) {
+      enqueueSnackbar("Invalid First Name", { variant: "error" });
+      return false;
+    }
+    if (!lastnameIsValid(lastname)) {
+      enqueueSnackbar("Invalid Last Name", { variant: "error" });
+      return false;
+    }
+    return true;
+  };
+
+  const emailIsValid = (email) => {
+    return /\S+@\S+\.\S+/.test(email);
+  };
+
+  const firstnameIsValid = (firstname) => {
+    return firstname && firstname.length <= 20;
+  };
+
+  const lastnameIsValid = (lastname) => {
+    return lastname && lastname.length <= 20;
+  };
+
+
   const handleEditUser = () => {
+    if (!validateForm()) {
+      return;
+    }
     const data = {
       email,
       password,

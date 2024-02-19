@@ -34,7 +34,22 @@ const UpdatePassword = () => {
       });
   }, []);
 
+  const validateForm = () => {
+    if (!passwordIsValid(password)) {
+      enqueueSnackbar("Invalid Password", { variant: "error" });
+      return false;
+    }
+    return true;
+  };
+
+  const passwordIsValid = (password) => {
+    return password.length < 20; // && /\d/.test(password);
+  };
+
   const handleUpdatePassword = () => {
+    if (!validateForm()) {
+      return;
+    }
     const data = {
       email,
       password,
@@ -67,9 +82,7 @@ const UpdatePassword = () => {
       <h1 className="text-3xl font-bold my-4 text-center">Edit Password</h1>
       <div className="flex flex-col border-2 bg-emerald-200 border-emerald-300 rounded-xl w-[600px] p-4 mx-auto">
         <div className="my-4">
-          <label className="text-xl mr-4 text-black">
-            Enter New Password
-          </label>
+          <label className="text-l mr-4 text-grey-500"><span className="text-2xl mr-4 text-black font-bold">Enter New Password</span> Must be less than 20 characters</label>
           <input
             type="text"
             onChange={(e) => setPassword(e.target.value)}

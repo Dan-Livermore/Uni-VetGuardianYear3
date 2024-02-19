@@ -15,9 +15,9 @@ const DeleteUser = () => {
       .delete(`http://localhost:1111/users/${id}`)
       .then(() => {
         setLoading(false);
-        enqueueSnackbar("User Deleted Successfully", { variant: "success" });
         localStorage.removeItem("token");
         navigate("/log-in");
+        enqueueSnackbar("User Deleted Successfully", { variant: "success" });
       })
       .catch((error) => {
         setLoading(false);
