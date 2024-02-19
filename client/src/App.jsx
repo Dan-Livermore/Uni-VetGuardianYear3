@@ -1,7 +1,6 @@
 import { createBrowserRouter,Route,createRoutesFromElements,RouterProvider } from "react-router-dom";
 import "./index.css";
 
-
 import RootLayout from "./structure/RootLayout";
 import PrivateRoutes from "./structure/PrivateRoutes";
 

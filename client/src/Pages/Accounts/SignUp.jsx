@@ -10,6 +10,7 @@ const SignUp = () => {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const data = useActionData();
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -156,13 +157,12 @@ const SignUp = () => {
 
 export default SignUp;
 
-export const HandleSignUp = async ({ request }) => {
+export const HandleSignUp = async ({ request, enqueueSnackbar }) => {
   const data = await request.formData();
   const email = data.get("email");
   const password = data.get("password");
   const firstname = data.get("firstname");
   const lastname = data.get("lastname");
-  const { enqueueSnackbar } = useSnackbar();
 
   try {
     const response = await axios.post("http://localhost:1111/signup", {
@@ -173,11 +173,9 @@ export const HandleSignUp = async ({ request }) => {
     });
     console.log("Response from server:", response.data);
     if (response.data === "Account Created!") {
-      //  alert("Your account has been created!");
-
-      enqueueSnackbar("Your account has been created.", { variant: "success"});
+      // enqueueSnackbar("Your account has been created.", { variant: "success" });
       // return redirect("/account");
-
+ 
       try {
         const response = await axios.post("http://localhost:1111/login", {
           email,
@@ -207,6 +205,6 @@ export const HandleSignUp = async ({ request }) => {
       return { error: "An Error Has Occurred" };
     }
   } catch (error) {
-    return { error: error.response.data };
+    return { error: error.message };
   }
 };
