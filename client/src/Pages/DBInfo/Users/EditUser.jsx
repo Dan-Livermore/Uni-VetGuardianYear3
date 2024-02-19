@@ -34,27 +34,48 @@ const EditUser = () => {
       });
   }, []);
 
+  const validateForm = () => {
+    // Perform validation checks here
+    // For example, check if email is in valid format
+    if (!emailIsValid(email)) {
+      enqueueSnackbar("Invalid email address", { variant: "error" });
+      return false;
+    }
+    // Add more validation checks for other fields as needed
+    return true;
+  };
+
+  const emailIsValid = (email) => {
+    // Basic email validation logic
+    return /\S+@\S+\.\S+/.test(email);
+  };
+
   const handleEditUser = () => {
-    const data = {
-      email,
-      password,
-      firstname,
-      lastname,
-      admin,
-    };
-    setLoading(true);
-    axios
-      .put(`http://localhost:1111/users/${id}`, data)
-      .then(() => {
-        setLoading(false);
-        enqueueSnackbar("User Updated Successfully", { variant: "success" });
-        navigate(-1);
-      })
-      .catch((error) => {
-        setLoading(false);
-        enqueueSnackbar("Error", { variant: "error" });
-        console.log(error);
-      });
+    if (!validateForm()) {
+      console.log("Form is not valid");
+      enqueueSnackbar("Invalid email address", { variant: "error" });
+    } else {
+      const data = {
+        email,
+        password,
+        firstname,
+        lastname,
+        admin,
+      };
+      setLoading(true);
+      axios
+        .put(`http://localhost:1111/users/${id}`, data)
+        .then(() => {
+          setLoading(false);
+          enqueueSnackbar("User Updated Successfully", { variant: "success" });
+          navigate(-1);
+        })
+        .catch((error) => {
+          setLoading(false);
+          enqueueSnackbar("Error", { variant: "error" });
+          console.log(error);
+        });
+    }
   };
 
   return (
@@ -74,7 +95,6 @@ const EditUser = () => {
           <label className="text-xl mr-4 text-gray-500">Password</label>
           <input
             type="text"
-            value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="border-2 border-gray-500 px-4 py-2  w-full"
           />
@@ -105,9 +125,9 @@ const EditUser = () => {
             <input
               type="radio"
               id="adminFalse"
-              value="false"
-              checked={admin === "false"}
-              onChange={(e) => setAdmin(e.target.value)}
+              value={false}
+              checked={admin === false}
+              onChange={() => setAdmin(false)}
               className="border-2 border-gray-500 px-4 py-2  mr-2 appearance-none"
               style={{ borderRadius: "0" }}
             />
@@ -115,14 +135,13 @@ const EditUser = () => {
               Standard User
             </label>
             <p>This user has the intended access to the website.</p>
-          </div>
-          <div>
+
             <input
               type="radio"
               id="adminTrue"
-              value="true"
-              checked={admin === "true"}
-              onChange={(e) => setAdmin(e.target.value)}
+              value={true}
+              checked={admin === true}
+              onChange={() => setAdmin(true)}
               className="border-2 border-gray-500 px-4 py-2  mr-2 appearance-none"
               style={{ borderRadius: "0" }}
             />
