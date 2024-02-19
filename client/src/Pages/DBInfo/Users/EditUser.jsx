@@ -35,27 +35,47 @@ const EditUser = () => {
   }, []);
 
   const validateForm = () => {
-    // Perform validation checks here
-    // For example, check if email is in valid format
     if (!emailIsValid(email)) {
-      enqueueSnackbar("Invalid email address", { variant: "error" });
+      enqueueSnackbar("Invalid Email Address", { variant: "error" });
       return false;
     }
-    // Add more validation checks for other fields as needed
+    if (!firstnameIsValid(firstname)) {
+      enqueueSnackbar("Invalid First Name", { variant: "error" });
+      return false;
+    }
+    if (!lastnameIsValid(lastname)) {
+      enqueueSnackbar("Invalid Last Name", { variant: "error" });
+      return false;
+    }
+    if (!adminIsValid(admin)) {
+      enqueueSnackbar("Invalid Admin Value", { variant: "error" });
+      return false;
+    }
     return true;
   };
 
   const emailIsValid = (email) => {
-    // Basic email validation logic
     return /\S+@\S+\.\S+/.test(email);
   };
 
+  const firstnameIsValid = (firstname) => {
+    return firstname && firstname.length <= 20;
+  };
+
+  const lastnameIsValid = (lastname) => {
+    return lastname && lastname.length <= 20;
+  };
+
+  const adminIsValid = (admin) => {
+    return admin === true || admin === false;
+  }
+  
+
   const handleEditUser = () => {
     if (!validateForm()) {
-      console.log("Form is not valid");
-      enqueueSnackbar("Invalid email address", { variant: "error" });
-    } else {
-      const data = {
+      return;
+    }
+    const data = {
         email,
         password,
         firstname,
@@ -75,15 +95,14 @@ const EditUser = () => {
           enqueueSnackbar("Error", { variant: "error" });
           console.log(error);
         });
-    }
-  };
+    };
 
   return (
     <div className="p-4 bg-emerald-50 min-h-screen">
       <h1 className="text-3xl my-4 text-center">Edit User</h1>
       <div className="flex flex-col border-2 border-emerald-300 bg-emerald-200 rounded-xl w-[600px] p-4 mx-auto">
         <div className="my-4">
-          <label className="text-xl mr-4 text-gray-500">Email Address</label>
+          <label className="text-2xl mr-4 text-black font-bold">Email Address</label>
           <input
             type="text"
             value={email}
@@ -92,7 +111,7 @@ const EditUser = () => {
           />
         </div>
         <div className="my-4">
-          <label className="text-xl mr-4 text-gray-500">Password</label>
+          <label className="text-2xl mr-4 text-black font-bold">Password</label>
           <input
             type="text"
             onChange={(e) => setPassword(e.target.value)}
@@ -100,7 +119,7 @@ const EditUser = () => {
           />
         </div>
         <div className="my-4">
-          <label className="text-xl mr-4 text-gray-500">First Name</label>
+          <label className="text-l mr-4 text-grey-500"><span className="text-2xl mr-4 text-black font-bold">First Name</span> Must be less than 20 characters</label>
           <input
             type="text"
             value={firstname}
@@ -109,7 +128,7 @@ const EditUser = () => {
           />
         </div>
         <div className="my-4">
-          <label className="text-xl mr-4 text-gray-500">Last Name</label>
+        <label className="text-l mr-4 text-grey-500"><span className="text-2xl mr-4 text-black font-bold">Last Name</span> Must be less than 20 characters</label>
           <input
             type="text"
             value={lastname}
@@ -149,8 +168,7 @@ const EditUser = () => {
               Admin
             </label>
             <p>
-              This user has the same access as the standard user but can update
-              the database directly.
+              This user has the same access as the standard user but can create and manage users, pets and other data.
             </p>
           </div>
         </div>

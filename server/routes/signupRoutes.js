@@ -30,7 +30,7 @@ router.post("/", async (req, res) => {
         errors: error.errors,
       });
     }
-    console.error(error); // Log the error for debugging
+    console.error(error); 
     res.status(500).send({ message: "Internal Server Error" });
   }
 });

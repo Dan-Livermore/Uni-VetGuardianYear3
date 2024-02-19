@@ -21,8 +21,8 @@ import Terms from "./pages/LandingPages/Terms";
 // Accounts Pages
 import ForgotPassword from "./pages/Accounts/ForgotPassword";
 import PasswordRequestSent from "./pages/Accounts/PasswordRequestSent";
-import LogIn, { HandleLogIn } from "./pages/Accounts/LogIn";
-import SignUp, { HandleSignUp } from "./pages/Accounts/SignUp.jsx";
+import LogIn, { HandleLogIn } from "./Pages/Accounts/LogIn";
+import SignUp, { HandleSignUp } from "./Pages/Accounts/SignUp.jsx";
 import UserHome from "./Pages/Accounts/UserHome.jsx";
 import UpdateUser from "./Pages/Accounts/UpdateUser.jsx";
 import UpdatePassword from "./Pages/Accounts/UpdatePassword.jsx";
