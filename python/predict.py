@@ -10,7 +10,7 @@ app = Flask(__name__)
 cors = CORS(app, resources={r"/predict": {"origins": "http://localhost:3001"}})
 
 # Load the model (If not being trained)
-model = YOLO('./runs/classify/train3/weights/best.pt')
+model = YOLO('./runs/classify/train5/weights/best.pt')
 
 # Define a route for predictions
 @app.route('/', methods=['GET'])
