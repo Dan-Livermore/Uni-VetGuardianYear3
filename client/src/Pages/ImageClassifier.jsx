@@ -4,6 +4,7 @@ import { FaArrowLeft } from "react-icons/fa";
 
 const ImageClassifier = () => {
   const [prediction, setPrediction] = useState("");
+  const [confidence, setConfidence] = useState("");
   const [Image, setImage] = useState("");
   const [ImageURL, setImageURL] = useState(null); 
   const [error, setError] = useState("");
@@ -11,6 +12,7 @@ const ImageClassifier = () => {
   const handleImageChange = (event) => {
     setImage(event.target.files[0]);
     setPrediction("");
+    setConfidence("");
     setError("");
     setImageURL(null);
   };
@@ -38,6 +40,7 @@ const ImageClassifier = () => {
       if (response.ok) {
         const data = await response.json();
         setPrediction(data.prediction);
+        setConfidence(data.confidence);
         setError("");
       } else {
         setError("Failed to identify pet. Please try again.");
@@ -51,6 +54,7 @@ const ImageClassifier = () => {
 
   const Restart = () => {
     setPrediction("");
+    setConfidence("");
     setImage("");
     setError("");
     setImageURL(null);
@@ -83,7 +87,7 @@ const ImageClassifier = () => {
                 <img src={ImageURL} alt="Image From User" className="w-1/2 h-auto mb-2 border-2 border-solid border-slate-950 rounded-md"/>
                 <div className="bg-emerald-200 p-2 rounded-md w-1/2">
                   <p>{" "} Prediction: {prediction}{" "}</p>
-                  <p>{" "} Confidence: TBA {" "}</p>
+                  <p>{" "} Confidence: {confidence} {"% "}</p>
                 </div>
                 <button disabled type="submit" className="bg-slate-500 text-white font-bold py-2 px-4 rounded-md mt-2">
                   Add Your Pet
