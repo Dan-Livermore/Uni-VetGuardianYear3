@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Get the file path of the results
-results_path = './runs/classify/train5/results.csv'
+results_path = './runs/classify/train8/results.csv'
 
 # Read the results from the trained model
 results = pd.read_csv(results_path)
