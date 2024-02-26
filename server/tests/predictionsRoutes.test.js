@@ -94,7 +94,7 @@ describe("Predictions Routes", () => {
 
   it("GET ONE by known ID", () => {
     return request
-      .get("/predictions/65b915c553f7b67ea6423fa0")
+      .get("/predictions/65dcbc3ff9a0f3f2392b4569")
       .expect(200)
       .expect("Content-Type", /json/)
       .then((res) => {
@@ -109,6 +109,7 @@ describe("Predictions Routes", () => {
         expect(res.body.output).to.be.a("string");
       });
   });
+
   it("GET ONE - ID Too Short", () => {
     return request
       .get("/predictions/1")
@@ -161,7 +162,7 @@ describe("Predictions Routes", () => {
   it("CREATE Prediction - time not a date", () => {
     const newPredictionData = {
         petID: "65ca369e4ac399bd523db06e",
-        time: "2024-01-31T00:00:00.000Z",
+        time: "Date",
         output: "Head Pain"
     };
     return request
@@ -171,15 +172,10 @@ describe("Predictions Routes", () => {
       .expect("Content-Type", /json/);
   });
 
-  it("CREATE Prediction - weight is a string", () => {
-    const newPredictionData = {
-        petID: "65ca369e4ac399bd523db06e",
-        time: "2024-01-31T00:00:00.000Z",
-        output: "Head Pain"
-    };
+  it("CREATE Prediction", () => {
     return request
       .post("/predictions")
-      .send(newPredictionData)
+      .send()
       .expect(400)
       .expect("Content-Type", /json/)
       .then((res) => {

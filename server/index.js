@@ -5,6 +5,7 @@ import petsRoute from "./routes/petsRoutes.js";
 import usersRoute from "./routes/usersRoutes.js";
 import signupRoute from "./routes/signupRoutes.js";
 import loginRoute from "./routes/loginRoute.js";
+import predictionsRoute from "./routes/predictionsRoutes.js";
 import cors from 'cors';
 
 const app = express();
@@ -22,6 +23,7 @@ app.use('/pets', petsRoute);
 app.use("/users", usersRoute);
 app.use("/signup", signupRoute);
 app.use("/login", loginRoute);
+app.use("/predictions", predictionsRoute);
 
 mongoose
   .connect(mongoDBURL)

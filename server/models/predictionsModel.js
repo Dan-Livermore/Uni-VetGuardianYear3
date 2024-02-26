@@ -4,7 +4,6 @@ const predictionsSchema = mongoose.Schema(
     {
         petID:{
             type: String,
-            unique: true,
             required: true,
         },
         time:{
