@@ -11,7 +11,7 @@ const predictionsSchema = mongoose.Schema(
             type: Date,
             required: true,
         },
-        Output: {
+        output: {
             type: String,
             required: true,
         }
