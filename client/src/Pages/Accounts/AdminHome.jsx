@@ -28,9 +28,9 @@ const AdminHome = () => {
             </div>
             
             <div className="flex justify-center items-center">
-              <Link to="/admin/records">
-                {/* <button className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded w-40"> */}
-                <button disabled className="bg-slate-500 text-white font-bold py-2 px-4 rounded w-40">
+              <Link to="/admin/predictions">
+                <button className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded w-40">
+                {/* <button disabled className="bg-slate-500 text-white font-bold py-2 px-4 rounded w-40"> */}
                   Pet's Conditions
                 </button>
               </Link>

@@ -52,10 +52,10 @@ const DisplayPred = () => {
                           {index + 1}
                     </td>
                     <td className="border border-slate-700 text-center">
-                         {prediction.pet}
+                         {prediction.petID}
                     </td>
                     <td className="border border-slate-700 text-center">
-                         {prediction.time + " " + prediction.lastname}
+                         {prediction.time}
                     </td>
                     <td className="border border-slate-700 text-center">
                     {prediction.output}

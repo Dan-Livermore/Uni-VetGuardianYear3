@@ -40,16 +40,16 @@ const DisplayPets = () => {
   const formattedPets = pets.map((pet, index) => {
     const owner = users.find((user) => user._id === pet.ownerID);
     const formattedDate = formatDate(pet.dob);
-  
+
     return {
       _id: pet._id,
       index: index + 1,
-      name: pet ? pet.name: "Unknown Name",
+      name: pet ? pet.name : "Unknown Name",
       ownerFname: owner ? owner.firstname : "Unknown Owner",
       ownerLname: owner ? owner.lastname : "Unknown Owner",
-      animal: pet ? pet.animal: "Unknown Animal",
-      weight: pet ? pet.weight: "Unknown Weight",
-      gender: pet ? pet.gender: "Unknown Gender",
+      animal: pet ? pet.animal : "Unknown Animal",
+      weight: pet ? pet.weight : "Unknown Weight",
+      gender: pet ? pet.gender : "Unknown Gender",
       dob: formattedDate,
     };
   });
@@ -59,7 +59,7 @@ const DisplayPets = () => {
     const day = String(date.getDate()).padStart(2, "0");
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const year = date.getFullYear();
-    
+
     return `${day}/${month}/${year}`;
   }
 
@@ -126,8 +126,8 @@ const DisplayPets = () => {
                     {pet.dob}
                   </td>
                   {/* <td className="border border-slate-700 text-center max-md:hidden">
-                  {user.records}
-                  </td> */}
+    {user.records}
+    </td> */}
 
                   <td className="border border-slate-700 text-center">
                     <div className="flex justify-center gap-x-4">

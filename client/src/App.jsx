@@ -39,10 +39,17 @@ import DeleteUser from "./Pages/DBInfo/Users/DeleteUser.jsx";
 
 // DB Info Pages
 import DisplayPets from "./pages/DBInfo/Pets/DisplayPets.jsx";
-// import CreatePet from "./Pages/DBInfo/Pets/CreatePet.jsx";
-// import DisplayOnePet from "./Pages/DBInfo/Pets/DisplayOnePet.jsx";
-// import EditPet from "./Pages/DBInfo/Pets/EditPet.jsx";
-// import DeletePet from "./Pages/DBInfo/Pets/DeletePet.jsx";
+import CreatePet from "./Pages/DBInfo/Pets/CreatePet.jsx";
+import DisplayOnePet from "./Pages/DBInfo/Pets/DisplayOnePet.jsx";
+import EditPet from "./Pages/DBInfo/Pets/EditPet.jsx";
+import DeletePet from "./Pages/DBInfo/Pets/DeletePet.jsx";
+
+// DB Info Pages
+import DisplayPred from "./pages/DBInfo/Predictions/DisplayPred.jsx";
+import CreatePred from "./Pages/DBInfo/Predictions/CreatePred.jsx";
+import DisplayOnePred from "./Pages/DBInfo/Predictions/DisplayOnePred.jsx";
+import EditPred from "./Pages/DBInfo/Predictions/EditPred.jsx";
+import DeletePred from "./Pages/DBInfo/Predictions/DeletePred.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -96,10 +103,16 @@ const router = createBrowserRouter(
         <Route path="/admin/users/delete/:id" element={<DeleteUser/>} />
 
         <Route path="/admin/pets" element={<DisplayPets />} />  
-        {/* <Route path="/admin/pets/create" element={<CreatePet />}  />
+        <Route path="/admin/pets/create" element={<CreatePet />}  />
         <Route path="/admin/pets/read/:id" element={<DisplayOnePet />} />  
         <Route path="/admin/pets/edit/:id" element={<EditPet />} />  
-        <Route path="/admin/pets/delete/:id" element={<DeletePet/>} /> */}
+        <Route path="/admin/pets/delete/:id" element={<DeletePet/>} />
+
+        <Route path="/admin/predictions" element={<DisplayPred />} />  
+        <Route path="/admin/predictions/create" element={<CreatePred />}  />
+        <Route path="/admin/predictions/read/:id" element={<DisplayOnePred />} />  
+        <Route path="/admin/predictions/edit/:id" element={<EditPred />} />  
+        <Route path="/admin/predictions/delete/:id" element={<DeletePred/>} />
       </Route>
     </Route>
   )
