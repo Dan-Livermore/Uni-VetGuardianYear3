@@ -94,7 +94,7 @@ describe("Predictions Routes", () => {
 
   it("GET ONE by known ID", () => {
     return request
-      .get("/predictions/65dcbc3ff9a0f3f2392b4569")
+      .get("/predictions/65dcbc42f9a0f3f2392b456b")
       .expect(200)
       .expect("Content-Type", /json/)
       .then((res) => {
