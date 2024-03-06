@@ -8,6 +8,7 @@ import LogOut from "../../components/Accounts/LogOut";
 import UpdateAccount from "../../components/Accounts/UpdateAccount";
 import UpdatePassword from "../../components/Accounts/UpdatePassword";
 import PetsList from "../../components/Accounts/PetsList/PetsList";
+import AddPet from "../../Components/Accounts/AddPet";
 
 const UserHome = () => {
   const [user, setUser] = useState({});
@@ -57,6 +58,7 @@ const UserHome = () => {
             <UpdatePassword />
             <DeleteAccount />
             <PetsList />
+            <AddPet />
             <LogOut />
           </div>
         </div>

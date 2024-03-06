@@ -51,6 +51,10 @@ import DisplayOnePred from "./Pages/DBInfo/Predictions/DisplayOnePred.jsx";
 import EditPred from "./Pages/DBInfo/Predictions/EditPred.jsx";
 import DeletePred from "./Pages/DBInfo/Predictions/DeletePred.jsx";
 
+
+
+import AddPet from "./Pages/Accounts/AddPet.jsx";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<RootLayout />}>
@@ -58,7 +62,7 @@ const router = createBrowserRouter(
 
 
       
-<Route path="/colour-themes" element={<ColourThemes />} />
+      <Route path="/colour-themes" element={<ColourThemes />} />
 
 
 
@@ -95,6 +99,9 @@ const router = createBrowserRouter(
         <Route path="/update-account/:id" element={<UpdateUser />} />
         <Route path="/update-password/:id" element={<UpdatePassword />} />
         <Route path="/delete-account/:id" element={<DeleteAccount />} />
+
+
+        <Route path="/create-pet/" element={<AddPet />} />
 
         <Route path="/admin/users" element={<DisplayUsers />} />  
         <Route path="/admin/users/create" element={<CreateUser />}  />
