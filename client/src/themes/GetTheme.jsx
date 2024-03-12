@@ -1,20 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
-const ThemeSwitcher = () => {
+const DarkModeTheme = createContext();
+
+export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     // Check if a theme preference is stored in localStorage
     const storedTheme = localStorage.getItem('theme');
-    // If a theme preference is stored, use it otherwise, default to "light"
+    // If a theme preference is stored, use it; otherwise, default to "light"
     return storedTheme ? storedTheme : 'light';
   });
-
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [theme]);
 
   useEffect(() => {
     // Update the class on the document element based on the theme
@@ -29,12 +23,10 @@ const ThemeSwitcher = () => {
   };
 
   return (
-    <div className=" bg-white dark:bg-black">
-    <button onClick={toggleTheme} className='bg-emerald-500 dark:bg-emerald-900'>
-      Toggle Theme
-    </button>
-    </div>
+    <DarkModeTheme.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </DarkModeTheme.Provider>
   );
 };
 
-export default ThemeSwitcher;
+export const useTheme = () => useContext(DarkModeTheme);

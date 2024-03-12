@@ -33,29 +33,31 @@ const Navbar = () => {
   const handleClick = () => setClick(!click);
 
   const content = (
-    <div className="lg:hidden block absolute top-16 w-full left-0 right-0 bg-emerald-500 transition">
-      <ul className="text-center text-xl p-20">
+    <div className="lg:hidden block absolute top-16 w-full left-0 right-0 bg-emerald-800 dark:bg-emerald-900 transition">
+      <ul className="text-center text-2xl p-20">
         <Link to="/about">
-          <li className="hover:text-zinc-400 transition border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">About</li>
+          <li className="hover:text-zinc-400 transition my-2 py-2 border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">About</li>
         </Link>
         <Link to="/symptom-checker">
-          <li className="hover:text-zinc-400 transition border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">Symptom Suggester</li>
+          <li className="hover:text-zinc-400 transition my-2 py-2 border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">Symptom Suggester</li>
         </Link>
         <Link to="/image-classifier">
-          <li className="hover:text-zinc-400 transition border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">Pet Identifier</li>
+          <li className="hover:text-zinc-400 transition my-2 py-2 border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">Pet Identifier</li>
         </Link>
         <Link to="/account">
-        <li className="my-4 py-4 border-b border-sky-500 hover:bg-emerald-500 hover:text-zinc-400 hover:rounded cursor-pointer">
-          {isLoggedIn ? <button>Account</button> : <button>Log In</button>}
-        </li>
+        {isLoggedIn ? 
+        <li className="my-2 py-2 border-b border-emerald-800 dark:border-emerald-900 hover:border-emerald-800 hover:text-zinc-400 hover:rounded cursor-pointer">Account</li>
+         : 
+         <li className="my-2 py-2 border-b border-emerald-800 dark:border-emerald-900 hover:border-emerald-800 hover:text-zinc-400 hover:rounded cursor-pointer">Log In</li>
+         }
         </Link>
       </ul>
     </div>
   );
 
   return (
-    <nav className="bg-emerald-900 dark:bg-red-900">
-      <div className="h-10vh flex justify-between z-50 text-white lg:py-5 px-20 py-4">
+    <nav className="bg-emerald-900 dark:bg-emerald-950 text-white dark:text-slate-600">
+      <div className="h-10vh flex justify-between z-50 lg:py-5 px-20 py-4">
         {/* Logo */}
         <div className="flex items-center flex-1">
           <span className="text-3xl font-bold items-center">
@@ -74,26 +76,26 @@ const Navbar = () => {
             <ul className="flex gap-8 mr-0 ml-auto text-xl font-bold">
               {/* links for sections */}
               <Link to="/about">
-                <li className="hover:text-zinc-400 transition border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">
+                <li className="hover:text-zinc-400 dark:hover:text-slate-500 transition border-b-0 cursor-pointer">
                   About
                 </li>
               </Link>
               <Link to="/symptom-checker">
-                <li className="hover:text-zinc-400 transition border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">
+                <li className="hover:text-zinc-400 dark:hover:text-slate-500 transition border-b-0 cursor-pointer">
                   Symptom Checker
                 </li>
               </Link>
               <Link to="/image-classifier">
-                <li className="hover:text-zinc-400 transition border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">
+                <li className="hover:text-zinc-400 dark:hover:text-slate-500 transition border-b-0 cursor-pointer">
                   Pet Identifier
                 </li>
               </Link>
-              <li className="hover:text-zinc-400 transition border-b-0 border-sky-600 hover:border-zinc-400 cursor-pointer">
+              <li className="hover:text-zinc-40  dark:hover:text-slate-500 transition border-b-0 cursor-pointer">
                 <Link to="/account">
                   {isLoggedIn ? (
-                    <button>Account</button>
+                    <li>Account</li>
                   ) : (
-                    <button>Log In</button>
+                    <li>Log In</li>
                   )}
                 </Link>
               </li>

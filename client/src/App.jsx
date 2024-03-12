@@ -5,7 +5,7 @@ import "./index.css";
 import RootLayout from "./structure/RootLayout";
 import PrivateRoutes from "./structure/PrivateRoutes";
 
-import ColourThemes from './structure/ColourThemes.jsx';
+import ColourThemes from './Pages/ColourThemes.jsx';
 
 import ImageClassifier from "./pages/ImageClassifier";
 import PageNotFound from "./pages/PageNotFound";
@@ -58,20 +58,13 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<RootLayout />}>
 
-
-
-      
-      <Route path="/colour-themes" element={<ColourThemes />} />
-
-
-
-
       <Route path="*" element={<PageNotFound />} />
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/services" element={<Services />} />
       <Route path="/terms" element={<Terms />} />
+      <Route path="/colour-themes" element={<ColourThemes />} />
 
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/password-request-sent" element={<PasswordRequestSent />} />
