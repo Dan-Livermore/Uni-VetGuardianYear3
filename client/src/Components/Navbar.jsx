@@ -54,7 +54,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="bg-emerald-900">
+    <nav className="bg-emerald-900 dark:bg-red-900">
       <div className="h-10vh flex justify-between z-50 text-white lg:py-5 px-20 py-4">
         {/* Logo */}
         <div className="flex items-center flex-1">
