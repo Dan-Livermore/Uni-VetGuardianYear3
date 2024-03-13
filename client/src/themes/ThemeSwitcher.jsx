@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 
 const ThemeSwitcher = () => {
   const [theme, setTheme] = useState(() => {
-    // Check if a theme preference is stored in localStorage
+    // Check if a theme  is stored in localStorage.
     const storedTheme = localStorage.getItem('theme');
-    // If a theme preference is stored, use it otherwise, default to "light"
+    // If there is a theme use it, otherwise use the default theme.
     return storedTheme ? storedTheme : 'light';
   });
 
   useEffect(() => {
+    // If there is a theme add it to globally.
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
@@ -17,20 +18,20 @@ const ThemeSwitcher = () => {
   }, [theme]);
 
   useEffect(() => {
-    // Update the class on the document element based on the theme
+    // Update the class on the document element based on the theme.
     document.documentElement.classList.toggle('dark', theme === 'dark');
-    // Save the theme preference to local storage
+    // Save the theme to local storage.
     localStorage.setItem('theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
-    // Toggle between "light" and "dark" themes
+    // Toggle between both themes.
     setTheme(prevTheme => (prevTheme === 'dark' ? 'light' : 'dark'));
   };
 
   return (
-    <div className=" bg-white dark:bg-black">
-    <button onClick={toggleTheme} className='bg-emerald-500 dark:bg-emerald-900'>
+    <div className="flex bg-white dark:bg-gray-900 min-h-screen items-center justify-center">
+    <button onClick={toggleTheme} className='bg-emerald-500 dark:bg-emerald-900 rounded-lg text-white dark:text-gray-300 h-10 w-40'>
       Toggle Theme
     </button>
     </div>

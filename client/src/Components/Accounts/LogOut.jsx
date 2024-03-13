@@ -9,8 +9,8 @@ const LogOut = () => {
 
   useEffect(() => {
     setLoading(true);
+    // Checks that the user is logged in.
     const token = localStorage.getItem("token");
-
     if (token) {
       try {
         const id = jwtDecode(token).userId;
@@ -44,7 +44,7 @@ const LogOut = () => {
       <div className="flex justify-center">
         <button
           onClick={handleLogOut}
-          className="bg-red-500 hover:bg-red-600 text-white font-bold text-center text-xl py-2 px-4 rounded-md my-4 w-2/3"
+          className="bg-red-500 dark:bg-red-700 hover:bg-red-600 dark:hover:bg-red-800 text-white dark:text-gray-300 font-bold text-center text-xl py-2 px-4 rounded-md my-4 w-2/3"
         >
           Log Out
         </button>

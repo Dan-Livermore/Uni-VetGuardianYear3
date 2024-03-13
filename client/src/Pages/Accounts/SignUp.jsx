@@ -10,8 +10,8 @@ const SignUp = () => {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const data = useActionData();
-  const { enqueueSnackbar } = useSnackbar();
 
+  // Gets the data from the form
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -30,12 +30,12 @@ const SignUp = () => {
 
   return (
     <>
-      <div className="flex min-h-screen bg-white">
-        <div className="w-8/12 bg-white">
+      <div className="flex min-h-screen bg-white dark:bg-gray-900">
+        <div className="w-8/12 bg-white dark:bg-gray-900">
           <img src={Image} alt="Animal Image" className="object-cover h-full" />
         </div>
-        <div className="bg-white shadow-md w-4/12 p-8">
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+        <div className="bg-white dark:bg-gray-900 shadow-md w-4/12 p-8">
+          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-300">
             Sign Up
           </h2>
 
@@ -45,7 +45,7 @@ const SignUp = () => {
                 <div>
                   <label
                     htmlFor="firstname"
-                    className="block text-sm font-medium leading-6 text-gray-900"
+                    className="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-300"
                   >
                     First Name
                   </label>
@@ -63,7 +63,7 @@ const SignUp = () => {
                 <div>
                   <label
                     htmlFor="lastname"
-                    className="block text-sm font-medium leading-6 text-gray-900"
+                    className="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-300"
                   >
                     Last Name
                   </label>
@@ -82,7 +82,7 @@ const SignUp = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-300"
                 >
                   Email address
                 </label>
@@ -102,7 +102,7 @@ const SignUp = () => {
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-300"
                 >
                   Password
                 </label>
@@ -131,7 +131,7 @@ const SignUp = () => {
               <div>
                 <button
                   type="submit"
-                  className="flex w-full justify-center rounded-md bg-emerald-500 hover:bg-emerald-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+                  className="flex w-full justify-center rounded-md bg-emerald-500 dark:bg-emerald-600 hover:bg-emerald-600 dark:hover:bg-emerald-800 text-white dark:text-gray-300 px-3 py-1.5 text-sm font-semibold leading-6  shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
                 >
                   Sign Up
                 </button>
@@ -142,7 +142,7 @@ const SignUp = () => {
               Already have an account?
               <Link
                 to="/log-in"
-                className="font-semibold text-indigo-600 hover:text-indigo-500"
+                className="font-semibold text-indigo-600 dark:text-indigo-700 hover:text-indigo-500 dark:hover:text-indigo-600"
               >
                 {" "}
                 Log In

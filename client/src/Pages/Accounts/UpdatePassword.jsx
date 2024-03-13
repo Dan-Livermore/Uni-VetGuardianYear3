@@ -16,6 +16,7 @@ const UpdatePassword = () => {
   const { enqueueSnackbar } = useSnackbar();
 
   useEffect(() => {
+    // Perform update API request on the logged in user's data.
     setLoading(true);
     axios
       .get(`http://localhost:1111/users/${id}`)
@@ -78,11 +79,11 @@ const UpdatePassword = () => {
   };
 
   return (
-    <div className="p-4">
-      <h1 className="text-3xl font-bold my-4 text-center">Edit Password</h1>
-      <div className="flex flex-col border-2 bg-emerald-200 border-emerald-300 rounded-xl w-[600px] p-4 mx-auto">
+    <div className="p-4 dark:bg-gray-900">
+      <h1 className="text-3xl font-bold my-4 text-center dark:text-gray-300">Edit Password</h1>
+      <div className="flex flex-col border-2 bg-emerald-200 dark:bg-emerald-600 border-emerald-300 dark:border-emerald-600 dark:text-gray-300 rounded-xl w-[600px] p-4 mx-auto">
         <div className="my-4">
-          <label className="text-l mr-4 text-grey-500"><span className="text-2xl mr-4 text-black font-bold">Enter New Password</span> Must be less than 20 characters</label>
+          <label className="text-l mr-4 text-grey-500"><span className="text-2xl mr-4 text-black dark:text-gray-300 font-bold">Enter New Password</span> Must be less than 20 characters</label>
           <input
             type="text"
             onChange={(e) => setPassword(e.target.value)}

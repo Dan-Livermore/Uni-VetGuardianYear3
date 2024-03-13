@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
 
 const UpdateUser = () => {
+  // Creates state variable for each element of the user collection
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstname, setFirstname] = useState("");
@@ -15,6 +16,7 @@ const UpdateUser = () => {
   const { id } = useParams();
   const { enqueueSnackbar } = useSnackbar();
 
+  // On load, get all the current data of the user
   useEffect(() => {
     setLoading(true);
     axios
@@ -34,6 +36,7 @@ const UpdateUser = () => {
       });
   }, []);
 
+  // Validates each section of the form
   const validateForm = () => {
     if (!emailIsValid(email)) {
       enqueueSnackbar("Invalid Email Address", { variant: "error" });
@@ -51,9 +54,11 @@ const UpdateUser = () => {
   };
 
   const emailIsValid = (email) => {
+    // Checks that the email contains an @ and a .
     return /\S+@\S+\.\S+/.test(email);
   };
 
+  // Sets arbituary limit of 20 characters for first and last name
   const firstnameIsValid = (firstname) => {
     return firstname && firstname.length <= 20;
   };
@@ -64,6 +69,7 @@ const UpdateUser = () => {
 
 
   const handleEditUser = () => {
+    // Checks the values are valid
     if (!validateForm()) {
       return;
     }
@@ -76,6 +82,7 @@ const UpdateUser = () => {
     };
     setLoading(true);
     axios
+    // Performs PUT request to update the user
       .put(`http://localhost:1111/users/${id}`, data)
       .then(() => {
         setLoading(false);
@@ -90,11 +97,11 @@ const UpdateUser = () => {
   };
 
   return (
-    <div className="p-4  min-h-screen">
-      <h1 className="text-3xl my-4 text-center">Edit User</h1>
-      <div className="flex flex-col border-2 border-emerald-300 bg-emerald-200 rounded-xl w-[600px] p-4 mx-auto">
+    <div className="p-4  min-h-screen dark:bg-gray-900 ">
+      <h1 className="text-3xl my-4 text-center dark:text-gray-300">Edit User</h1>
+      <div className="flex flex-col border-2 border-emerald-300 dark:border-emerald-600 bg-emerald-200 dark:bg-emerald-500 rounded-xl w-[600px] p-4 mx-auto">
         <div className="my-4">
-          <label className="text-xl mr-4 text-gray-500">Email Address</label>
+          <label className="text-xl mr-4 text-gray-500 dark:text-gray-300">Email Address</label>
           <input
             type="text"
             value={email}
@@ -103,7 +110,7 @@ const UpdateUser = () => {
           />
         </div>
         <div className="my-4">
-          <label className="text-xl mr-4 text-gray-500">First Name</label>
+          <label className="text-xl mr-4 text-gray-500 dark:text-gray-300">First Name</label>
           <input
             type="text"
             value={firstname}
@@ -112,7 +119,7 @@ const UpdateUser = () => {
           />
         </div>
         <div className="my-4">
-          <label className="text-xl mr-4 text-gray-500">Last Name</label>
+          <label className="text-xl mr-4 text-gray-500 dark:text-gray-300">Last Name</label>
           <input
             type="text"
             value={lastname}
@@ -121,7 +128,7 @@ const UpdateUser = () => {
           />
         </div>
         <button
-          className="p-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg m-8"
+          className="p-2 bg-emerald-500 dark:bg-emerald-600 hover:bg-emerald-600 dark:hover:bg-emerald-800 text-white dark:text-gray-300 rounded-lg m-8"
           onClick={handleEditUser}
         >
           Save

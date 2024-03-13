@@ -1,11 +1,9 @@
-import react, {useState, useEffect} from "react";
+import {useState, useEffect} from "react";
 import { createBrowserRouter,Route,createRoutesFromElements,RouterProvider } from "react-router-dom";
 import "./index.css";
 
 import RootLayout from "./structure/RootLayout";
 import PrivateRoutes from "./structure/PrivateRoutes";
-
-import ColourThemes from './Pages/ColourThemes.jsx';
 
 import ImageClassifier from "./pages/ImageClassifier";
 import PageNotFound from "./pages/PageNotFound";
@@ -53,11 +51,11 @@ import EditPred from "./Pages/DBInfo/Predictions/EditPred.jsx";
 import DeletePred from "./Pages/DBInfo/Predictions/DeletePred.jsx";
 
 import AddPet from "./Pages/Accounts/AddPet.jsx";
+import ColourThemes from './Pages/ColourThemes.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<RootLayout />}>
-
       <Route path="*" element={<PageNotFound />} />
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
@@ -85,13 +83,11 @@ const router = createBrowserRouter(
       <Route path="/result" element={<Result />} />
       <Route path="/image-classifier" element={<ImageClassifier />} />
 
-
       <Route element={<PrivateRoutes />}>
         <Route path="/account" element={<UserHome />} />
         <Route path="/update-account/:id" element={<UpdateUser />} />
         <Route path="/update-password/:id" element={<UpdatePassword />} />
         <Route path="/delete-account/:id" element={<DeleteAccount />} />
-
 
         <Route path="/create-pet/" element={<AddPet />} />
 
@@ -118,19 +114,6 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  const [theme, setTheme] = useState("light");
-
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [theme]);
-
-  const handleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  }
   return (
     <>
       <RouterProvider router={router} />

@@ -7,7 +7,7 @@ import SymptomDropdown from "../../components/SymptomChecker/SymptomDropdown";
 
 const Symptom1 = () => {
   return (
-    <div className='py-4 pr-4 pb-4 flex-1 w-1/3'>
+    <div className='py-4 pr-4 pb-4 flex-1 w-1/3 dark:text-gray-300'>
       <p>Select your pet's main symptom from the list:</p>
       <SymptomDropdown />
       </div>

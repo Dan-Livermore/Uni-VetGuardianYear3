@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { FaTimes } from "react-icons/fa";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import faviconImage from "../assets/Logo.jpeg";
+import { FaTimes } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -10,6 +10,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const checkTokenStatus = () => {
+      // Tokens are for authenticating account session and authorizing logins
       const token = localStorage.getItem("token");
       if (token) {
         setIsLoggedIn(true);
@@ -18,20 +19,22 @@ const Navbar = () => {
       }
     };
 
-    // Initial check when the component mounts
+    // Checks status on load
     checkTokenStatus();
 
-    // Polling interval (every half second in this case)
+    // Checks status every half second in this case
     const interval = setInterval(() => {
       checkTokenStatus();
     }, 500); // 500 milliseconds = 0.5 seconds
 
-    // Clean up the interval on component unmount
+    // Stops checking once finished
     return () => clearInterval(interval);
   }, []);
 
+  // Manage state of the mobile version
   const handleClick = () => setClick(!click);
 
+  // Mobile sections
   const content = (
     <div className="lg:hidden block absolute top-16 w-full left-0 right-0 bg-emerald-800 dark:bg-emerald-900 transition">
       <ul className="text-center text-2xl p-20">
@@ -56,7 +59,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="bg-emerald-900 dark:bg-emerald-950 text-white dark:text-slate-600">
+    <nav className="bg-emerald-900 dark:bg-emerald-950 text-white dark:text-gray-300">
       <div className="h-10vh flex justify-between z-50 lg:py-5 px-20 py-4">
         {/* Logo */}
         <div className="flex items-center flex-1">
@@ -74,7 +77,6 @@ const Navbar = () => {
         <div className="lg:flex md:flex lg: flex-1 items-center justify-end font-normal hidden">
           <div className="flex-10">
             <ul className="flex gap-8 mr-0 ml-auto text-xl font-bold">
-              {/* links for sections */}
               <Link to="/about">
                 <li className="hover:text-zinc-400 dark:hover:text-slate-500 transition border-b-0 cursor-pointer">
                   About
@@ -90,20 +92,18 @@ const Navbar = () => {
                   Pet Identifier
                 </li>
               </Link>
-              <li className="hover:text-zinc-40  dark:hover:text-slate-500 transition border-b-0 cursor-pointer">
                 <Link to="/account">
                   {isLoggedIn ? (
-                    <li>Account</li>
+                    <li className="hover:text-zinc-40  dark:hover:text-slate-500 transition border-b-0 cursor-pointer">Account</li>
                   ) : (
-                    <li>Log In</li>
+                    <li className="hover:text-zinc-40  dark:hover:text-slate-500 transition border-b-0 cursor-pointer">Log In</li>
                   )}
                 </Link>
-              </li>
             </ul>
           </div>
         </div>
 
-        {/* Mobile burger */}
+        {/* Burger */}
         <div>{click && content}</div>
         <button className="block sm:hidden transition" onClick={handleClick}>
           {click ? <FaTimes /> : <GiHamburgerMenu />}

@@ -87,11 +87,11 @@ const EditPred = () => {
     };
 
   return (
-    <div className="p-4 bg-emerald-50 min-h-screen">
+    <div className="p-4 bg-emerald-50 min-h-screen dark:bg-gray-900 dark:text-gray-300">
       <h1 className="text-3xl my-4 text-center">Edit Prediction</h1>
-      <div className="flex flex-col border-2 border-emerald-300 bg-emerald-200 rounded-xl w-[600px] p-4 mx-auto">
+      <div className="flex flex-col border-2 border-emerald-300 dark:border-emerald-500 bg-emerald-200 dark:bg-emerald-500  rounded-xl w-[600px] p-4 mx-auto">
         <div className="my-4">
-          <label className="text-2xl mr-4 text-black font-bold">Pet ID</label>
+          <label className="text-2xl mr-4 text-black dark:text-gray-300 font-bold">Pet ID</label>
           <input
             type="text"
             value={petID}
@@ -100,7 +100,7 @@ const EditPred = () => {
           />
         </div>
         <div className="my-4">
-          <label className="text-2xl mr-4 text-black font-bold">Time</label>
+          <label className="text-2xl mr-4 text-black dark:text-gray-300 font-bold">Time</label>
           <input
             type="text"
             onChange={(e) => setTime(e.target.value)}
@@ -108,7 +108,7 @@ const EditPred = () => {
           />
         </div>
         <div className="my-4">
-          <label className="text-l mr-4 text-grey-500"><span className="text-2xl mr-4 text-black font-bold">First Name</span> Must be less than 20 characters</label>
+          <label className="text-l mr-4 text-grey-500 dark:text-gray-300"><span className="text-2xl mr-4 text-black font-bold">First Name</span> Must be less than 20 characters</label>
           <input
             type="text"
             value={output}
@@ -117,7 +117,7 @@ const EditPred = () => {
           />
         </div>        
         <button
-          className="p-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg m-8"
+          className="p-2 bg-emerald-500 dark:bg-emerald-600 hover:bg-emerald-600 dark:hover:bg-emerald-800 text-white dark:text-gray-300 rounded-lg m-8"
           onClick={handleEditPred}
         >
           Save

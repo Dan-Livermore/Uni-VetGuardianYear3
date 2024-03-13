@@ -12,7 +12,7 @@ const Symptom2 = () => {
 
   return (
     <>
-      <div className="flex p-4">
+      <div className="flex p-4 dark:text-gray-300">
         <div>
           <p>Has your pet had a change in energy levels?</p>
           <button onClick={() => handleButtonClick('Yes')} id="Yes" type="submit"

@@ -46,9 +46,9 @@ const CreateUser = () => {
   };
 
   return (
-    <div className="p-4  min-h-screen">
-      <h1 className="text-3xl text-bold my-4 text-center">Create User</h1>
-      <div className="flex flex-col border-2 bg-emerald-200 border-emerald-300 rounded-xl w-[600px] p-4 mx-auto">
+    <div className="p-4  min-h-screen dark:bg-gray-900">
+      <h1 className="text-3xl text-bold my-4 text-center dark:text-gray-300">Create User</h1>
+      <div className="flex flex-col border-2 bg-emerald-200 dark:bg-emerald-400 border-emerald-300 dark:border-emerald-500 rounded-xl w-[600px] p-4 mx-auto">
         <div className="my-4">
           <label className="text-2xl mr-4 font-bold text-black">
             Email (example@demo.co.uk)

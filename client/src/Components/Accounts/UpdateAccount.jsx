@@ -9,8 +9,8 @@ const UpdateAccount = () => {
 
   useEffect(() => {
     setLoading(true);
+    // Checks that the user is logged in.
     const token = localStorage.getItem("token");
-
     if (token) {
       try {
         const id = jwtDecode(token).userId;
@@ -33,7 +33,7 @@ const UpdateAccount = () => {
   return (
     <Link to={`/update-account/${user._id}`}>
       <div className="flex justify-center">
-        <button className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-center text-xl py-2 px-4 rounded-md my-4 w-2/3">
+        <button className="bg-emerald-500 dark:bg-emerald-700 hover:bg-emerald-600 dark:hover:bg-emerald-800 text-white dark:text-gray-300 font-bold text-center text-xl py-2 px-4 rounded-md my-4 w-2/3">
           Change Details
         </button>
       </div>

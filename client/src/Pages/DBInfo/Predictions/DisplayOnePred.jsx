@@ -23,8 +23,8 @@ const DisplayOnePred = () => {
   }, []);
 
   return (
-    <div className="p-4  min-h-screen">
-      <h1 className="text-3xl text-bold my-4 text-center text-black ">Prediction Information</h1>
+    <div className="p-4  min-h-screen dark:bg-gray-900">
+      <h1 className="text-3xl text-bold my-4 text-center text-black dark:text-gray-300">Prediction Information</h1>
       <div className="flex flex-col border-2 bg-emerald-200 border-emerald-300 rounded-xl w-[800px] p-4 mx-auto">
           <div className='my-4'>
             <span className='text-xl mr-4 font-bold text-black'>Object ID:</span>

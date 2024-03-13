@@ -16,6 +16,7 @@ const UserHome = () => {
 
   useEffect(() => {
     setLoading(true);
+    // Check the user is logged in
     const token = localStorage.getItem("token");
     if (token) {
       try {
@@ -41,9 +42,9 @@ const UserHome = () => {
 
   return (
     <>
-      <div className="flex h-full flex-col justify-center items-center px-6 pt-12 lg:px-8 bg-emerald-50">
-        <div className="bg-white shadow-md rounded-md p-6 w-7/12 mt-1 md:mt-0">
-          <div className="mx-auto items-center">
+      <div className="flex h-full flex-col justify-center items-center px-6 pt-12 lg:px-8 bg-emerald-50 dark:bg-gray-900">
+        <div className="bg-white dark:bg-gray-900 shadow-md rounded-md p-6 w-7/12 mt-1 md:mt-0">
+          <div className="mx-auto items-center dark:text-gray-300">
             {loading ? (
               <h2 className="text-3xl mb-6 font-bold text-center">
                 Loading...
