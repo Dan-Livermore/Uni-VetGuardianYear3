@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import faviconImage from "../assets/Logo.jpeg";
 import { FaTimes } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
+import ThemeSwitcher from "../themes/ThemeSwitcher";
+import ThemeSwitcherMobile from "../themes/ThemeSwitcherMobile";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -39,21 +41,32 @@ const Navbar = () => {
     <div className="lg:hidden block absolute top-16 w-full left-0 right-0 bg-emerald-800 dark:bg-emerald-900 transition">
       <ul className="text-center text-2xl p-20">
         <Link to="/about">
-          <li className="hover:text-zinc-400 transition my-2 py-2 border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">About</li>
+          <li className="hover:text-zinc-400 transition my-2 py-2 border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">
+            About
+          </li>
         </Link>
         <Link to="/symptom-checker">
-          <li className="hover:text-zinc-400 transition my-2 py-2 border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">Symptom Suggester</li>
+          <li className="hover:text-zinc-400 transition my-2 py-2 border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">
+            Symptom Suggester
+          </li>
         </Link>
         <Link to="/image-classifier">
-          <li className="hover:text-zinc-400 transition my-2 py-2 border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">Pet Identifier</li>
+          <li className="hover:text-zinc-400 transition my-2 py-2 border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer">
+            Pet Identifier
+          </li>
         </Link>
         <Link to="/account">
-        {isLoggedIn ? 
-        <li className="my-2 py-2 border-b border-emerald-800 dark:border-emerald-900 hover:border-emerald-800 hover:text-zinc-400 hover:rounded cursor-pointer">Account</li>
-         : 
-         <li className="my-2 py-2 border-b border-emerald-800 dark:border-emerald-900 hover:border-emerald-800 hover:text-zinc-400 hover:rounded cursor-pointer">Log In</li>
-         }
+          {isLoggedIn ? (
+            <li className="my-2 py-2 border-b border-emerald-800 dark:border-emerald-900 hover:border-emerald-800 hover:text-zinc-400 hover:rounded cursor-pointer">
+              Account
+            </li>
+          ) : (
+            <li className="my-2 py-2 border-b border-emerald-800 dark:border-emerald-900 hover:border-emerald-800 hover:text-zinc-400 hover:rounded cursor-pointer">
+              Log In
+            </li>
+          )}
         </Link>
+        <ThemeSwitcherMobile />
       </ul>
     </div>
   );
@@ -65,7 +78,11 @@ const Navbar = () => {
         <div className="flex items-center flex-1">
           <span className="text-3xl font-bold items-center">
             <Link to="/about">
-              <img src={faviconImage} alt="Vet Guardian Logo" className="logo-img inline-block h-8 w-auto mr-2" />
+              <img
+                src={faviconImage}
+                alt="Vet Guardian Logo"
+                className="logo-img inline-block h-8 w-auto mr-2"
+              />
               <p className="hover:text-zinc-400 transition border-b-0 border-emerald-600 hover:border-zinc-400 cursor-pointer inline-block">
                 Vet Guardian
               </p>
@@ -92,13 +109,18 @@ const Navbar = () => {
                   Pet Identifier
                 </li>
               </Link>
-                <Link to="/account">
-                  {isLoggedIn ? (
-                    <li className="hover:text-zinc-40  dark:hover:text-slate-500 transition border-b-0 cursor-pointer">Account</li>
-                  ) : (
-                    <li className="hover:text-zinc-40  dark:hover:text-slate-500 transition border-b-0 cursor-pointer">Log In</li>
-                  )}
-                </Link>
+              <ThemeSwitcher />
+              <Link to="/account">
+                {isLoggedIn ? (
+                  <li className="hover:text-zinc-40  dark:hover:text-slate-500 transition border-b-0 cursor-pointer">
+                    Account
+                  </li>
+                ) : (
+                  <li className="hover:text-zinc-40  dark:hover:text-slate-500 transition border-b-0 cursor-pointer">
+                    Log In
+                  </li>
+                )}
+              </Link>
             </ul>
           </div>
         </div>

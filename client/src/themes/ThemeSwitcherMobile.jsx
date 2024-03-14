@@ -31,13 +31,17 @@ const ThemeSwitcher = () => {
   };
 
   return (
-    <button onClick={toggleTheme} className='bg-emerald-900 dark:bg-emerald-950 rounded-lg text-white dark:text-gray-300 h-10 flex items-center justify-center px-4'>
-      <div className="flex items-center justify-center">
-        <FaSun className={`w-6 h-6 text-${theme === 'light' ? 'white' : 'gray'}-500 mr-2`} />
-        <p className='pr-2'>/</p>
-        <FaMoon className={`w-6 h-6 text-${theme === 'dark' ? 'white' : 'gray'}-500`} />
-      </div>
-    </button>    
+  <div className='lg:flex md:flex lg:flex-1 items-center justify-end font-normal'>
+    <div className="flex items-center justify-center">
+      <button onClick={toggleTheme} className='bg-emerald-800 dark:bg-emerald-900 border-emerald-800 rounded-lg text-white dark:text-gray-300 h-10 flex items-center justify-center px-4'>
+        <div className="flex items-center justify-center">
+          <FaSun className={`w-6 h-6 text-${theme === 'light' ? 'white' : 'gray'}-500 mr-2`} />
+          <p className='pr-2'>/</p>
+          <FaMoon className={`w-6 h-6 text-${theme === 'dark' ? 'white' : 'gray'}-500`} />
+        </div>
+      </button>
+    </div>
+  </div>
   );
 };
 

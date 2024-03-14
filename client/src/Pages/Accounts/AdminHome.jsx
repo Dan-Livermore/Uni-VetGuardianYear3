@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AdminHome = () => {
   return (
     <>
-      <div className="flex flex-1 flex-col justify-center items-center px-6 py-12 lg:px-8 dark:bg-gray-900">
+      <div className="flex flex-1 flex-col justify-center items-center px-6 py-12 lg:px-8 bg-emerald-50 dark:bg-gray-900">
         <div className="bg-white dark:bg-gray-900 shadow-md rounded-md p-6 max-w-screen-md w-full mx-auto mt-1 md:mt-0">
           <h1 className="text-center text-2xl font-bold dark:text-gray-300">Manage Data</h1>
           <br />

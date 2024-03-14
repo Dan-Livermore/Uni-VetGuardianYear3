@@ -129,7 +129,7 @@ const PetsList = () => {
               </span>
               {/* For each pet, buttons that lead to their details and records from the symptom suggester */}
               <div className="flex items-center">
-                <Link to={`/pets/details/${pet._id}`}>
+                <Link to={`pets/read/${pet._id}`}>
                   <button className="bg-emerald-500 hover:bg-emerald-600 dark:bg-emerald-700 dark:hover:bg-emerald-800 text-white dark:text-gray-300 px-4 py-2 rounded">
                     View Details
                   </button>
