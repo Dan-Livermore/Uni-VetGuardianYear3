@@ -8,6 +8,7 @@ const LogIn = () => {
   const [password, setPassword] = useState("");
   const data = useActionData();
 
+  // Get the data from the fields in the form.
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -18,7 +19,7 @@ const LogIn = () => {
 
   return (
     <>
-      <div className="flex min-h-screen bg-white">
+      <div className="flex min-h-screen bg-white dark:bg-gray-900">
         <div className="w-8/12 bg-white">
           <img
             src={Image}
@@ -26,8 +27,8 @@ const LogIn = () => {
             className="object-cover h-full"
           />
         </div>
-        <div className="bg-white shadow-md w-4/12 p-8 pt-20">
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+        <div className="bg-white dark:bg-gray-900  shadow-md w-4/12 p-8 pt-20">
+          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-300">
             Sign In
           </h2>
 
@@ -36,7 +37,7 @@ const LogIn = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-300"
                 >
                   Email address
                 </label>
@@ -57,13 +58,13 @@ const LogIn = () => {
                 <div className="flex items-center justify-between">
                   <label
                     htmlFor="password"
-                    className="block text-sm font-medium leading-6 text-gray-900"
+                    className="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-300"
                   >
                     Password
                   </label>
                   <div className="text-sm">
                     <Link to="/forgot-password">
-                      <p className="font-semibold text-indigo-600 hover:text-indigo-500">
+                      <p className="font-semibold text-indigo-600 dark:text-indigo-700 hover:text-indigo-500 dark:hover:text-indigo-800">
                         Forgot password?
                       </p>
                     </Link>
@@ -82,7 +83,7 @@ const LogIn = () => {
 
               {data && data.error && (
                 <div
-                  className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+                  className="bg-red-100 dark:bg-red-500 border border-red-400 dark:border-red-700 text-red-700 dark:text-white px-4 py-3 rounded relative"
                   role="alert"
                 >
                   <strong className="font-bold">Error! </strong>
@@ -93,18 +94,18 @@ const LogIn = () => {
               <div>
                 <button
                   type="submit"
-                  className="flex w-full justify-center rounded-md bg-emerald-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-emerald-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+                  className="flex w-full bg-emerald-500 dark:bg-emerald-600 hover:bg-emerald-600 dark:hover:bg-emerald-800 text-white dark:text-gray-300 justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
                 >
                   Sign in
                 </button>
               </div>
             </Form>
 
-            <p className="mt-10 text-center text-sm text-gray-500 pb-12">
+            <p className="mt-10 text-center text-sm text-gray-500 dark:text-gray-300 pb-12">
               Don't have an account?
               <Link
                 to="/sign-up"
-                className="font-semibold text-indigo-600 hover:text-indigo-500"
+                className="font-semibold text-indigo-600 dark:text-indigo-700 hover:text-indigo-500 dark:hover:text-indigo-800"
               >
                 {""} Sign up today
               </Link>
@@ -119,12 +120,14 @@ const LogIn = () => {
 export default LogIn;
 
 export const HandleLogIn = async ({ request }) => {
+  // Get the data from the form
   const data = await request.formData();
 
   const email = data.get("email");
   const password = data.get("password");
 
   console.log(email, password);
+  // Send the data to the server to validate password using bcrypt
   try {
     const response = await axios.post("http://localhost:1111/login", {
       email,
@@ -135,7 +138,7 @@ export const HandleLogIn = async ({ request }) => {
     if (response.data.token) {
       // Store the token in local storage or session storage
       localStorage.setItem("token", response.data.token);
-      // Redirect to account page or perform other actions
+      // Redirect to account page
       return redirect("/account");
     } else {
       return { error: error.response.data.error || 'An error occurred.' };

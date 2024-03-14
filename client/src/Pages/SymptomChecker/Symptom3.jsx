@@ -4,7 +4,7 @@ import Result from './Result';
 
 const Symptom3 = () => {
   const [selectedButton, setSelectedButton] = useState(null);
-  const [showElement, setShowElement] = useState(false); // Define showElement state
+  const [showElement, setShowElement] = useState(false); 
 
   const handleButtonClick = (id) => {
     setSelectedButton(id);
@@ -13,7 +13,7 @@ const Symptom3 = () => {
 
   return (
     <>
-      <div className="flex ">
+      <div className="flex dark:text-gray-300">
         <div>
           <p>Has your pet experienced any changes in appetite or water consumption recently?</p>
           <Link to="/result">

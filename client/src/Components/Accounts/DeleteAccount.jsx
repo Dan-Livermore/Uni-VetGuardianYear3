@@ -9,8 +9,8 @@ const DeleteAccount = () => {
 
   useEffect(() => {
     setLoading(true);
+    // Checks that the user is logged in and is allowed to access the data for other users.
     const token = localStorage.getItem("token");
-
     if (token) {
       try {
         const id = jwtDecode(token).userId;
@@ -33,7 +33,7 @@ const DeleteAccount = () => {
   return (
     <Link to={`/delete-account/${user._id}`}>
       <div className="flex justify-center">
-        <button className="bg-red-500 hover:bg-red-600 text-white font-bold text-center text-xl py-2 px-4 rounded-md my-4 w-2/3">
+        <button className="bg-red-500 dark:bg-red-700 hover:bg-red-600 dark:hover:bg-red-800 text-white dark:text-gray-300 font-bold text-center text-xl py-2 px-4 rounded-md my-4 w-2/3">
           Delete Account
         </button>
       </div>

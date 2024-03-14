@@ -52,21 +52,21 @@ const DeletePred = () => {
   }
 
   return (
-    <div className="p-4  min-h-screen">
-      <h1 className="text-3xl my-4 font-bold text-center">Delete Prediction</h1>
-      <div className="flex flex-col items-center bg-emerald-200 border-2 border-emerald-300 rounded-xl w-[600px] p-8 mx-auto">
+    <div className="p-4  min-h-screen dark:bg-gray-900">
+      <h1 className="text-3xl my-4 font-bold text-center dark:text-gray-300">Delete Prediction</h1>
+      <div className="flex flex-col items-center dark:text-gray-300 bg-emerald-200 border-2 border-emerald-300 rounded-xl w-[600px] p-8 mx-auto">
         <h3 className="text-2xl">
           Are you sure you want to delete this account?
         </h3>
 
         <button
-          className="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-full"
+          className="flex-1 bg-red-500 dark:bg-red-600 hover:bg-red-600 dark:hover:bg-red-800 text-white dark:text-gray-300 font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-full"
           onClick={handleDeletePrediction}
         >
           Yes. Delete it
         </button>
         <button
-          className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-full"
+          className="flex-1 bg-emerald-500 dark:bg-emerald-600 hover:bg-emerald-600 dark:hover:bg-emerald-800 text-white dark:text-gray-300 font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-full"
           onClick={handleCancelDelete}
         >
           No. Go Back

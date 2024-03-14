@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const Result = () => {
   return (
     <>
-    <div className="p-4  h-screen min-h-screen">
+    <div className="p-4  h-screen min-h-screen dark:text-gray-300 dark:bg-gray-900">
       <div className="p-4 flex-1">
         <h1 className="p-2 text-4xl font-bold mb-4">Illness Prediction</h1>
         <p className='p-2 text-xl'> You're pet might have: <b>ADD ISSUE</b>.</p>

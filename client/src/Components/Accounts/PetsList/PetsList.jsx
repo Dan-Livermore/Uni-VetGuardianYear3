@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
+// Icons for pets
 import { FaTrash } from "react-icons/fa";
 
 import { FaBug } from "react-icons/fa";
@@ -26,8 +27,10 @@ const PetsList = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  // Gets pets and users from the database.
   useEffect(() => {
     setLoading(true);
+    // Checks that the user is logged in and is allowed to access the data.
     const token = localStorage.getItem("token");
     if (token) {
       try {
@@ -56,6 +59,7 @@ const PetsList = () => {
     }
   }, []);
 
+  // Combine the 2 collections for the data that will be displayed.
   const usersPets = pets.map((pet, index) => {
     const owner = users.find((user) => user._id === pet.ownerID);
     return {
@@ -71,14 +75,16 @@ const PetsList = () => {
   });
 
   return (
-    <div className="shadow-xl p-8 mx-auto my-16 bg-white">
+    <div className="shadow-xl p-8 mx-auto my-16 bg-white dark:bg-gray-900 dark:text-gray-300">
       <h1 className="text-3xl mb-6 font-bold text-center">Your Pets</h1>
       <ul>
+        {/* If the user does not have any connected pets to their account display no pets */}
         {usersPets.length === 0 ? (
-          <p className="text-md bg-grey-700 text-center">
+          <p className="text-md bg-grey-700 dark:bg-gray-300 text-center">
             You have no pets registered to this account.
           </p>
         ) : (
+          //Else display all pets owned by the logged in user
           usersPets.map((pet, index) => (
             <li
               key={pet._id}
@@ -86,6 +92,7 @@ const PetsList = () => {
                 index !== 0 && "border-t pt-4"
               }`}
             >
+              {/* Get the type of pet and display the corresponding icon */}
               {pet.animal === "Bug" ? (
                 <FaBug size={40} />
               ) : pet.animal === "Cat" ? (
@@ -120,21 +127,22 @@ const PetsList = () => {
               <span>
                 {pet.name} {pet.lastname}
               </span>
+              {/* For each pet, buttons that lead to their details and records from the symptom suggester */}
               <div className="flex items-center">
-                <Link to={`/pets/details/${pet._id}`}>
-                  <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded">
+                <Link to={`pets/read/${pet._id}`}>
+                  <button className="bg-emerald-500 hover:bg-emerald-600 dark:bg-emerald-700 dark:hover:bg-emerald-800 text-white dark:text-gray-300 px-4 py-2 rounded">
                     View Details
                   </button>
                 </Link>
                 <div className="border-r mx-1 h-6"/>
                 <Link to={`/records/pet/${pet._id}`}>
-                  <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded">
+                  <button className="bg-emerald-500 hover:bg-emerald-600 dark:bg-emerald-700 dark:hover:bg-emerald-800 text-white dark:text-gray-300 px-4 py-2 rounded">
                     Previous Records
                   </button>
                 </Link>
                 <div className="border-r mx-1 h-6"/>
                 <Link to={`/pets/remove/${pet._id}`}>
-                  <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-3 rounded">
+                  <button className="bg-red-500 hover:bg-red-600 dark:bg-red-700 dark:hover:bg-red-800 text-white dark:text-gray-300 px-4 py-3 rounded">
                     <FaTrash />
                   </button>
                 </Link>

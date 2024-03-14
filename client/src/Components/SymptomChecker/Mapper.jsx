@@ -23,10 +23,12 @@ const Mapper = () => {
 
   const [hoveredArea, setHoveredArea] = useState(null);
 
+  // Fill when hovering.
   const enterArea = area => {
     setHoveredArea(area);
   };
 
+  // Remove fill when not hovered.
   const leaveArea = () => {
     setHoveredArea(null);
   };

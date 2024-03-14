@@ -39,20 +39,21 @@ const Dog = () => {
 // href:"./symptom-checker/dog/tail",
 
 const enterArea = area => {
+  // If the mouse is hovering over that section display it red.
     if (selectedArea != null && !selectedArea.includes(area.name)) {
         setHoveredArea(area);
         }
     };
 
-    // If there is nothing selected and the current area isnt selected
 
 const leaveArea = () => {
+  // Remove fill when not hovered or clicked off.
     if (!selectedArea == null){
         setHoveredArea(null);
         }
     };
-    // remove if not selected
 
+    // Fill when selected.
     const selectArea = (area) => {
       if (selectedArea === area) {
         setSelectedArea(null);
@@ -61,10 +62,13 @@ const leaveArea = () => {
         setHoveredArea(area);
       }
     };
+
+
     // Need to find how to keep the fill colour when not hovered
 
   return (
     <div className='flex'>
+      {/* Display the image with the mapped areas. */}
       <ImageMapper
         src={IMGURL}
         map={MAP}

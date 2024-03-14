@@ -4,7 +4,7 @@ const Authenticator = createContext({});
 
 export const AuthProvider = ({ children }) => {
     const [auth, setAuth] = useState({});
-
+    // Checks that the user has the required token for being authenticated.
     return (
         <Authenticator.Provider value={{ auth, setAuth}}>
             {children}

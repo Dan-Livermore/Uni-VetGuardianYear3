@@ -3,27 +3,3 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-
-:root {
-  --primary-color-light: #007bff;
-  --secondary-color-light: #6c757d;
-  --background-color-light: #f8f9fa;
-
-  --primary-color-dark: #1f6feb;
-  --secondary-color-dark: #adb5bd;
-  --background-color-dark: #212529;
-}
-
-[data-theme="light"] {
-  --primary-color: var(--primary-color-light);
-  --secondary-color: var(--secondary-color-light);
-  --background-color: var(--background-color-light);
-}
-
-[data-theme="dark"] {
-  --primary-color: var(--primary-color-dark);
-  --secondary-color: var(--secondary-color-dark);
-  --background-color: var(--background-color-dark);
-}
-
-/* Define other styles using the theme colors */

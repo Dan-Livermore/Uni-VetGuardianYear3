@@ -1,10 +1,9 @@
+import {useState, useEffect} from "react";
 import { createBrowserRouter,Route,createRoutesFromElements,RouterProvider } from "react-router-dom";
 import "./index.css";
 
 import RootLayout from "./structure/RootLayout";
 import PrivateRoutes from "./structure/PrivateRoutes";
-
-import ColourThemes from './structure/ColourThemes.jsx';
 
 import ImageClassifier from "./pages/ImageClassifier";
 import PageNotFound from "./pages/PageNotFound";
@@ -30,49 +29,40 @@ import DeleteAccount from "./Pages/Accounts/DeleteAccount.jsx";
 import SymptomChecker from "./pages/SymptomChecker/SymptomChecker.jsx";
 import Result from "./pages/SymptomChecker/Result";
 
-// DB Info Pages
+// DB User Pages
 import DisplayUsers from "./Pages/DBInfo/Users/DisplayUsers.jsx";
 import CreateUser from "./Pages/DBInfo/Users/CreateUser.jsx"; 
 import DisplayOneUser from "./Pages/DBInfo/Users/DisplayOneUser.jsx";
 import EditUser from "./Pages/DBInfo/Users/EditUser.jsx";
 import DeleteUser from "./Pages/DBInfo/Users/DeleteUser.jsx";
 
-// DB Info Pages
+// DB Pet Pages
 import DisplayPets from "./pages/DBInfo/Pets/DisplayPets.jsx";
 import CreatePet from "./Pages/DBInfo/Pets/CreatePet.jsx";
 import DisplayOnePet from "./Pages/DBInfo/Pets/DisplayOnePet.jsx";
 import EditPet from "./Pages/DBInfo/Pets/EditPet.jsx";
 import DeletePet from "./Pages/DBInfo/Pets/DeletePet.jsx";
 
-// DB Info Pages
+// DB Pet Records Pages
 import DisplayPred from "./pages/DBInfo/Predictions/DisplayPred.jsx";
 import CreatePred from "./Pages/DBInfo/Predictions/CreatePred.jsx";
 import DisplayOnePred from "./Pages/DBInfo/Predictions/DisplayOnePred.jsx";
 import EditPred from "./Pages/DBInfo/Predictions/EditPred.jsx";
 import DeletePred from "./Pages/DBInfo/Predictions/DeletePred.jsx";
 
-
-
 import AddPet from "./Pages/Accounts/AddPet.jsx";
+import ColourThemes from './Pages/ColourThemes.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<RootLayout />}>
-
-
-
-      
-      <Route path="/colour-themes" element={<ColourThemes />} />
-
-
-
-
       <Route path="*" element={<PageNotFound />} />
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/services" element={<Services />} />
       <Route path="/terms" element={<Terms />} />
+      <Route path="/colour-themes" element={<ColourThemes />} />
 
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/password-request-sent" element={<PasswordRequestSent />} />
@@ -93,13 +83,11 @@ const router = createBrowserRouter(
       <Route path="/result" element={<Result />} />
       <Route path="/image-classifier" element={<ImageClassifier />} />
 
-
       <Route element={<PrivateRoutes />}>
         <Route path="/account" element={<UserHome />} />
         <Route path="/update-account/:id" element={<UpdateUser />} />
         <Route path="/update-password/:id" element={<UpdatePassword />} />
         <Route path="/delete-account/:id" element={<DeleteAccount />} />
-
 
         <Route path="/create-pet/" element={<AddPet />} />
 

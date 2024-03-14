@@ -16,7 +16,7 @@ const PasswordRequestSent = () => {
         </p>
         <br />
         <Link to="/log-in">
-          <button class="w-full py-3 font-medium text-white bg-emerald-500 hover:bg-emerald-600 rounded-lg hover:shadow inline-flex space-x-2 items-center justify-center">
+          <button class="w-full py-3 font-medium bg-emerald-500 dark:bg-emerald-600 hover:bg-emerald-600 dark:hover:bg-emerald-800 text-white dark:text-gray-300 rounded-lg hover:shadow inline-flex space-x-2 items-center justify-center">
             <span>Log In</span>
           </button>
         </Link>

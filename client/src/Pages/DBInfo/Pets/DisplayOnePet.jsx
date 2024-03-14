@@ -5,11 +5,11 @@ import BackButton from '../../../components/DBInfo/BackButton';
 
 const DisplayOnePet = () => {
   const [pet, setPet] = useState({});
-  // const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
+    // Get the pet with the given id.
     setLoading(true);
         axios
           .get(`http://localhost:1111/pets/${id}`)
@@ -51,8 +51,9 @@ const DisplayOnePet = () => {
   // }
 
   return (
-    <div className="p-4  min-h-screen">
-      <h1 className="text-3xl text-bold my-4 text-center text-black ">Pet Information</h1>
+    // Display the information of the pet.
+    <div className="p-4  min-h-screen dark:bg-gray-900">
+      <h1 className="text-3xl text-bold my-4 text-center text-black dark:text-gray-300">Pet Information</h1>
       <div className="flex flex-col border-2 bg-emerald-200 border-emerald-300 rounded-xl w-[800px] p-4 mx-auto">
           <div>
             {/* <div className='my-4'>
@@ -79,6 +80,7 @@ const DisplayOnePet = () => {
               <span className='text-xl mr-4 font-bold text-black'>Gender:</span>
               <span>{pet.gender}</span>
             </div>
+            {/* Convert the dates into strings */}
             <div className='my-4'>
               <span className='text-xl mr-4 font-bold text-black'>Date of Birth:</span>
               <span>{new Date(pet.dob).toString()}</span>
