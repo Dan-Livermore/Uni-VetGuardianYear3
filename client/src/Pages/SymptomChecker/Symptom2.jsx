@@ -14,7 +14,7 @@ const Symptom2 = () => {
     <>
       <div className="flex p-4 dark:text-gray-300">
         <div>
-          <p>Has your pet had a change in energy levels?</p>
+          <p>Can your dog stand up and move around?</p>
           <button onClick={() => handleButtonClick('Yes')} id="Yes" type="submit"
             className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xl text-center py-2 px-4 rounded-md mt-2 mr-4 w-24">
             Yes

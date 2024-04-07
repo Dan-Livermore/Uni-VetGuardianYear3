@@ -54,10 +54,10 @@ const UserHome = () => {
                 {user.firstname} {user.lastname}'s Account
               </h2>
             )}
-            <br />
+            {/* <br />
             <UpdateAccount />
             <UpdatePassword />
-            <DeleteAccount />
+            <DeleteAccount /> */}
             <PetsList />
             <AddPet />
             <LogOut />
