@@ -6,7 +6,6 @@ on:
         - main
         - ReactTesting
   
-
 jobs:
   build-and-test:
     name: Install Dependencies and Run Tests
@@ -22,5 +21,5 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
-    - name: Run Tests
-      run: npm run test
+    - name: Run React Tests
+      run: cd client && vitest 

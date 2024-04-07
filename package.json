@@ -4,7 +4,8 @@
   "description": "For Pet owners whose pet is unwell, Vet Guardian is a web application that allows the owners to self-diagnose their pet’s problems before contacting their vet.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 50000 ./server/tests/ConnectDatabase.test.js ./server/tests -exit"
+    "test": "mocha --timeout 50000 ./server/tests/ConnectDatabase.test.js ./server/tests -exit",
+    "reacttests": "cd client && vitest" 
   },
   "keywords": [],
   "author": "",
