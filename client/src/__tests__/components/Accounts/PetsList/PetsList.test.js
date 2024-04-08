@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import PetsList from '../../../../components/Accounts/PetsList/PetsList';
+import PetsList from '../../../../Components/Accounts/PetsList/PetsList';
 
 
 test('Renders PetsList Component', () => {

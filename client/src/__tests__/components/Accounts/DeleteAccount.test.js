@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import DeleteAccount from '../../../components/accounts/DeleteAccount';
+import DeleteAccount from '../../../Components/accounts/DeleteAccount';
 
 
 test('Renders DeleteAccount Component', () => {

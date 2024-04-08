@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import SymptomDropdown from '../../../components/SymptomChecker/SymptomDropdown';
+import SymptomDropdown from '../../../Components/SymptomChecker/SymptomDropdown';
 
 
 test('Renders SymptomDropdown Component', () => {
