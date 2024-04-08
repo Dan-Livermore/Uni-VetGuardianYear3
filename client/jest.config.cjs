@@ -3,6 +3,7 @@ module.exports = {
   setupFilesAfterEnv: ["<rootDir>/setupTests.cjs"],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/src/__mocks__/imageMock.js',
-    '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+    '^/client/src/(.*)$': '<rootDir>/src/$1',
   },
 };
