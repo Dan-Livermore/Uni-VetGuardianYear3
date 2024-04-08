@@ -4,16 +4,23 @@
   "description": "For Pet owners whose pet is unwell, Vet Guardian is a web application that allows the owners to self-diagnose their pet’s problems before contacting their vet.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 50000 ./server/tests/ConnectDatabase.test.js ./server/tests -exit"
+    "test-server": "mocha --timeout 50000 ./server/tests/ConnectDatabase.test.js ./server/tests -exit",
+    "test-react": "cd client && jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/preset-env": "^7.24.4",
+    "@babel/preset-react": "^7.24.1",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.2",
+    "babel-jest": "^29.7.0",
     "bcrypt": "^5.1.1",
     "chai": "^5.0.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "jest": "^29.7.0",
     "jsonwebtoken": "^9.0.2",
     "mocha": "^10.3.0",
     "mongodb": "^6.3.0",
