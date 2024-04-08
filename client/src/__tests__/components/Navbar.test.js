@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Navbar from '../../components/Navbar';
+import Navbar from '../../Components/Navbar';
 
 // import '@testing-library/jest-dom/extend-expect';
 // The rest of your test code follows
