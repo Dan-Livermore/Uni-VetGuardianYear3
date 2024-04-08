@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - Jest
 
 jobs:
   test:
@@ -28,6 +29,8 @@ jobs:
         run: echo "export MONGODB_URI='${{ secrets.MONGODB_URI }}'" >> $GITHUB_ENV
         shell: bash
 
-      - name: Run tests
-        run: npm test
-        working-directory: ./server
+      - name: Run React Tests
+        run: npm run test-react
+
+      - name: Run Server Tests
+        run: npm run test-server
