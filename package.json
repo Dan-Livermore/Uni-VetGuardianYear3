@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
     "bcrypt": "^5.1.1",
     "chai": "^5.0.0",
     "cors": "^2.8.5",
