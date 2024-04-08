@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import UpdatePassword from '../../../Components/accounts/UpdatePassword';
+import UpdatePassword from '../../../Components/Accounts/UpdatePassword';
 
 
 test('Renders UpdatePassword Component', () => {

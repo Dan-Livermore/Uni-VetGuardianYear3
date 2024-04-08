@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import UpdateAccount from '../../../Components/accounts/UpdateAccount';
+import UpdateAccount from '../../../Components/Accounts/UpdateAccount';
 
 
 test('Renders UpdateAccount Component', () => {

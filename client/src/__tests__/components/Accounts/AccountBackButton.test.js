@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import AccountBackButton from '../../../Components/accounts/AccountBackButton';
+import AccountBackButton from '../../../Components/Accounts/AccountBackButton';
 
 
 test('Renders AccountBackButton Component', () => {
