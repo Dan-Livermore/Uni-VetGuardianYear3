@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "../assets/PageNotFound.webp";
 import ReturnHomeButton from "../components/PageNotFound/ReturnHomeButton";
 
