@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ImageMapper from 'react-img-mapper';
 import IMGURL from "../../assets/SymptomChecker/Dog.avif";
-import Symptom2 from "../../pages/SymptomChecker/Symptom2";
+import Symptom2 from "../../Pages/SymptomChecker/Symptom2";
 
 const Dog = () => {
     const [hoveredArea, setHoveredArea] = useState(null);

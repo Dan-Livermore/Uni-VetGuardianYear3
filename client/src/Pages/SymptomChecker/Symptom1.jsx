@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import Symptom2 from "./Symptom2";
 
-import SymptomDropdown from "../../components/SymptomChecker/SymptomDropdown";
+import SymptomDropdown from "../../Components/SymptomChecker/SymptomDropdown";
 
 const Symptom1 = () => {
   return (

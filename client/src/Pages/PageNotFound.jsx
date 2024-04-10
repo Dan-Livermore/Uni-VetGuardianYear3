@@ -1,5 +1,6 @@
+import React from "react";
 import Image from "../assets/PageNotFound.webp";
-import ReturnHomeButton from "../components/PageNotFound/ReturnHomeButton";
+import ReturnHomeButton from "../Components/PageNotFound/ReturnHomeButton";
 
 const PageNotFound = () => {
   return (
