@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import Yes3 from './Yes3';
-import No3 from './No3';
+import Yes9 from './Yes9';
+import No9 from './No9';
 
-const No1 = () => {
+const Yes8 = () => {
     const [selectedButton, setSelectedButton] = useState(null);
     const [showElement, setShowElement] = useState(false);
     
@@ -15,7 +15,7 @@ const No1 = () => {
     return (
         <>
           <div className="flex flex-col items-center py-4 dark:text-gray-300">
-          <p className="text-center">Did the symptoms appear gradually?</p>
+          <p className="text-center">Is the difficulty primarily in the hind legs?</p>
           <div className="flex justify-center">
             <button
               onClick={() => handleButtonClick("Yes")}
@@ -52,4 +52,4 @@ const No1 = () => {
     );
 }
 
-export default No1
+export default Yes8
