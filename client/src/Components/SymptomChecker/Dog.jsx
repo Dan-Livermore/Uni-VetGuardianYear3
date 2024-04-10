@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ImageMapper from 'react-img-mapper';
 import IMGURL from "../../assets/SymptomChecker/Dog.avif";
-import Symptom2 from "../../pages/SymptomChecker/Symptom2";
+import Legs from './Dog/Legs/Legs';
 
 const Dog = () => {
     const [hoveredArea, setHoveredArea] = useState(null);
@@ -81,7 +81,7 @@ const leaveArea = () => {
         <span>
           <br />
           <h1 className='text-2xl font-bold px-10'>{hoveredArea.name} Related Issues</h1>
-          <Symptom2 />
+          <Legs />
         </span>
       )}
     </div>
