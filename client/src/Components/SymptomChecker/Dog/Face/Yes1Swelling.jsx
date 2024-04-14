@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Yes1Yellowed from './Yes1Yellowed';
-import No1Yellowed from './No1Yellowed';
+import Yes2Single from './Yes2Single';
+import No2Single from './No2Single';
 
-function Mouth() {
+function Yes1Swelling() {
     const [selectedButton, setSelectedButton] = useState(null);
     const [showElement, setShowElement] = useState(false);
     
@@ -14,7 +14,7 @@ function Mouth() {
     return (
       <>
         <div className="flex flex-col items-center py-4 dark:text-gray-300">
-          <p className="text-center">Does your dog have bad breath?</p>
+          <p className="text-center">Is the swelling localized to one area (e.g., around the eye, mouth, or cheek)?</p>
           <div className="flex justify-center">
             <button
               onClick={() => handleButtonClick("Yes")}
@@ -39,9 +39,9 @@ function Mouth() {
             <div className="flex justify-center py-4 pb-4">
               {showElement &&
                 (selectedButton === "Yes" ? (
-                  <Yes1Yellowed selected={selectedButton} />
+                  <Yes2Single selected={selectedButton} />
                 ) : (
-                  <No1Yellowed selected={selectedButton} />
+                  <No2Single selected={selectedButton} />
                 ))}
             </div>
             </>
@@ -51,4 +51,4 @@ function Mouth() {
     );
 }
 
-export default Mouth;
+export default Yes1Swelling;
