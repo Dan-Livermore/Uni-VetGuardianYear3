@@ -1,0 +1,22 @@
+Is the dog showing signs of ear discomfort or abnormalities?
+├─ Yes: Proceed to the next question.
+└─ No: Routine observation is recommended; keep an eye on your dog’s ear health, especially if prone to ear issues.
+
+What type of symptom is the dog displaying?
+├─ Scratching or Pawing at Ears:
+│  ├─ Is there visible redness or swelling inside the ear?
+│  │  ├─ Yes: This could indicate an infection or irritation. Check for odor or discharge.
+│  │  │  ├─ Odor/Discharge Present: Likely an ear infection. Consult a vet promptly.
+│  │  │  └─ No Odor/Discharge: Might be irritation or allergies. Monitor and if it persists, see a vet.
+│  │  └─ No: Monitor for a day or two. If scratching persists without other symptoms, consult a vet.
+├─ Odor or Discharge from the Ear:
+│  ├─ Is the discharge black or yellowish and foul-smelling?
+│  │  ├─ Yes: Likely an ear infection, possibly with yeast or bacteria. Veterinary care is needed.
+│  │  └─ No: If the discharge is clear and odorless, it might be water or mild irritation. Keep the ears dry and clean, and monitor.
+└─ Changes in Hearing or Balance:
+   ├─ Does the dog seem to hear less or is tilting its head?
+   │  ├─ Yes: This can indicate an inner ear problem or even a deeper infection. Immediate vet consultation is necessary.
+   │  └─ No: If no other symptoms are present, continue to observe. Regular cleaning may prevent issues if the dog is prone to ear problems.
+   ├─ Are there signs of pain when opening the mouth or chewing?
+   │  ├─ Yes: This could be a sign of an advanced ear infection affecting deeper structures. See a vet immediately.
+   │  └─ No: Regularly check and clean your dog’s ears as part of routine grooming.

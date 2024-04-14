@@ -1,0 +1,27 @@
+Is the dog showing signs of neck discomfort or abnormalities?
+├─ Yes: Proceed to the next question.
+└─ No: Regular observation and care are recommended; monitor your dog’s posture and movement.
+
+What type of symptom is the dog displaying?
+├─ Pain or Whining When Moving Neck:
+│  ├─ Does the dog show signs of severe pain or cry out when moving?
+│  │  ├─ Yes: This could be indicative of acute injury or severe cervical spinal issues. Restrict movement and consult a vet immediately.
+│  │  └─ No: If mild discomfort, restrict strenuous activity and monitor. If pain persists for more than 24 hours, consult a vet.
+├─ Reluctance to Move or Stiffness:
+│  ├─ Is there noticeable stiffness or does the dog avoid looking up or bending down?
+│  │  ├─ Yes: Possible signs of muscular strain or early spinal issues. Consider if any recent activity could have triggered this.
+│  │  │  ├─ Recent Strenuous Activity: Provide rest and monitor. Use a supportive bed and consider a neck-supportive harness.
+│  │  │  └─ No Recent Activity: This could indicate a more chronic or serious condition. Veterinary assessment is recommended.
+│  │  └─ No: If the dog sometimes appears stiff but usually resolves on its own, continue to monitor. Increase gentle neck exercises if possible.
+├─ Swelling or Lumps:
+│  ├─ Are there visible lumps or swollen areas?
+│  │  ├─ Yes: Could be an abscess, cyst, or other growth.
+│  │  │  ├─ Soft and Painful: Likely an abscess or infection. Veterinary care needed promptly.
+│  │  │  └─ Hard and Not Painful: Monitor the lump. If it grows or changes, or if the dog seems affected, seek veterinary care.
+│  │  └─ No: If no swelling or lumps but the neck area seems thicker or puffy, monitor for other symptoms such as lethargy or fever.
+└─ Changes in Behavior or Appetite:
+   ├─ Has there been a decrease in appetite or a change in behavior?
+   │  ├─ Yes: Neck pain might be causing difficulty with eating or general discomfort.
+   │  │  ├─ Difficulty Eating: Elevate food and water bowls. If no improvement, see a vet as there might be an issue affecting swallowing.
+   │  │  └─ General Discomfort: Consider soft bedding, a comfortable collar, and see a vet if discomfort affects daily activities.
+   │  └─ No: If no other symptoms are present and behavior is normal, maintain regular checks and consider a vet visit for a wellness evaluation.

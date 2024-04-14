@@ -1,0 +1,22 @@
+What type of symptom is the dog displaying?
+├─ Tail is limp or not wagging: Tail
+│  ├─ Was there a recent injury or trauma to the tail?
+│  │  ├─ Yes: Could be a fracture or sprain. Restrict movement and consult a vet immediately.
+│  │  └─ No: If the tail is limp without injury, observe for 24 hours. If no improvement, consult a vet.
+│  └─ Is the tail tucked between the legs more than usual?
+│     ├─ Yes: This could be a sign of pain or fear. Consider recent changes or stressors. If persists, see a vet.
+│     └─ No: Monitor the tail's behavior. If other symptoms develop, consult a vet.
+├─ Swelling or visible injury on the tail:
+│  ├─ Is there bleeding or open wound?
+│  │  ├─ Yes: Clean the wound lightly, avoid heavy bandaging, and consult a vet immediately.
+│  │  └─ No: If swelling without open wounds, apply a cold compress and see if swelling reduces. If it persists or worsens, see a vet.
+│  └─ Does the dog seem to be in pain when the tail is touched?
+│     ├─ Yes: Likely indicates an infection or injury. Consult a vet immediately.
+│     └─ No: Continue to observe. If the swelling does not improve or if the dog starts showing signs of pain, consult a vet.
+└─ Chasing or biting the tail excessively:
+   ├─ Are there signs of skin irritation or infection on the tail?
+   │  ├─ Yes: Could be fleas, allergies, or infection. Treat for fleas (if present) and consult a vet for potential allergies or infections.
+   │  └─ No: If no irritation but compulsive behavior persists, consider behavioral causes. Consult with a vet or a pet behaviorist.
+   └─ Has there been a change in the dog's environment or routine?
+      ├─ Yes: Stress or anxiety could be the cause. Monitor and try to alleviate stress. If behavior persists, consult with a vet or behaviorist.
+      └─ No: Continue to monitor. If the behavior leads to injury or does not improve, seek veterinary advice.

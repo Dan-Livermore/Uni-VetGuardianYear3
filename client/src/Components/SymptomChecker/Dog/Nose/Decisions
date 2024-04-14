@@ -1,0 +1,23 @@
+Is the dog showing any abnormal symptoms with its nose?
+├─ Yes: Proceed to the next question.
+└─ No: No immediate action required, but continue to monitor the dog's nose health.
+
+What type of symptom is the dog displaying?
+├─ Nasal Discharge:
+│  ├─ Is the discharge clear and watery?
+│  │  ├─ Yes: Likely minor irritation or allergies. Monitor for 24 hours; if symptoms persist or worsen, consult a vet.
+│  │  └─ No: Is the discharge thick, colored, or accompanied by sneezing?
+│     ├─ Yes: Possible infection. Consult a vet for appropriate medication and care.
+│     └─ No: Observe for any additional symptoms; if other issues arise, consult a vet.
+├─ Nose Bleeds:
+│  ├─ Is there a minor bleed without any apparent serious injury?
+│  │  ├─ Yes: Apply gentle pressure to stop the bleeding. If bleeding stops quickly, monitor closely. If recurrent or heavy, see a vet.
+│  │  └─ No: Is the bleeding heavy or does it persist?
+│     ├─ Yes: This could be serious. Restrain from activity and consult a vet immediately.
+│     └─ No: Monitor the situation; if bleeding occurs again or if you have any concerns, consult a vet.
+└─ Changes in Nose Appearance:
+   ├─ Has the nose become unusually dry or cracked?
+   │  ├─ Yes: This can be due to environmental factors or dehydration. Ensure hydration and monitor. If condition persists or worsens, consult a vet.
+   │  └─ No: Does the nose show signs of ulceration or discoloration?
+      ├─ Yes: Potential for more serious conditions, including autoimmune diseases or infections. Immediate veterinary consultation is recommended.
+      └─ No: Keep an eye on any further changes and maintain regular veterinary check-ups.

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ImageMapper from 'react-img-mapper';
 import IMGURL from "../../assets/SymptomChecker/Dog.avif";
 import Legs from './Dog/Legs/Legs';
+import Tail from './Dog/Tail/Tail';
 
 const Dog = () => {
     const [hoveredArea, setHoveredArea] = useState(null);
@@ -70,6 +71,8 @@ const leaveArea = () => {
         switch (hoveredArea.name) {
           case "Leg":
             return <Legs />;
+            case "Tail":
+              return <Tail />;
           case "Belly":
             return <Belly />;
           default:
