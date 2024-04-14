@@ -1,7 +1,3 @@
-Is the dog showing any abnormal symptoms with its nose?
-├─ Yes: Proceed to the next question.
-└─ No: No immediate action required, but continue to monitor the dog's nose health.
-
 What type of symptom is the dog displaying?
 ├─ Nasal Discharge:
 │  ├─ Is the discharge clear and watery?

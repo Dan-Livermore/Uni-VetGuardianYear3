@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import ImageMapper from 'react-img-mapper';
 import IMGURL from "../../assets/SymptomChecker/Dog.avif";
+import Back from './Dog/Back/Back';
+import Belly from './Dog/Belly/Belly';
+import Ear from './Dog/Ear/Ear';
+import Face from './Dog/Face/Face';
+import Feet from './Dog/Feet/Feet';
 import Legs from './Dog/Legs/Legs';
+import Mouth from './Dog/Mouth/Mouth';
+import Neck from './Dog/Neck/Neck';
+import Nose from './Dog/Nose/Nose';
 import Tail from './Dog/Tail/Tail';
 
 const Dog = () => {
@@ -69,12 +77,26 @@ const leaveArea = () => {
       <h1 className='text-2xl font-bold'>{hoveredArea.name} Related Issues</h1>
       {(() => {
         switch (hoveredArea.name) {
-          case "Leg":
-            return <Legs />;
-            case "Tail":
-              return <Tail />;
+          case "Back":
+            return <Back />;
           case "Belly":
             return <Belly />;
+          case "Ear":
+            return <Ear />;
+          case "Face":
+            return <Face />;
+          case "Feet":
+            return <Feet />;
+          case "Leg":
+            return <Legs />;
+          case "Mouth":
+            return <Mouth />;
+          case "Neck":
+            return <Neck />;
+          case "Nose":
+            return <Nose />;
+          case "Tail":
+            return <Tail />;
           default:
             return null;
         }

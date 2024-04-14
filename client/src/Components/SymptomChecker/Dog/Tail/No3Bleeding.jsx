@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import Yes2Recent from './Yes2Recent';
-import No2Recent from './No2Recent';
+import No4Skin from './No4Skin';
+import Yes4Skin from './Yes4Skin';
 
-const Yes1Limp = () => {
+const No3Bleeding = () => {
     const [selectedButton, setSelectedButton] = useState(null);
     const [showElement, setShowElement] = useState(false);
     
@@ -15,7 +15,7 @@ const Yes1Limp = () => {
     return (
         <>
           <div className="flex flex-col items-center py-4 dark:text-gray-300">
-          <p className="text-center">Was there a recent injury or trauma to the tail?</p>
+          <p className="text-center">Are there signs of skin irritation or infection on the tail?</p>
           <div className="flex justify-center">
             <button
               onClick={() => handleButtonClick("Yes")}
@@ -40,9 +40,9 @@ const Yes1Limp = () => {
             <div className="flex justify-center py-4 pb-4">
               {showElement &&
                 (selectedButton === "Yes" ? (
-                  <Yes2Recent selected={selectedButton} />
+                  <No4Skin selected={selectedButton} />
                 ) : (
-                  <No2Recent selected={selectedButton} />
+                  <Yes4Skin selected={selectedButton} />
                 ))}
             </div>
             </>
@@ -52,4 +52,4 @@ const Yes1Limp = () => {
     );
 }
 
-export default Yes1Limp
+export default No3Bleeding

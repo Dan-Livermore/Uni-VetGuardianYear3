@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import Yes3 from './Yes3';
-import No3 from './No3';
+import Yes3Bleeding from './Yes3Bleeding';
+import No3Bleeding from './No3Bleeding';
 
 const No1Limp = () => {
     const [selectedButton, setSelectedButton] = useState(null);
@@ -15,7 +15,7 @@ const No1Limp = () => {
     return (
         <>
           <div className="flex flex-col items-center py-4 dark:text-gray-300">
-          <p className="text-center">Did the symptoms appear gradually?</p>
+          <p className="text-center">Does the dog seem to be in pain when the tail is touched?</p>
           <div className="flex justify-center">
             <button
               onClick={() => handleButtonClick("Yes")}
@@ -40,9 +40,9 @@ const No1Limp = () => {
             <div className="flex justify-center py-4 pb-4">
               {showElement &&
                 (selectedButton === "Yes" ? (
-                  <Yes3 selected={selectedButton} />
+                  <Yes3Bleeding selected={selectedButton} />
                 ) : (
-                  <No3 selected={selectedButton} />
+                  <No3Bleeding selected={selectedButton} />
                 ))}
             </div>
             </>

@@ -1,14 +1,13 @@
-
 import React, {useState} from 'react'
 
-const Yes3Bleeding = () => {
+const No3Thick = () => {
     return (
         <>
           <div className="flex p-4 dark:text-gray-300">
-            <p>Yes: Likely indicates an infection or injury. Consult a vet immediately.</p>
+            <p>No: Observe for any additional symptoms; if other issues arise, consult a vet.</p>
           </div>
         </>
     );
 }
 
-export default Yes3Bleeding
+export default No3Thick
