@@ -11,10 +11,17 @@ What type of symptom is the dog displaying?
 │  ├─ Is the vomiting frequent or accompanied by blood?
 │  │  ├─ Yes: This indicates a potentially serious condition. Consult a vet immediately.
 │  │  └─ No: If occasional and the dog seems otherwise healthy, monitor and restrict food for 12 hours. If vomiting continues, see a vet.
+
+
+
 ├─ Apparent Pain or Tenderness:
 │  ├─ Does the dog yelp or resist touch on the belly?
 │  │  ├─ Yes: Indicates severe pain. Do not delay in consulting a vet as this could be indicative of pancreatitis, infections, or other critical issues.
 │  │  └─ No: If mild discomfort, monitor closely for other symptoms like changes in eating or bathroom habits.
+
+
+
+
 └─ Changes in Eating or Bathroom Habits:
    ├─ Has the dog stopped eating or changed its bathroom habits drastically?
    │  ├─ Yes: Lack of appetite or changes in defecation (diarrhea, constipation) can be signs of digestive issues. Vet consultation is recommended.

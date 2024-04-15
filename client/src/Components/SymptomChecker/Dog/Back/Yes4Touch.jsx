@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Yes1Standing from './Yes1Standing';
-import No1Standing from './No1Standing';
+import Yes5Aggressive from './Yes5Aggressive';
+import No5Aggressive from './No5Aggressive';
 
-function Back() {
+function Yes4Touch() {
     const [selectedButton, setSelectedButton] = useState(null);
     const [showElement, setShowElement] = useState(false);
     
@@ -14,7 +14,7 @@ function Back() {
     return (
       <>
         <div className="flex flex-col items-center py-4 dark:text-gray-300">
-          <p className="text-center">Does your dog have difficultly standing or walking?</p>
+          <p className="text-center">Does the dog react aggressively or whimper when the back is touched?</p>
           <div className="flex justify-center">
             <button
               onClick={() => handleButtonClick("Yes")}
@@ -39,9 +39,9 @@ function Back() {
             <div className="flex justify-center py-4 pb-4">
               {showElement &&
                 (selectedButton === "Yes" ? (
-                  <Yes1Standing selected={selectedButton} />
+                  <Yes5Aggressive selected={selectedButton} />
                 ) : (
-                  <No1Standing selected={selectedButton} />
+                  <No5Aggressive selected={selectedButton} />
                 ))}
             </div>
             </>
@@ -51,4 +51,4 @@ function Back() {
     );
 }
 
-export default Back;
+export default Yes4Touch;
