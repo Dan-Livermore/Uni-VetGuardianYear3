@@ -4,7 +4,7 @@ import { FaDog } from "react-icons/fa";
 import { FaCat } from "react-icons/fa";
 import { GiSnail } from "react-icons/gi";
 
-import Dog from "../../components/SymptomChecker/Dog";
+import Dog from "../../Components/SymptomChecker/Dog";
 
 const AnimalSelector = () => {
 const [selectedButton, setSelectedButton] = useState(null);
