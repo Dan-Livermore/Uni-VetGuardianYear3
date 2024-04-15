@@ -1,0 +1,23 @@
+Is the dog showing signs of discomfort or abnormalities in the feet?
+├─ Yes: Proceed to the next question.
+└─ No: Routine observation and paw care are recommended; keep an eye on your dog’s paw health.
+
+What type of symptom is the dog displaying?
+├─ Limping or Refusal to Walk:
+│  ├─ Is there visible injury (e.g., cuts, thorns, broken nails)?
+│  │  ├─ Yes: Remove any visible debris gently. If injury is minor, clean and monitor. For severe injuries, consult a vet immediately.
+│  │  └─ No: Check for swelling or sensitivity between the toes or on the pads.
+│     ├─ Swelling or Sensitivity Found: Possible infection or foreign body. Consult a vet.
+│     └─ No Swelling or Sensitivity: Consider strain or sprain. Rest the dog and if limping persists for more than 24 hours, see a vet.
+├─ Excessive Licking or Chewing at Paws:
+│  ├─ Are there signs of redness, swelling, or sores?
+│  │  ├─ Yes: Indicates irritation or infection. Could be allergies, parasites, or injuries. Treat accordingly and consult a vet if no improvement.
+│  │  └─ No: May be behavioral. Monitor for boredom or anxiety. If behavior persists, consult a vet or a behaviorist.
+└─ Changes in Paw Appearance:
+   ├─ Are there cracked pads or growths?
+   │  ├─ Cracked Pads: Can be due to dryness or environmental factors. Moisturize pads, avoid harsh surfaces, and monitor. If cracks are deep or bleeding, consult a vet.
+   │  ├─ Growths: Any new growth should be checked by a vet to rule out warts, cysts, or tumors.
+   │  └─ No Cracked Pads or Growths: If general discoloration or other changes are noted without other symptoms, continue to monitor.
+   └─ Is there discharge or a foul odor?
+      ├─ Yes: Likely indicates an infection or deeper issue, such as a nail bed infection or interdigital cyst. Veterinary care needed.
+      └─ No: If no discharge and the dog is not showing distress, continue routine care and monitor for changes.

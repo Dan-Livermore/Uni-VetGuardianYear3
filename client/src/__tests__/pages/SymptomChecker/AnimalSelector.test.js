@@ -1,13 +1,13 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Info1 from '../../../Pages/SymptomChecker/Info1';
+import AnimalSelector from '../../../Pages/SymptomChecker/AnimalSelector';
 
-describe('Info1 component', () => {
+describe('AnimalSelector component', () => {
     test('Renders page without crashing', () => {
         render(
             <Router>
-                <Info1 />
+                <AnimalSelector />
             </Router>
         );
         expect(screen.getByText('Dog')).toBeInTheDocument();

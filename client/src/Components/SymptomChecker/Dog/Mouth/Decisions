@@ -1,0 +1,25 @@
+Is the dog showing signs of mouth discomfort or abnormalities?
+├─ Yes: Proceed to the next question.
+└─ No: Regular dental care and observation are recommended; monitor your dog’s eating habits and oral health.
+
+What type of symptom is the dog displaying?
+├─ Bad Breath:
+│  ├─ Is the bad breath accompanied by yellowing teeth or gum redness?
+│  │  ├─ Yes: Likely dental plaque or gum disease. Schedule a dental cleaning with a vet.
+│  │  └─ No: If breath is unusually foul without visible plaque, consider digestive issues or other internal problems. Consult a vet.
+├─ Difficulty Eating or Drooling:
+│  ├─ Does the dog seem to have pain when eating?
+│  │  ├─ Yes: Possible tooth decay, broken teeth, or oral injury. Check for visible signs of injury or swelling.
+│  │  │  ├─ Visible Injury: Consult a vet immediately for possible treatment or extraction.
+│  │  │  └─ No Visible Injury: Pain may be from deeper in the mouth or throat. See a vet for a thorough examination.
+│  │  └─ No: If drooling excessively without pain, check for foreign objects or signs of nausea.
+│     ├─ Foreign Object Found: Remove if easily accessible or see a vet if removal is risky or impossible.
+│     └─ No Foreign Object: If excessive drooling continues, consult a vet as it could indicate toxicity or neurological issues.
+└─ Swelling or Lumps in the Mouth:
+   ├─ Are there visible lumps or areas of swelling?
+   │  ├─ Yes: This could indicate oral tumors, cysts, or abscesses.
+   │  │  ├─ Tender or Painful: Likely an abscess or infection. Immediate veterinary care needed.
+   │  │  └─ Hard and Not Painful: Monitor closely. Schedule a vet visit to rule out tumors or chronic issues.
+   │  └─ No: If swelling without distinct lumps, could be allergic reaction or infection.
+      ├─ Accompanied by Difficulty Breathing: Treat as an emergency—possible severe allergic reaction. Seek veterinary help immediately.
+      └─ No Breathing Difficulty: Monitor for other symptoms like fever or lethargy and consult a vet.

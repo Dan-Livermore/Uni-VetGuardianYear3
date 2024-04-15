@@ -6,7 +6,7 @@ import { GiSnail } from "react-icons/gi";
 
 import Dog from "../../Components/SymptomChecker/Dog";
 
-const Info1 = () => {
+const AnimalSelector = () => {
 const [selectedButton, setSelectedButton] = useState(null);
 
 const handleButtonClick = (id) => {
@@ -63,4 +63,4 @@ return (
 );
 };
 
-export default Info1;
+export default AnimalSelector;

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ImageMapper from 'react-img-mapper';
 import IMGURL from "../../assets/SymptomChecker/Dog.avif";
-import Symptom2 from "../../Pages/SymptomChecker/Symptom2";
 
 const Dog = () => {
     const [hoveredArea, setHoveredArea] = useState(null);
@@ -24,19 +23,6 @@ const Dog = () => {
         { name: "Tail", shape: "poly",  coords: [617,257, 594,247, 569,240, 541,221, 522,191, 507,168, 496,154, 481,150, 490,168, 500,196, 507,212, 512,237, 519,247, 531,256, 540,256, 555,264, 563,265, 570,266, 578,266, 591,266, 604,266], fillColor: "red"  },
         ]
     };
-
-// href:"./symptom-checker/dog/back", 
-// href:"./symptom-checker/dog/belly",
-// href:"./symptom-checker/dog/ear",
-// href:"./symptom-checker/dog/face",
-// href:"./symptom-checker/dog/feet",
-// href:"./symptom-checker/dog/feet",
-// href:"./symptom-checker/dog/leg",
-// href:"./symptom-checker/dog/leg",
-// href:"./symptom-checker/dog/mouth",
-// href:"./symptom-checker/dog/neck",
-// href:"./symptom-checker/dog/nose",
-// href:"./symptom-checker/dog/tail",
 
 const enterArea = area => {
   // If the mouse is hovering over that section display it red.
@@ -67,24 +53,48 @@ const leaveArea = () => {
     // Need to find how to keep the fill colour when not hovered
 
   return (
-    <div className='flex'>
-      {/* Display the image with the mapped areas. */}
-      <ImageMapper
-        src={IMGURL}
-        map={MAP}
-        width={626}
-        onMouseEnter={enterArea}
-        onMouseLeave={leaveArea}
-        onClick={selectArea}
-      />
-      {hoveredArea && ( 
-        <span>
-          <br />
-          <h1 className='text-2xl font-bold px-10'>{hoveredArea.name} Related Issues</h1>
-          <Symptom2 />
-        </span>
-      )}
+<div className='flex'>
+  <ImageMapper
+    src={IMGURL}
+    map={MAP}
+    width={626}
+    onMouseEnter={enterArea}
+    onMouseLeave={leaveArea}
+    onClick={selectArea}
+  />
+  {hoveredArea && ( 
+    <div className="flex-1 text-center"> 
+      <h1 className='text-2xl font-bold'>{hoveredArea.name} Related Issues</h1>
+      {(() => {
+        switch (hoveredArea.name) {
+          case "Back":
+            return <Back />;
+          case "Belly":
+            return <Belly />;
+          case "Ear":
+            return <Ear />;
+          case "Face":
+            return <Face />;
+          case "Feet":
+            return <Feet />;
+          case "Leg":
+            return <Legs />;
+          case "Mouth":
+            return <Mouth />;
+          case "Neck":
+            return <Neck />;
+          case "Nose":
+            return <Nose />;
+          case "Tail":
+            return <Tail />;
+          default:
+            return null;
+        }
+      })()}
     </div>
+  )}
+</div>
+
   );
 };
 

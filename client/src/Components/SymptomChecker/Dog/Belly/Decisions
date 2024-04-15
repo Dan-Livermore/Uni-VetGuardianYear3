@@ -1,0 +1,33 @@
+Is the dog showing signs of abdominal discomfort or change?
+├─ Yes: Proceed to the next question.
+└─ No: Routine observation is recommended; keep an eye on your dog’s eating habits and behavior.
+
+What type of symptom is the dog displaying?
+├─ Swelling or Distention of the Belly:
+│  ├─ Is the belly significantly swollen and tight?
+│  │  ├─ Yes: This could be a sign of serious conditions like bloat, which is an emergency. Consult a vet immediately.
+│  │  └─ No: Monitor for any additional symptoms like vomiting or lethargy. If swelling persists or worsens, consult a vet.
+├─ Vomiting:
+│  ├─ Is the vomiting frequent or accompanied by blood?
+│  │  ├─ Yes: This indicates a potentially serious condition. Consult a vet immediately.
+│  │  └─ No: If occasional and the dog seems otherwise healthy, monitor and restrict food for 12 hours. If vomiting continues, see a vet.
+
+
+
+├─ Apparent Pain or Tenderness:
+│  ├─ Does the dog yelp or resist touch on the belly?
+│  │  ├─ Yes: Indicates severe pain. Do not delay in consulting a vet as this could be indicative of pancreatitis, infections, or other critical issues.
+│  │  └─ No: If mild discomfort, monitor closely for other symptoms like changes in eating or bathroom habits.
+
+
+
+
+└─ Changes in Eating or Bathroom Habits:
+   ├─ Has the dog stopped eating or changed its bathroom habits drastically?
+   │  ├─ Yes: Lack of appetite or changes in defecation (diarrhea, constipation) can be signs of digestive issues. Vet consultation is recommended.
+   │  └─ No: If subtle changes, continue to observe and ensure the dog stays hydrated. If uncertain, a vet check-up is advisable.
+   ├─ Are there any signs of diarrhea or constipation?
+   │  ├─ Yes: 
+   │  │  ├─ Diarrhea: If persistent or bloody, see a vet immediately. If mild, monitor hydration and diet, consider a bland diet.
+   │  │  └─ Constipation: Ensure adequate hydration and exercise. If no improvement in 24-48 hours, consult a vet.
+   │  └─ No: Maintain regular observation and ensure a balanced diet.

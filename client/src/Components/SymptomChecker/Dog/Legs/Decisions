@@ -1,0 +1,37 @@
+Is the dog showing any leg-related symptoms?
+├─ Yes: Proceed to the next question.
+└─ No: No action needed, but continue to monitor your dog's health.
+
+Is the symptom sudden or gradual?
+├─ Sudden:
+│  ├─ Is there visible swelling or injury?
+│  │  ├─ Yes: Could be a traumatic injury. Restrict movement and consult a vet immediately.
+│  │  └─ No: Observe for 24 hours. If the condition worsens or doesn't improve, consult a vet.
+│  └─ Is the dog unable to bear weight at all?
+│     ├─ Yes: Likely a severe injury or condition. Consult a vet immediately.
+│     └─ No: Monitor closely. If the condition persists or worsens, consult a vet.
+└─ Gradual:
+   ├─ Is there stiffness, especially after rest?
+   │  ├─ Yes: Could be arthritis or a degenerative joint disease. Consult a vet for management.
+   │  └─ No: Continue to the next question.
+   ├─ Does the dog show reluctance to move, jump, or play?
+   │  ├─ Yes: Could be early signs of joint disease or discomfort. Consult a vet.
+   │  └─ No: Continue to the next question.
+   ├─ Are there any signs of general weakness or neurological symptoms?
+   │  ├─ Yes: This could indicate a more serious condition, including neurological issues. Consult a vet immediately.
+   │  └─ No: Proceed to the next question.
+   └─ Does the dog have difficulty standing up from a lying position or seem unsteady on its feet?
+      ├─ Yes: 
+      │  ├─ Is the difficulty primarily in the hind legs?
+      │  │  ├─ Yes: May suggest hip dysplasia, especially in larger breeds. Veterinary assessment recommended.
+      │  │  └─ No: General weakness or possible early signs of a systemic condition. Consult a vet.
+      │  └─ Does the dog seem to experience pain during colder weather or after certain activities?
+      │     ├─ Yes: Could indicate chronic conditions like arthritis or hip dysplasia worsening with activity/cold. Seek veterinary advice for pain management strategies.
+      │     └─ No: If symptoms are not clearly linked to pain or weather, consider a vet visit for a comprehensive assessment, including possible neurological evaluation.
+      └─ No: 
+         ├─ Has the dog shown any change in behavior or appetite?
+         │  ├─ Yes: Behavioral or appetite changes can be subtle signs of discomfort or illness. A veterinary check-up can help uncover underlying issues.
+         │  └─ No: Continue to monitor. Any persistent leg issues, even without other symptoms, warrant a veterinary examination.
+         └─ Does the dog frequently lick or bite at its legs or paws?
+            ├─ Yes: This could indicate pain, allergies, or skin conditions. Examination by a vet is necessary to determine the cause and treatment.
+            └─ No: Continue to monitor. Regular vet check-ups are recommended to ensure ongoing health.

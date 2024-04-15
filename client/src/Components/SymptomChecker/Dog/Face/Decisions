@@ -1,0 +1,24 @@
+Is the dog showing signs of discomfort or abnormalities on the face?
+├─ Yes: Proceed to the next question.
+└─ No: Regular grooming and observation are recommended; note any changes in behavior or appearance.
+
+What type of symptom is the dog displaying?
+├─ Swelling:
+│  ├─ Is the swelling localized to one area (e.g., around the eye, mouth, or cheek)?
+│  │  ├─ Yes: Possible abscess, allergic reaction, or injury. Observe closely.
+│  │  │  ├─ If accompanied by pain or heat: Likely infection or abscess. Consult a vet immediately.
+│  │  │  └─ If no pain and not hot to the touch: Possible allergic reaction. Monitor for breathing difficulties and consult a vet if condition persists or worsens.
+│  │  └─ No: If swelling is diffuse and not localized, possible systemic issue or severe allergic reaction. Seek veterinary care immediately.
+├─ Wounds or Cuts:
+│  ├─ Are there any visible wounds or cuts?
+│  │  ├─ Yes: Clean with mild antiseptic and observe for signs of infection (redness, swelling, discharge).
+│  │  │  ├─ If wound is deep or bleeding heavily: Consult a vet immediately.
+│  │  │  └─ If wound is superficial: Keep clean and monitor for infection. If healing does not progress, see a vet.
+│  │  └─ No: If there are no cuts but the dog is scratching or rubbing its face, consider allergies or parasites. Monitor and consult a vet if it persists.
+└─ Discoloration or Dermatological Issues:
+   ├─ Is there any change in skin color, or are there rashes or sores?
+   │  ├─ Yes: Possible fungal infection, dermatitis, or auto-immune disease. Early veterinary consultation recommended.
+   │  └─ No: If the skin looks healthy but the dog shows other symptoms like rubbing the face, consider less visible issues like dental pain.
+   ├─ Does the dog have bad breath or difficulty eating?
+   │  ├─ Yes: This could indicate dental issues, such as gum disease or tooth abscess. Veterinary dental examination is necessary.
+   │  └─ No: Continue regular monitoring and maintain good dental hygiene.

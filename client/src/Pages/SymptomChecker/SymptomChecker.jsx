@@ -1,4 +1,4 @@
-import Info1 from "./Info1";
+import AnimalSelector from "./AnimalSelector";
 
 import React, { useState } from 'react';
 
@@ -9,7 +9,7 @@ const SymptomChecker = () => {
       <div className="p-4 flex-1">
         <h1 className="text-4xl font-bold mb-4">Symptom Suggester</h1>
         <p>Use this for a suggestion of your pet's problem and what you can do next.</p>
-        <Info1 />
+        <AnimalSelector />
       </div>
     </div>
     </>

@@ -1,0 +1,22 @@
+Is the dog showing signs of back discomfort or pain?
+├─ Yes: Proceed to the next question.
+└─ No: Routine observation is recommended; keep an eye on your dog’s posture and movements.
+
+What type of symptom is the dog displaying?
+├─ Difficulty Standing or Walking:
+│  ├─ Is the dog unable to stand or walk at all?
+│  │  ├─ Yes: This could indicate a severe issue such as acute disc disease or severe injury. Consult a vet immediately.
+│  │  └─ No: Does the difficulty seem to improve after movement, or does it persist?
+│     ├─ Improves with movement: May be stiffness due to age or mild arthritis. Monitor and consider a vet visit for pain management advice.
+│     └─ Persists: Could be indicative of a more serious condition like disc disease. Veterinary examination is necessary.
+├─ Visible Pain When Touched or Moved:
+│  ├─ Does the dog react aggressively or whimper when the back is touched?
+│  │  ├─ Yes: Indicates significant pain. Avoid further handling to prevent aggression or injury and consult a vet immediately.
+│  │  └─ No: Monitor for additional symptoms. If discomfort continues or worsens, schedule a vet appointment.
+└─ Changes in Posture or Mobility:
+   ├─ Is there a noticeable hunch in the back or reluctance to jump/climb?
+   │  ├─ Yes: These are common signs of back pain or injury. Consult a vet for assessment and possible imaging.
+   │  └─ No: If there are no other signs of discomfort, continue to observe but consider a vet check-up for a wellness evaluation.
+   ├─ Has the dog shown signs of incontinence or partial paralysis?
+   │  ├─ Yes: This is urgent as it could indicate severe spinal issues or nerve damage. Immediate veterinary care is required.
+   │  └─ No: Continue to monitor the dog’s behavior and posture. Regular vet visits are advised to ensure no underlying issues.
