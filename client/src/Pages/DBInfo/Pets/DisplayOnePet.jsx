@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import BackButton from '../../../components/DBInfo/BackButton';
+import EditButton from '../../../components/DBInfo/EditButton';
 
 const DisplayOnePet = () => {
   const [pet, setPet] = useState({});
@@ -97,6 +98,7 @@ const DisplayOnePet = () => {
         </div>
       <br />
       <BackButton />
+      <EditButton />
     </div>
   );
 };
