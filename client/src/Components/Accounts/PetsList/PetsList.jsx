@@ -140,7 +140,7 @@ const PetsList = () => {
                   </button>
                 </Link>
                 <div className="border-r mx-1 h-6"/>
-                <Link to={`/pets/remove/${pet._id}`}>
+                <Link to={`/account/pets/delete/${pet._id}`}>
                   <button className="bg-red-500 hover:bg-red-600 dark:bg-red-700 dark:hover:bg-red-800 text-white dark:text-gray-300 px-4 py-3 rounded">
                     <FaTrash />
                   </button>

@@ -89,7 +89,7 @@ const router = createBrowserRouter(
         <Route path="/update-password/:id" element={<UpdatePassword />} />
         <Route path="/delete-account/:id" element={<DeleteAccount />} />
 
-        <Route path="/create-pet/" element={<AddPet />} />
+        <Route path="/create-pet/" element={<CreatePet />} />
 
         <Route path="/admin/users" element={<DisplayUsers />} />  
         <Route path="/admin/users/create" element={<CreateUser />}  />

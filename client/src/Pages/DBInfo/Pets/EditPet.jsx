@@ -9,7 +9,7 @@ const EditPet = () => {
   const [ownerID, setOwnerID] = useState("");
   const [animal, setAnimal] = useState("");
   const [weight, setWeight] = useState("");
-  const [gender, setgender] = useState("");
+  const [gender, setGender] = useState("");
   const [dob, setDob] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -26,7 +26,7 @@ const EditPet = () => {
         setAnimal(response.data.animal);
         setWeight(response.data.weight);
         setDob(formatDateTimeLocal(response.data.dob));
-        setgender(response.data.gender);
+        setGender(response.data.gender);
         setLoading(false);
       })
       .catch((error) => {
@@ -167,7 +167,7 @@ const EditPet = () => {
           <input
             type="text"
             value={gender}
-            onChange={(e) => setDob(e.target.value)}
+            onChange={(e) => setGender(e.target.value)}
             className="border-2 border-gray-500 px-4 py-2 w-full"
           />
         </div>
