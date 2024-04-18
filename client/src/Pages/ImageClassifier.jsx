@@ -95,9 +95,11 @@ const ImageClassifier = () => {
                   <p>{" "} Prediction: {prediction}{" "}</p>
                   <p>{" "} Confidence: {confidence} {"% "}</p>
                 </div>
+                {/*
                 <button disabled type="submit" className="bg-slate-500 text-white font-bold py-2 px-4 rounded-md mt-2">
                   Add Your Pet
                 </button>
+        */}
               </div>
               <br/>
               <Link to="/image-classifier">

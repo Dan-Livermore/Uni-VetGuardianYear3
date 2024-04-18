@@ -130,7 +130,7 @@ const EditPet = () => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-2 w-full"
+            className="border-2 border-gray-500 dark:text-black px-4 py-2 w-full"
           />
         </div>
         <div className="my-4">
@@ -139,7 +139,7 @@ const EditPet = () => {
             type="text"
             value={animal}
             onChange={(e) => setAnimal(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-2  w-full"
+            className="border-2 border-gray-500 dark:text-black px-4 py-2  w-full"
           />
         </div>
         <div className="my-4">
@@ -148,7 +148,7 @@ const EditPet = () => {
             type="number"
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-2 w-full"
+            className="border-2 border-gray-500 dark:text-black px-4 py-2 w-full"
           />
         </div>
         <div className="my-4">
@@ -157,7 +157,7 @@ const EditPet = () => {
             type="date"
             value={dob}
             onChange={(e) => setDob(SaveDate(e.target.value))}
-            className="border-2 border-gray-500 px-4 py-2 w-full"
+            className="border-2 border-gray-500 dark:text-black px-4 py-2 w-full"
           />
         </div>
         <div className="my-4">
@@ -168,7 +168,7 @@ const EditPet = () => {
             type="text"
             value={gender}
             onChange={(e) => setGender(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-2 w-full"
+            className="border-2 border-gray-500 dark:text-black px-4 py-2 w-full"
           />
         </div>
         <button

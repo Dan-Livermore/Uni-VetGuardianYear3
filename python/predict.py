@@ -35,6 +35,9 @@ def predictImage(img):
     prediction = pet_names[np.argmax(probs)]
     confidence = np.round(probs[np.argmax(probs)] * 100, 2)
 
+    words = prediction.split('_')
+    prediction = words[0] + ' ' + ' '.join(word.capitalize() for word in words[1:])
+
     # Prepare response in JSON format
     response = {
         "prediction": prediction,
