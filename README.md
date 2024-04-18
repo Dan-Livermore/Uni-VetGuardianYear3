@@ -1,5 +1,5 @@
 # COMP 3000 Computing Project
-![Thumbnail](ReadmeImage(1).jpg) <br>
+![Thumbnail](ReadmeImage(2).jpg) <br>
 
 Created by: Daniel Livermore <br>
 Supervised by: Dr Vivek Singh (Semester 2) & Dr Liz Stuart (Semester 1) <br>
@@ -7,7 +7,7 @@ Supervised by: Dr Vivek Singh (Semester 2) & Dr Liz Stuart (Semester 1) <br>
 
 **Link to demonstration video**: ---LINK--- <br>
 
-![Poster](ReadmeImage(2).jpg) <br>
+![Poster](ReadmeImage(1).jpg) <br>
 
 ### Project Vision
 Vet Guardian is a pet health tracker platform, featuring a self-diagnosis tool to help users manage their pet’s health. Users can input their pet’s symptoms through the symptom checker and receive information about their pet’s predicted problem. Personalise your pet’s care by creating profiles where you can manage their current health concerns.
