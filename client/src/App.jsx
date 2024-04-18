@@ -89,7 +89,7 @@ const router = createBrowserRouter(
         <Route path="/update-password/:id" element={<UpdatePassword />} />
         <Route path="/delete-account/:id" element={<DeleteAccount />} />
 
-        <Route path="/create-pet/" element={<AddPet />} />
+        <Route path="/create-pet/" element={<CreatePet />} />
 
         <Route path="/admin/users" element={<DisplayUsers />} />  
         <Route path="/admin/users/create" element={<CreateUser />}  />
@@ -97,11 +97,11 @@ const router = createBrowserRouter(
         <Route path="/admin/users/edit/:id" element={<EditUser />} />  
         <Route path="/admin/users/delete/:id" element={<DeleteUser/>} />
 
-        <Route path="/admin/pets" element={<DisplayPets />} />  
-        <Route path="/admin/pets/create" element={<CreatePet />}  />
-        <Route path="/admin/pets/read/:id" element={<DisplayOnePet />} />  
-        <Route path="/admin/pets/edit/:id" element={<EditPet />} />  
-        <Route path="/admin/pets/delete/:id" element={<DeletePet/>} />
+        <Route path="/account/pets" element={<DisplayPets />} />  
+        <Route path="/account/pets/create" element={<CreatePet />}  />
+        <Route path="/account/pets/read/:id" element={<DisplayOnePet />} />  
+        <Route path="/account/pets/edit/:id" element={<EditPet />} />  
+        <Route path="/account/pets/delete/:id" element={<DeletePet/>} />
 
         <Route path="/admin/predictions" element={<DisplayPred />} />  
         <Route path="/admin/predictions/create" element={<CreatePred />}  />

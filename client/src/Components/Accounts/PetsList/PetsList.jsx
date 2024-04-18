@@ -127,7 +127,6 @@ const PetsList = () => {
               <span>
                 {pet.name} {pet.lastname}
               </span>
-              {/* For each pet, buttons that lead to their details and records from the symptom suggester */}
               <div className="flex items-center">
                 <Link to={`pets/read/${pet._id}`}>
                   <button className="bg-emerald-500 hover:bg-emerald-600 dark:bg-emerald-700 dark:hover:bg-emerald-800 text-white dark:text-gray-300 px-4 py-2 rounded">
@@ -135,13 +134,13 @@ const PetsList = () => {
                   </button>
                 </Link>
                 <div className="border-r mx-1 h-6"/>
-                <Link to={`/records/pet/${pet._id}`}>
+                <Link to={`/account/pets/edit/${pet._id}`}>
                   <button className="bg-emerald-500 hover:bg-emerald-600 dark:bg-emerald-700 dark:hover:bg-emerald-800 text-white dark:text-gray-300 px-4 py-2 rounded">
-                    Previous Records
+                    Edit Details
                   </button>
                 </Link>
                 <div className="border-r mx-1 h-6"/>
-                <Link to={`/pets/remove/${pet._id}`}>
+                <Link to={`/account/pets/delete/${pet._id}`}>
                   <button className="bg-red-500 hover:bg-red-600 dark:bg-red-700 dark:hover:bg-red-800 text-white dark:text-gray-300 px-4 py-3 rounded">
                     <FaTrash />
                   </button>
