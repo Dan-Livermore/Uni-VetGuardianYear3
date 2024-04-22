@@ -75,10 +75,11 @@ const ImageClassifier = () => {
               <p className="px-2 py-1 dark:text-gray-300">Click on the <b>Choose File</b> button and select a photo of your pet.</p>
               <p className="px-2 py-1 dark:text-gray-300">Select the <b>Load Image</b> Button.</p>
               <input type="file" accept="image/*" onChange={handleImageChange} className="bg-white border border-slate-300 rounded-md p-2"/>
-              <button type="submit" className="bg-emerald-500 dark:bg-emerald-600 hover:bg-emerald-600 dark:hover:bg-emerald-800 text-white dark:text-gray-300 font-bold py-2 px-4 rounded-md mt-2">
+              <button type="submit" className="bg-emerald-500 dark:bg-emerald-600 hover:bg-emerald-600 dark:hover:bg-emerald-800 text-white dark:text-gray-300 font-bold py-2 px-4 rounded-md mt-2 ml-2">
                 Load Image
               </button>
               <p className="px-2 py-4 font-bold dark:text-gray-300">Supported File Types: GIF, JPEG, PNG.</p>
+              <p className="px-2 py-4 dark:text-gray-300">No images of pets are stored after pet identification is completed.</p>
             </form>
           </div>
         )}
@@ -95,11 +96,13 @@ const ImageClassifier = () => {
                   <p>{" "} Prediction: {prediction}{" "}</p>
                   <p>{" "} Confidence: {confidence} {"% "}</p>
                 </div>
-                {/*
-                <button disabled type="submit" className="bg-slate-500 text-white font-bold py-2 px-4 rounded-md mt-2">
-                  Add Your Pet
-                </button>
-        */}
+                
+                <Link to="/create-pet">
+                  <button type="submit" className="bg-emerald-500 dark:bg-emerald-600 hover:bg-emerald-600 dark:hover:bg-emerald-800 text-white dark:text-gray-300 font-bold py-2 px-4 rounded-md mt-2">
+                    Add Your Pet
+                  </button>
+                </Link>
+       
               </div>
               <br/>
               <Link to="/image-classifier">

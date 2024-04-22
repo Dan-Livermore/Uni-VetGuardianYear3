@@ -3,7 +3,7 @@
 
 Created by: Daniel Livermore <br>
 Supervised by: Dr Vivek Singh (Semester 2) & Dr Liz Stuart (Semester 1) <br>
-![GitHub Actions Output](https://github.com/Dan-Livermore/COMP3000DanLivermore/actions/workflows/DBTests.yml/badge.svg) <br>
+![GitHub Actions Output](https://github.com/Dan-Livermore/COMP3000DanLivermore/actions/workflows/Tests.yml/badge.svg) <br>
 
 **Link to demonstration video**: ---LINK--- <br>
 
