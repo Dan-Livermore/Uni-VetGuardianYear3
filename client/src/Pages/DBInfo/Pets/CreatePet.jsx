@@ -128,7 +128,7 @@ const CreatePet = () => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-2 w-full"
+            className="border-2 border-gray-500 px-4 py-2 w-full dark:text-black"
           />
         </div>
         <div className="my-4">
@@ -137,7 +137,7 @@ const CreatePet = () => {
             type="text"
             value={animal}
             onChange={(e) => setAnimal(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-2  w-full"
+            className="border-2 border-gray-500 px-4 py-2  w-full dark:text-black" 
           />
         </div>
         <div className="my-4">
@@ -146,16 +146,16 @@ const CreatePet = () => {
             type="number"
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-2 w-full"
+            className="border-2 border-gray-500 px-4 py-2 w-full dark:text-black"
           />
         </div>
         <div className="my-4">
-        <label className="text-2xl mr-4 text-black dark:text-gray-300 font-bold">Date of Birth</label>
+        <label className="text-2xl mr-4 text-black dark:text-gray-300 font-bold ">Date of Birth</label>
         <input
             type="datetime-local"
             value={dob ? dob.slice(0, 16) : ""}
             onChange={(e) => setDob(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-2 w-full"
+            className="border-2 border-gray-500 px-4 py-2 w-full dark:text-black"
           />
         </div>
         <div className="my-4">
@@ -166,7 +166,7 @@ const CreatePet = () => {
             type="text"
             value={gender}
             onChange={(e) => setGender(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-2 w-full"
+            className="border-2 border-gray-500 px-4 py-2 w-full dark:text-black"
           />
         </div>
         <button
