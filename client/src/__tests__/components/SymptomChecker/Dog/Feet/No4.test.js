@@ -1,15 +1,16 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
-import AnimalSelector from "../../../Pages/SymptomChecker/AnimalSelector";
+import No4Licking from "../../../../../Components/SymptomChecker/Dog/Feet/No4Licking";
 
-describe("AnimalSelector component", () => {
+describe("No4Licking component", () => {
   test("Renders page without crashing", () => {
     render(
       <Router>
-        <AnimalSelector />
+        <No4Licking />
       </Router>
     );
-    expect(screen.getByText("Now, where does the problem occur from?")).toBeInTheDocument();
+    expect(screen.getByText("Are there cracked pads or growths?")).toBeInTheDocument();
   });
 });
+

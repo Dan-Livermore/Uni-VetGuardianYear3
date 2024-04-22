@@ -1,15 +1,15 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
-import AnimalSelector from "../../../Pages/SymptomChecker/AnimalSelector";
+import Yes2Tight from "../../../../../Components/SymptomChecker/Dog/Belly/Yes2Tight";
 
-describe("AnimalSelector component", () => {
+describe("Yes2Tight component", () => {
   test("Renders page without crashing", () => {
     render(
       <Router>
-        <AnimalSelector />
+        <Yes2Tight />
       </Router>
     );
-    expect(screen.getByText("Now, where does the problem occur from?")).toBeInTheDocument();
+    expect(screen.getByText("Potential Symptom")).toBeInTheDocument();
   });
 });

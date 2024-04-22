@@ -1,15 +1,15 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
-import AnimalSelector from "../../../Pages/SymptomChecker/AnimalSelector";
+import No7Paralysis from "../../../../../Components/SymptomChecker/Dog/Back/No7Paralysis";
 
-describe("AnimalSelector component", () => {
+describe("No7Paralysis component", () => {
   test("Renders page without crashing", () => {
     render(
       <Router>
-        <AnimalSelector />
+        <No7Paralysis />
       </Router>
     );
-    expect(screen.getByText("Now, where does the problem occur from?")).toBeInTheDocument();
+    expect(screen.getByText("Potential Symptom")).toBeInTheDocument();
   });
 });

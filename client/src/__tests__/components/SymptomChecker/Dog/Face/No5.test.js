@@ -1,15 +1,15 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
-import AnimalSelector from "../../../Pages/SymptomChecker/AnimalSelector";
+import No5Dental from "../../../../../Components/SymptomChecker/Dog/Face/No5Dental";
 
-describe("AnimalSelector component", () => {
+describe("No5Dental component", () => {
   test("Renders page without crashing", () => {
     render(
       <Router>
-        <AnimalSelector />
+        <No5Dental />
       </Router>
     );
-    expect(screen.getByText("Now, where does the problem occur from?")).toBeInTheDocument();
+    expect(screen.getByText("Potential Symptom")).toBeInTheDocument();
   });
 });

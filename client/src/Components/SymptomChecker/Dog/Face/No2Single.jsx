@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Yes2Single() {
+function No2Single() {
 return (
   <>
     <div className="flex flex-col p-4 dark:text-gray-300">
@@ -14,4 +14,4 @@ return (
 };
 
 
-export default Yes2Single;
+export default No2Single;
