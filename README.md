@@ -5,7 +5,7 @@ Created by: Daniel Livermore <br>
 Supervised by: Dr Vivek Singh (Semester 2) & Dr Liz Stuart (Semester 1) <br>
 ![GitHub Actions Output](https://github.com/Dan-Livermore/COMP3000DanLivermore/actions/workflows/Tests.yml/badge.svg) <br>
 
-**Link to demonstration video**: ---LINK--- <br>
+**Link to demonstration video**: https://youtu.be/GDPYq4E2qzI <br>
 
 ![Poster](ReadmeImage(1).jpg) <br>
 
@@ -25,9 +25,9 @@ Vet Guardian requires Node.js v18.
 
 ```sh
 1. Open Server Directory cd server
-2. Run npm start
+2. Run npm run start
 3. Open Client Directory cd ../ client
-4. Run npm start 
+4. Run npm run start 
 5. Open Python Directory cd ../ Python
 6. Run python predict .py
 ```
